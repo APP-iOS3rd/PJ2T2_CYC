@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		048DDD7E2B2062DA00331E2A /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048DDD7D2B2062DA00331E2A /* NotificationView.swift */; };
 		B1ABEA422B200D3000F3C44A /* CYCApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ABEA412B200D3000F3C44A /* CYCApp.swift */; };
-		B1ABEA442B200D3000F3C44A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ABEA432B200D3000F3C44A /* ContentView.swift */; };
+		B1ABEA442B200D3000F3C44A /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ABEA432B200D3000F3C44A /* SettingView.swift */; };
 		B1ABEA462B200D3200F3C44A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1ABEA452B200D3200F3C44A /* Assets.xcassets */; };
 		B1ABEA492B200D3200F3C44A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1ABEA482B200D3200F3C44A /* Preview Assets.xcassets */; };
 		B1ABEA592B200E0B00F3C44A /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1ABEA502B200E0B00F3C44A /* Pretendard-Regular.otf */; };
@@ -25,9 +26,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		048DDD7D2B2062DA00331E2A /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		B1ABEA3E2B200D3000F3C44A /* CYC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CYC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1ABEA412B200D3000F3C44A /* CYCApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CYCApp.swift; sourceTree = "<group>"; };
-		B1ABEA432B200D3000F3C44A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B1ABEA432B200D3000F3C44A /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		B1ABEA452B200D3200F3C44A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B1ABEA482B200D3200F3C44A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B1ABEA502B200E0B00F3C44A /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
@@ -76,7 +78,8 @@
 			children = (
 				B1ABEA652B200F9800F3C44A /* Info.plist */,
 				B1ABEA412B200D3000F3C44A /* CYCApp.swift */,
-				B1ABEA432B200D3000F3C44A /* ContentView.swift */,
+				B1ABEA432B200D3000F3C44A /* SettingView.swift */,
+				048DDD7D2B2062DA00331E2A /* NotificationView.swift */,
 				B1ABEA452B200D3200F3C44A /* Assets.xcassets */,
 				B1ABEA622B200E3800F3C44A /* Extensions */,
 				B1ABEA4F2B200D5100F3C44A /* Fonts */,
@@ -197,10 +200,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1ABEA442B200D3000F3C44A /* ContentView.swift in Sources */,
+				B1ABEA442B200D3000F3C44A /* SettingView.swift in Sources */,
 				B1ABEA642B200E5800F3C44A /* fontExtension.swift in Sources */,
 				B1ABEA422B200D3000F3C44A /* CYCApp.swift in Sources */,
 				B1ABEA682B2017E900F3C44A /* colorExtension.swift in Sources */,
+				048DDD7E2B2062DA00331E2A /* NotificationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +338,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CYC/Preview Content\"";
+				DEVELOPMENT_TEAM = H545GGT7HM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CYC/Info.plist;
@@ -347,7 +352,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = thanky.CYC;
+				PRODUCT_BUNDLE_IDENTIFIER = Liam.CYC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -363,6 +368,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CYC/Preview Content\"";
+				DEVELOPMENT_TEAM = H545GGT7HM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CYC/Info.plist;
@@ -376,7 +382,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = thanky.CYC;
+				PRODUCT_BUNDLE_IDENTIFIER = Liam.CYC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
