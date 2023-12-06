@@ -15,10 +15,10 @@ struct PersonGridView: View {
         VStack {
             ZStack {
                 Rectangle()
-                    .frame(width: 150,height: 190)
+                    .frame(width: 170,height: 200)
                     .clipShape(RoundedRectangle(cornerRadius: 25))
                     .foregroundStyle(person.color)
-                    .shadow(color: .gray, radius: 2)
+                    .shadow(color: .white, radius: 0.8)
                 
                 VStack {
                     Text(person.name)

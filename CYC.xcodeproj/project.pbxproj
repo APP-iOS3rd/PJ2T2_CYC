@@ -12,6 +12,7 @@
 		6317B3D22B2045450039795E /* PersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317B3D12B2045450039795E /* PersonModel.swift */; };
 		6317B3D42B2045860039795E /* PersonGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317B3D32B2045860039795E /* PersonGridView.swift */; };
 		6317B3D62B2049C60039795E /* AboutCYC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317B3D52B2049C60039795E /* AboutCYC.swift */; };
+		6317B3D82B20514D0039795E /* CustomSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317B3D72B20514D0039795E /* CustomSpacing.swift */; };
 		B1ABEA422B200D3000F3C44A /* CYCApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ABEA412B200D3000F3C44A /* CYCApp.swift */; };
 		B1ABEA442B200D3000F3C44A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ABEA432B200D3000F3C44A /* ContentView.swift */; };
 		B1ABEA462B200D3200F3C44A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1ABEA452B200D3200F3C44A /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 		6317B3D12B2045450039795E /* PersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonModel.swift; sourceTree = "<group>"; };
 		6317B3D32B2045860039795E /* PersonGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonGridView.swift; sourceTree = "<group>"; };
 		6317B3D52B2049C60039795E /* AboutCYC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutCYC.swift; sourceTree = "<group>"; };
+		6317B3D72B20514D0039795E /* CustomSpacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSpacing.swift; sourceTree = "<group>"; };
 		B1ABEA3E2B200D3000F3C44A /* CYC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CYC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1ABEA412B200D3000F3C44A /* CYCApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CYCApp.swift; sourceTree = "<group>"; };
 		B1ABEA432B200D3000F3C44A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -65,13 +67,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6317B3CE2B2045120039795E /* Person Profile */ = {
+		6317B3CE2B2045120039795E /* PersonProfile */ = {
 			isa = PBXGroup;
 			children = (
 				6317B3D02B20453A0039795E /* View */,
 				6317B3CF2B2045320039795E /* Model */,
 			);
-			path = "Person Profile";
+			path = PersonProfile;
 			sourceTree = "<group>";
 		};
 		6317B3CF2B2045320039795E /* Model */ = {
@@ -114,7 +116,7 @@
 				B1ABEA412B200D3000F3C44A /* CYCApp.swift */,
 				B1ABEA432B200D3000F3C44A /* ContentView.swift */,
 				6317B3CC2B203B1C0039795E /* OnboardingTabView.swift */,
-				6317B3CE2B2045120039795E /* Person Profile */,
+				6317B3CE2B2045120039795E /* PersonProfile */,
 				6317B3CA2B2033CD0039795E /* LoginView.swift */,
 				B1ABEA452B200D3200F3C44A /* Assets.xcassets */,
 				B1ABEA622B200E3800F3C44A /* Extensions */,
@@ -152,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				B1ABEA632B200E5800F3C44A /* fontExtension.swift */,
+				6317B3D72B20514D0039795E /* CustomSpacing.swift */,
 				B1ABEA672B2017E900F3C44A /* colorExtension.swift */,
 			);
 			path = Extensions;
@@ -242,6 +245,7 @@
 				6317B3CD2B203B1C0039795E /* OnboardingTabView.swift in Sources */,
 				B1ABEA642B200E5800F3C44A /* fontExtension.swift in Sources */,
 				B1ABEA422B200D3000F3C44A /* CYCApp.swift in Sources */,
+				6317B3D82B20514D0039795E /* CustomSpacing.swift in Sources */,
 				6317B3CB2B2033CD0039795E /* LoginView.swift in Sources */,
 				B1ABEA682B2017E900F3C44A /* colorExtension.swift in Sources */,
 				6317B3D42B2045860039795E /* PersonGridView.swift in Sources */,
