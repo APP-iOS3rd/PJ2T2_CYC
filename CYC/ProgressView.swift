@@ -13,32 +13,27 @@ struct ProgressView: View {
     @State private var progressTitle: String = ""
     
     @State private var showSheet = false
-    @State private var number: Int = 1
-    @State private var dday: Int = 0
+    @State private var goal: Int = 100
+    @State private var progress: Int = 0
+    
+    // MARK: 연속 커밋 일수 - step
+    @State private var step = 0
 
-    
-    
-    private let goal = 100
-    @State private var step = 30
-    
-    
-//    var maxWidth: Double {
-//        return min((containerWidth / CGFloat(goal) * CGFloat(step)), containerWidth)
-//    }
     // progress까지 가는
     var maxProgressWidth: Double {
-//        return min(Double(progress), containerWidth)
-        return min((containerWidth / CGFloat(goal) * CGFloat(step)), containerWidth)
+//        print(min((containerWidth / CGFloat(100) * CGFloat(progress)), containerWidth))
+        return min((containerWidth / CGFloat(100) * CGFloat(progress)), containerWidth)
     }
     
     var body: some View {
         VStack{
+            // 디버깅 테스트용
             Text(progressTitle)
             
             HStack{
                 ZStack(alignment: .leading) {
                     
-                    //progress bar 전체 범위
+                    //progress bar 전체 범위 뷰
                     GeometryReader { geo in
                         RoundedRectangle(cornerRadius: 60)
                             .foregroundColor(.bgColor)
@@ -61,11 +56,10 @@ struct ProgressView: View {
                         Image(.kissGreen)
                             .resizable()
                             .scaledToFit()
-                            .offset(x: 10, y: 0)
+                            .offset(x: 30, y: 0)
                             .frame(width: 40)
                     }
                     .padding(2)
-                    //.frame(minWidth: maxWidth)
                     .frame(minWidth: maxProgressWidth)
                     .fixedSize()
                     
@@ -75,14 +69,11 @@ struct ProgressView: View {
                 .padding(20)
                 .onAppear {
                     progressTitle = "\(step) / \(goal)"
-                    move()
+                    moveDinosaur()
                 }
                 
-                // pink 공룡 - Dday button
-                
+                // MARK: Dday 관련 버튼, 입력 모달 나오는 뷰
                 ZStack(alignment: .top){
-                    // Dday 입력창 나오기
-                    
                     Button {
                         showSheet.toggle()
                     } label: {
@@ -90,13 +81,13 @@ struct ProgressView: View {
                             Image(.kissPink2)
                                 .resizable()
                                 .scaledToFit()
-                                .offset(x: -25, y: 8)
+                                .offset(x: -18, y: 6.5)
                                 .frame(width: 40)
                             
-                            Text("D-\(dday)")
+                            Text("D-\(goal)")
                                 .font(.pretendardSemiBold_12)
                                 .foregroundStyle(.black)
-                                .offset(x: -25, y: 10)
+                                .offset(x: -18, y: 7)
                             
                         }
                     }
@@ -104,14 +95,14 @@ struct ProgressView: View {
                     .buttonStyle(.borderedProminent)
                     .sheet(isPresented: $showSheet) {
                         VStack{
-                            Picker("Your age", selection: $dday) {
+                            Picker("Your D-day", selection: $goal) {
                                 ForEach(1...100, id: \.self) { number in
                                     Text("\(number)")
                                 }
                             }.pickerStyle(.wheel)
-                            Button("complete"){
-                                
+                            Button("Save"){
                                 showSheet = false
+                                moveDinosaur()
                             }
                             
                         }
@@ -131,15 +122,14 @@ struct ProgressView: View {
         
     }
     
-    func move(){
-        guard step < goal else { return }
+    func moveDinosaur(){
         Task{
             for i in 0...step{
                 try await Task.sleep(until: .now.advanced(by: .milliseconds(40)), clock: .continuous)
                 progressTitle = "\(i)"
-                print(i/goal, i, goal, Double(i) / Double(goal))
                 withAnimation {
-                    step = Int((Double(i) / Double(goal) * 100.0))
+                    progress = Int((Double(i) / Double(goal) * 100.0))
+                    print("%: ", progress)
                 }
                 
             }
