@@ -71,7 +71,8 @@ struct ProgressView: View {
                         progressTitle = "\(step) / \(goal)"
                     }
                     
-                    Image(.kissPink)
+
+                    Image(.kissPink2)
                         .resizable()
                         .scaledToFit()
                         .offset(x: -25, y: -3)
