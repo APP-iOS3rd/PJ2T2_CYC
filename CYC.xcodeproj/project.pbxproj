@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5205DD772B2039640013DF68 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5205DD762B2039640013DF68 /* ProgressView.swift */; };
+		5205DD792B205E960013DF68 /* Drawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5205DD782B205E960013DF68 /* Drawer.swift */; };
 		B1ABEA422B200D3000F3C44A /* CYCApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ABEA412B200D3000F3C44A /* CYCApp.swift */; };
 		B1ABEA442B200D3000F3C44A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ABEA432B200D3000F3C44A /* ContentView.swift */; };
 		B1ABEA462B200D3200F3C44A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1ABEA452B200D3200F3C44A /* Assets.xcassets */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		5205DD762B2039640013DF68 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		5205DD782B205E960013DF68 /* Drawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawer.swift; sourceTree = "<group>"; };
 		B1ABEA3E2B200D3000F3C44A /* CYC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CYC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1ABEA412B200D3000F3C44A /* CYCApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CYCApp.swift; sourceTree = "<group>"; };
 		B1ABEA432B200D3000F3C44A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				5205DD762B2039640013DF68 /* ProgressView.swift */,
 				B1ABEA412B200D3000F3C44A /* CYCApp.swift */,
 				B1ABEA432B200D3000F3C44A /* ContentView.swift */,
+				5205DD782B205E960013DF68 /* Drawer.swift */,
 				B1ABEA452B200D3200F3C44A /* Assets.xcassets */,
 				B1ABEA622B200E3800F3C44A /* Extensions */,
 				B1ABEA4F2B200D5100F3C44A /* Fonts */,
@@ -204,6 +207,7 @@
 				B1ABEA642B200E5800F3C44A /* fontExtension.swift in Sources */,
 				5205DD772B2039640013DF68 /* ProgressView.swift in Sources */,
 				B1ABEA422B200D3000F3C44A /* CYCApp.swift in Sources */,
+				5205DD792B205E960013DF68 /* Drawer.swift in Sources */,
 				B1ABEA682B2017E900F3C44A /* colorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
