@@ -42,7 +42,15 @@ struct SettingView: View {
                             .listRowBackground(Color.containerColor)
                     }
                     .scrollContentBackground(.hidden)
-
+                    
+                    Text("2023, Check Your Commit all rights reserved.")
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        .font(.pretendardLight_11)
+                        .offset(y: 10)
+                    Text("Powered by PJ2T2_CYC")
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        .font(.pretendardLight_11)
+                        .offset(y: 10)
                 }
                 .padding(.top, 20)
                 
