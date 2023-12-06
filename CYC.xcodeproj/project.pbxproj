@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5205DD772B2039640013DF68 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5205DD762B2039640013DF68 /* ProgressView.swift */; };
 		B1ABEA422B200D3000F3C44A /* CYCApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ABEA412B200D3000F3C44A /* CYCApp.swift */; };
 		B1ABEA442B200D3000F3C44A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ABEA432B200D3000F3C44A /* ContentView.swift */; };
 		B1ABEA462B200D3200F3C44A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1ABEA452B200D3200F3C44A /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5205DD762B2039640013DF68 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		B1ABEA3E2B200D3000F3C44A /* CYC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CYC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1ABEA412B200D3000F3C44A /* CYCApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CYCApp.swift; sourceTree = "<group>"; };
 		B1ABEA432B200D3000F3C44A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				B1ABEA652B200F9800F3C44A /* Info.plist */,
+				5205DD762B2039640013DF68 /* ProgressView.swift */,
 				B1ABEA412B200D3000F3C44A /* CYCApp.swift */,
 				B1ABEA432B200D3000F3C44A /* ContentView.swift */,
 				B1ABEA452B200D3200F3C44A /* Assets.xcassets */,
@@ -199,6 +202,7 @@
 			files = (
 				B1ABEA442B200D3000F3C44A /* ContentView.swift in Sources */,
 				B1ABEA642B200E5800F3C44A /* fontExtension.swift in Sources */,
+				5205DD772B2039640013DF68 /* ProgressView.swift in Sources */,
 				B1ABEA422B200D3000F3C44A /* CYCApp.swift in Sources */,
 				B1ABEA682B2017E900F3C44A /* colorExtension.swift in Sources */,
 			);
@@ -334,6 +338,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CYC/Preview Content\"";
+				DEVELOPMENT_TEAM = 8383VR3NFP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CYC/Info.plist;
@@ -363,6 +368,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CYC/Preview Content\"";
+				DEVELOPMENT_TEAM = 8383VR3NFP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CYC/Info.plist;
