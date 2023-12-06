@@ -22,7 +22,7 @@ struct AboutCYC: View {
                         VStack(alignment: .leading, spacing: 8) {
                             Text("CYC는 어떤 앱인가요?")
                                 .font(.pretendardBold_20)
-                                .padding(.vertical, 20)
+                                .padding(.vertical, 15)
                                 
                             Text("CYC(Check Your Commit)은 주인장이 커밋을 자주 잊곤 해서 다른 사람들도 이런 불편함이 있지 않을까? 해서 만들어진 앱이에요")
                                 .font(.pretendardSemiBold_15)

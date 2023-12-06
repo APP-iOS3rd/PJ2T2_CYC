@@ -18,7 +18,7 @@ struct PersonGridView: View {
                     .frame(width: 170,height: 200)
                     .clipShape(RoundedRectangle(cornerRadius: 25))
                     .foregroundStyle(person.color)
-                    .shadow(color: .white, radius: 0.8)
+                    .shadow(color: .black, radius: 0.8)
                 
                 VStack {
                     Text(person.name)
