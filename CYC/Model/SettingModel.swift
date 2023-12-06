@@ -15,11 +15,13 @@ struct SettingModel:Identifiable, Hashable {
     let imageName: String
     let destination: () -> AnyView
     
-    static func == (lhs: SettingModel, rhs: SettingModel) -> Bool { // Equatable 프로토콜 
+    // MARK: - Equatable 프로토콜
+    static func == (lhs: SettingModel, rhs: SettingModel) -> Bool {
         return lhs.id == rhs.id
     }
     
-    func hash(into hasher: inout Hasher) { // Hashable 프로토콜
+    // MARK: - Hashable 프로토콜
+    func hash(into hasher: inout Hasher) { 
            hasher.combine(id)
        }
     

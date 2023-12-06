@@ -16,10 +16,13 @@ struct SettingView: View {
                 Color.bgColor.ignoresSafeArea(.all)
                 
                 VStack(alignment: .leading, spacing: -2) {
+                    
+                    // MARK: - 헤더
                     Text("설정")
                         .font(.pretendardBold_25)
                         .padding(.horizontal, 25)
                     
+                    // MARK: - 설정
                     List {
                         Section {
                             ForEach(SettingViewModel().settings, id: \.self) { setting in
@@ -31,6 +34,8 @@ struct SettingView: View {
                             }
                             .listRowBackground(Color.containerColor)
                         }
+                        
+                        // MARK: - 로그아웃
                         Label("로그아웃", image: "logout")
                             .font(.pretendardSemiBold_17)
                             .foregroundColor(Color.logoutColor)
