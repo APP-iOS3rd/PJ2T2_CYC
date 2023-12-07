@@ -12,6 +12,29 @@
 		6317B3D22B2045450039795E /* PersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317B3D12B2045450039795E /* PersonModel.swift */; };
 		6317B3D42B2045860039795E /* PersonGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317B3D32B2045860039795E /* PersonGridView.swift */; };
 		6317B3D62B2049C60039795E /* AboutCYC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317B3D52B2049C60039795E /* AboutCYC.swift */; };
+		6317B3D82B20514D0039795E /* CustomSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317B3D72B20514D0039795E /* CustomSpacing.swift */; };
+		6317B3E02B21546B0039795E /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6317B3DF2B21546B0039795E /* WidgetKit.framework */; };
+		6317B3E22B21546B0039795E /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6317B3E12B21546B0039795E /* SwiftUI.framework */; };
+		6317B3E52B21546B0039795E /* CYCWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317B3E42B21546B0039795E /* CYCWidgetBundle.swift */; };
+		6317B3E72B21546B0039795E /* CYCWidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317B3E62B21546B0039795E /* CYCWidgetLiveActivity.swift */; };
+		6317B3E92B21546B0039795E /* CYCWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317B3E82B21546B0039795E /* CYCWidget.swift */; };
+		6317B3EB2B21546B0039795E /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317B3EA2B21546B0039795E /* AppIntent.swift */; };
+		6317B3ED2B21546D0039795E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6317B3EC2B21546D0039795E /* Assets.xcassets */; };
+		6317B3F12B21546D0039795E /* CYCWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 6317B3DD2B21546B0039795E /* CYCWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6317B3F72B2154A00039795E /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317B3EA2B21546B0039795E /* AppIntent.swift */; };
+		6317B3F92B2154B80039795E /* fontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ABEA632B200E5800F3C44A /* fontExtension.swift */; };
+		6317B3FA2B2154BA0039795E /* CustomSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317B3D72B20514D0039795E /* CustomSpacing.swift */; };
+		6317B3FB2B2154BD0039795E /* colorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ABEA672B2017E900F3C44A /* colorExtension.swift */; };
+		6317B3FC2B2154C30039795E /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1ABEA562B200E0B00F3C44A /* Pretendard-Black.otf */; };
+		6317B3FD2B2154C50039795E /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1ABEA552B200E0B00F3C44A /* Pretendard-Bold.otf */; };
+		6317B3FE2B2154C70039795E /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1ABEA532B200E0B00F3C44A /* Pretendard-ExtraBold.otf */; };
+		6317B3FF2B2154CA0039795E /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1ABEA582B200E0B00F3C44A /* Pretendard-ExtraLight.otf */; };
+		6317B4002B2154CC0039795E /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1ABEA572B200E0B00F3C44A /* Pretendard-Light.otf */; };
+		6317B4012B2154CE0039795E /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1ABEA512B200E0B00F3C44A /* Pretendard-Medium.otf */; };
+		6317B4022B2154D00039795E /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1ABEA502B200E0B00F3C44A /* Pretendard-Regular.otf */; };
+		6317B4032B2154D20039795E /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1ABEA522B200E0B00F3C44A /* Pretendard-SemiBold.otf */; };
+		6317B4042B2154D40039795E /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1ABEA542B200E0B00F3C44A /* Pretendard-Thin.otf */; };
+		6317B40A2B2183A50039795E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317B4092B2183A50039795E /* MainView.swift */; };
 		B1ABEA422B200D3000F3C44A /* CYCApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ABEA412B200D3000F3C44A /* CYCApp.swift */; };
 		B1ABEA442B200D3000F3C44A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ABEA432B200D3000F3C44A /* ContentView.swift */; };
 		B1ABEA462B200D3200F3C44A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1ABEA452B200D3200F3C44A /* Assets.xcassets */; };
@@ -29,12 +52,47 @@
 		B1ABEA682B2017E900F3C44A /* colorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ABEA672B2017E900F3C44A /* colorExtension.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		6317B3EF2B21546D0039795E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B1ABEA362B200D3000F3C44A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6317B3DC2B21546B0039795E;
+			remoteInfo = CYCWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6317B3F22B21546D0039795E /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				6317B3F12B21546D0039795E /* CYCWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		6317B3CA2B2033CD0039795E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		6317B3CC2B203B1C0039795E /* OnboardingTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTabView.swift; sourceTree = "<group>"; };
 		6317B3D12B2045450039795E /* PersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonModel.swift; sourceTree = "<group>"; };
 		6317B3D32B2045860039795E /* PersonGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonGridView.swift; sourceTree = "<group>"; };
 		6317B3D52B2049C60039795E /* AboutCYC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutCYC.swift; sourceTree = "<group>"; };
+		6317B3D72B20514D0039795E /* CustomSpacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSpacing.swift; sourceTree = "<group>"; };
+		6317B3DD2B21546B0039795E /* CYCWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CYCWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		6317B3DF2B21546B0039795E /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		6317B3E12B21546B0039795E /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		6317B3E42B21546B0039795E /* CYCWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CYCWidgetBundle.swift; sourceTree = "<group>"; };
+		6317B3E62B21546B0039795E /* CYCWidgetLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CYCWidgetLiveActivity.swift; sourceTree = "<group>"; };
+		6317B3E82B21546B0039795E /* CYCWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CYCWidget.swift; sourceTree = "<group>"; };
+		6317B3EA2B21546B0039795E /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
+		6317B3EC2B21546D0039795E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6317B3EE2B21546D0039795E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6317B4092B2183A50039795E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		B1ABEA3E2B200D3000F3C44A /* CYC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CYC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1ABEA412B200D3000F3C44A /* CYCApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CYCApp.swift; sourceTree = "<group>"; };
 		B1ABEA432B200D3000F3C44A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,6 +113,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		6317B3DA2B21546B0039795E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6317B3E22B21546B0039795E /* SwiftUI.framework in Frameworks */,
+				6317B3E02B21546B0039795E /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B1ABEA3B2B200D3000F3C44A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -65,13 +132,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6317B3CE2B2045120039795E /* Person Profile */ = {
+		6317B3CE2B2045120039795E /* PersonProfile */ = {
 			isa = PBXGroup;
 			children = (
 				6317B3D02B20453A0039795E /* View */,
 				6317B3CF2B2045320039795E /* Model */,
 			);
-			path = "Person Profile";
+			path = PersonProfile;
 			sourceTree = "<group>";
 		};
 		6317B3CF2B2045320039795E /* Model */ = {
@@ -91,10 +158,34 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		6317B3DE2B21546B0039795E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6317B3DF2B21546B0039795E /* WidgetKit.framework */,
+				6317B3E12B21546B0039795E /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6317B3E32B21546B0039795E /* CYCWidget */ = {
+			isa = PBXGroup;
+			children = (
+				6317B3E42B21546B0039795E /* CYCWidgetBundle.swift */,
+				6317B3E62B21546B0039795E /* CYCWidgetLiveActivity.swift */,
+				6317B3E82B21546B0039795E /* CYCWidget.swift */,
+				6317B3EA2B21546B0039795E /* AppIntent.swift */,
+				6317B3EC2B21546D0039795E /* Assets.xcassets */,
+				6317B3EE2B21546D0039795E /* Info.plist */,
+			);
+			path = CYCWidget;
+			sourceTree = "<group>";
+		};
 		B1ABEA352B200D3000F3C44A = {
 			isa = PBXGroup;
 			children = (
 				B1ABEA402B200D3000F3C44A /* CYC */,
+				6317B3E32B21546B0039795E /* CYCWidget */,
+				6317B3DE2B21546B0039795E /* Frameworks */,
 				B1ABEA3F2B200D3000F3C44A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -103,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				B1ABEA3E2B200D3000F3C44A /* CYC.app */,
+				6317B3DD2B21546B0039795E /* CYCWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -112,10 +204,11 @@
 			children = (
 				B1ABEA652B200F9800F3C44A /* Info.plist */,
 				B1ABEA412B200D3000F3C44A /* CYCApp.swift */,
+				6317B4092B2183A50039795E /* MainView.swift */,
 				B1ABEA432B200D3000F3C44A /* ContentView.swift */,
-				6317B3CC2B203B1C0039795E /* OnboardingTabView.swift */,
-				6317B3CE2B2045120039795E /* Person Profile */,
 				6317B3CA2B2033CD0039795E /* LoginView.swift */,
+				6317B3CC2B203B1C0039795E /* OnboardingTabView.swift */,
+				6317B3CE2B2045120039795E /* PersonProfile */,
 				B1ABEA452B200D3200F3C44A /* Assets.xcassets */,
 				B1ABEA622B200E3800F3C44A /* Extensions */,
 				B1ABEA4F2B200D5100F3C44A /* Fonts */,
@@ -152,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				B1ABEA632B200E5800F3C44A /* fontExtension.swift */,
+				6317B3D72B20514D0039795E /* CustomSpacing.swift */,
 				B1ABEA672B2017E900F3C44A /* colorExtension.swift */,
 			);
 			path = Extensions;
@@ -160,6 +254,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		6317B3DC2B21546B0039795E /* CYCWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6317B3F52B21546D0039795E /* Build configuration list for PBXNativeTarget "CYCWidgetExtension" */;
+			buildPhases = (
+				6317B3D92B21546B0039795E /* Sources */,
+				6317B3DA2B21546B0039795E /* Frameworks */,
+				6317B3DB2B21546B0039795E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CYCWidgetExtension;
+			productName = CYCWidgetExtension;
+			productReference = 6317B3DD2B21546B0039795E /* CYCWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		B1ABEA3D2B200D3000F3C44A /* CYC */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B1ABEA4C2B200D3200F3C44A /* Build configuration list for PBXNativeTarget "CYC" */;
@@ -167,10 +278,12 @@
 				B1ABEA3A2B200D3000F3C44A /* Sources */,
 				B1ABEA3B2B200D3000F3C44A /* Frameworks */,
 				B1ABEA3C2B200D3000F3C44A /* Resources */,
+				6317B3F22B21546D0039795E /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				6317B3F02B21546D0039795E /* PBXTargetDependency */,
 			);
 			name = CYC;
 			productName = CYC;
@@ -187,6 +300,9 @@
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
+					6317B3DC2B21546B0039795E = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
 					B1ABEA3D2B200D3000F3C44A = {
 						CreatedOnToolsVersion = 15.0.1;
 					};
@@ -206,11 +322,29 @@
 			projectRoot = "";
 			targets = (
 				B1ABEA3D2B200D3000F3C44A /* CYC */,
+				6317B3DC2B21546B0039795E /* CYCWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		6317B3DB2B21546B0039795E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6317B4012B2154CE0039795E /* Pretendard-Medium.otf in Resources */,
+				6317B4042B2154D40039795E /* Pretendard-Thin.otf in Resources */,
+				6317B3FC2B2154C30039795E /* Pretendard-Black.otf in Resources */,
+				6317B3FD2B2154C50039795E /* Pretendard-Bold.otf in Resources */,
+				6317B3FF2B2154CA0039795E /* Pretendard-ExtraLight.otf in Resources */,
+				6317B3FE2B2154C70039795E /* Pretendard-ExtraBold.otf in Resources */,
+				6317B4022B2154D00039795E /* Pretendard-Regular.otf in Resources */,
+				6317B4032B2154D20039795E /* Pretendard-SemiBold.otf in Resources */,
+				6317B3ED2B21546D0039795E /* Assets.xcassets in Resources */,
+				6317B4002B2154CC0039795E /* Pretendard-Light.otf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B1ABEA3C2B200D3000F3C44A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -232,16 +366,33 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		6317B3D92B21546B0039795E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6317B3FA2B2154BA0039795E /* CustomSpacing.swift in Sources */,
+				6317B3E72B21546B0039795E /* CYCWidgetLiveActivity.swift in Sources */,
+				6317B3FB2B2154BD0039795E /* colorExtension.swift in Sources */,
+				6317B3EB2B21546B0039795E /* AppIntent.swift in Sources */,
+				6317B3E52B21546B0039795E /* CYCWidgetBundle.swift in Sources */,
+				6317B3F92B2154B80039795E /* fontExtension.swift in Sources */,
+				6317B3E92B21546B0039795E /* CYCWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B1ABEA3A2B200D3000F3C44A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				B1ABEA442B200D3000F3C44A /* ContentView.swift in Sources */,
+				6317B40A2B2183A50039795E /* MainView.swift in Sources */,
 				6317B3D62B2049C60039795E /* AboutCYC.swift in Sources */,
 				6317B3D22B2045450039795E /* PersonModel.swift in Sources */,
 				6317B3CD2B203B1C0039795E /* OnboardingTabView.swift in Sources */,
 				B1ABEA642B200E5800F3C44A /* fontExtension.swift in Sources */,
+				6317B3F72B2154A00039795E /* AppIntent.swift in Sources */,
 				B1ABEA422B200D3000F3C44A /* CYCApp.swift in Sources */,
+				6317B3D82B20514D0039795E /* CustomSpacing.swift in Sources */,
 				6317B3CB2B2033CD0039795E /* LoginView.swift in Sources */,
 				B1ABEA682B2017E900F3C44A /* colorExtension.swift in Sources */,
 				6317B3D42B2045860039795E /* PersonGridView.swift in Sources */,
@@ -250,7 +401,67 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		6317B3F02B21546D0039795E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6317B3DC2B21546B0039795E /* CYCWidgetExtension */;
+			targetProxy = 6317B3EF2B21546D0039795E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		6317B3F32B21546D0039795E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CYCWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CYCWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = thanky.CYC.CYCWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6317B3F42B21546D0039795E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CYCWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CYCWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = thanky.CYC.CYCWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		B1ABEA4A2B200D3200F3C44A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -373,6 +584,7 @@
 		B1ABEA4D2B200D3200F3C44A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -402,6 +614,7 @@
 		B1ABEA4E2B200D3200F3C44A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -431,6 +644,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		6317B3F52B21546D0039795E /* Build configuration list for PBXNativeTarget "CYCWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6317B3F32B21546D0039795E /* Debug */,
+				6317B3F42B21546D0039795E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B1ABEA392B200D3000F3C44A /* Build configuration list for PBXProject "CYC" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

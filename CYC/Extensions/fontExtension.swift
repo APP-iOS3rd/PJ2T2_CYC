@@ -25,7 +25,8 @@ extension Font {
     static let pretendardMedium: Font = .custom("Pretendard-Medium", size: 15)
     
     //SemiBold
-    static let pretendardSemiBold_12: Font = .custom("Pretendard-SemiBold", size: 12) //메인의 todo - 목록
+    static let pretendardSemiBold_12: Font = .custom("Pretendard-SemiBold", size: 12)
+    static let pretendardSemiBold_15: Font = .custom("Pretendard-SemiBold", size: 15)//메인의 todo - 목록
     
     //Bold
     static let pretendardBold_12: Font = .custom("Pretendard-Bold", size: 12) //너 만나러 커밋 하는중..
