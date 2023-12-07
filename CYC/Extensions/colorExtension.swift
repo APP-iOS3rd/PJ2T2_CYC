@@ -12,5 +12,6 @@ extension Color {
     static let containerColor = Color("containerColor")
     static let logoutColor = Color("logoutColor")
     static let progressBarColor = Color("progressBarColor")
+    static let baseColor = Color("baseColor")
 }
 
