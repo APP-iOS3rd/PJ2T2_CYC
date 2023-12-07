@@ -10,8 +10,19 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         LoginView()
+        VStack {
+            Image(systemName: "globe")
+                .imageScale(.large)
+                .foregroundStyle(.tint)
+                
+            Text("안녕하세여")
+                .font(.pretendardBold_12)
+            
+            Text("안녕하세여")
+        }
+        .background(Color.bgColor)
+        .padding()
     }
-    
 }
 
 #Preview {

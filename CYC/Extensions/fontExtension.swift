@@ -30,7 +30,7 @@ extension Font {
     
     //Bold
     static let pretendardBold_12: Font = .custom("Pretendard-Bold", size: 12) //너 만나러 커밋 하는중..
-    static let pretendardBold_15: Font = .custom("Pretendard-Bold", size: 15) 
+    static let pretendardBold_15: Font = .custom("Pretendard-Bold", size: 15)
     static let pretendardBold_17: Font = .custom("Pretendard-Bold", size: 17)
     static let pretendardBold_20: Font = .custom("Pretendard-Bold", size: 20)
     static let pretendardBold_25: Font = .custom("Pretendard-Bold", size: 25)
