@@ -36,10 +36,12 @@ struct SettingView: View {
                         }
                         
                         // MARK: - 로그아웃
-                        Label("로그아웃", image: "logout")
-                            .font(.pretendardSemiBold_17)
-                            .foregroundColor(Color.logoutColor)
-                            .listRowBackground(Color.containerColor)
+//                        NavigationLink(destination: loginView()) {
+                            Label("로그아웃", image: "logout")
+                                .font(.pretendardSemiBold_17)
+                                .foregroundColor(Color.logoutColor)
+                                .listRowBackground(Color.containerColor)
+//                        }
                     }
                     .scrollContentBackground(.hidden)
                     
