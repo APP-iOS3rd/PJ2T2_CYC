@@ -15,7 +15,7 @@ struct ContentView: View {
                 .foregroundStyle(.tint)
                 
             Text("안녕하세여")
-                .font(.pretendardBold)
+                .font(.pretendardBold_12)
             
             Text("안녕하세여")
         }
