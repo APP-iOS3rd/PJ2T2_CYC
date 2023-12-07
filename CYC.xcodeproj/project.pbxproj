@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		047BD8B52B20A2550021D3F9 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047BD8B42B20A2550021D3F9 /* SettingViewModel.swift */; };
+		047BD8B92B214D000021D3F9 /* LicenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047BD8B82B214D000021D3F9 /* LicenseView.swift */; };
+		047BD8BB2B214FE40021D3F9 /* LicenseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047BD8BA2B214FE40021D3F9 /* LicenseModel.swift */; };
+		047BD8BD2B2155F80021D3F9 /* LicenseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047BD8BC2B2155F80021D3F9 /* LicenseViewModel.swift */; };
 		048DDD7E2B2062DA00331E2A /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048DDD7D2B2062DA00331E2A /* NotificationView.swift */; };
 		048DDD802B209A7C00331E2A /* SettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048DDD7F2B209A7B00331E2A /* SettingModel.swift */; };
 		B1ABEA422B200D3000F3C44A /* CYCApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ABEA412B200D3000F3C44A /* CYCApp.swift */; };
@@ -29,6 +32,9 @@
 
 /* Begin PBXFileReference section */
 		047BD8B42B20A2550021D3F9 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
+		047BD8B82B214D000021D3F9 /* LicenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseView.swift; sourceTree = "<group>"; };
+		047BD8BA2B214FE40021D3F9 /* LicenseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseModel.swift; sourceTree = "<group>"; };
+		047BD8BC2B2155F80021D3F9 /* LicenseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseViewModel.swift; sourceTree = "<group>"; };
 		048DDD7D2B2062DA00331E2A /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		048DDD7F2B209A7B00331E2A /* SettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingModel.swift; sourceTree = "<group>"; };
 		B1ABEA3E2B200D3000F3C44A /* CYC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CYC.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				048DDD7F2B209A7B00331E2A /* SettingModel.swift */,
+				047BD8BA2B214FE40021D3F9 /* LicenseModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -73,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				047BD8B42B20A2550021D3F9 /* SettingViewModel.swift */,
+				047BD8BC2B2155F80021D3F9 /* LicenseViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -82,6 +90,7 @@
 			children = (
 				B1ABEA432B200D3000F3C44A /* SettingView.swift */,
 				048DDD7D2B2062DA00331E2A /* NotificationView.swift */,
+				047BD8B82B214D000021D3F9 /* LicenseView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -232,6 +241,9 @@
 			files = (
 				B1ABEA442B200D3000F3C44A /* SettingView.swift in Sources */,
 				047BD8B52B20A2550021D3F9 /* SettingViewModel.swift in Sources */,
+				047BD8BD2B2155F80021D3F9 /* LicenseViewModel.swift in Sources */,
+				047BD8BB2B214FE40021D3F9 /* LicenseModel.swift in Sources */,
+				047BD8B92B214D000021D3F9 /* LicenseView.swift in Sources */,
 				B1ABEA642B200E5800F3C44A /* fontExtension.swift in Sources */,
 				048DDD802B209A7C00331E2A /* SettingModel.swift in Sources */,
 				B1ABEA422B200D3000F3C44A /* CYCApp.swift in Sources */,

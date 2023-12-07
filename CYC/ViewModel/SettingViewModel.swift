@@ -13,7 +13,7 @@ struct SettingViewModel {
     let settings: [SettingModel] = [
         SettingModel(name: "알림설정", imageName: "worker", destination: { AnyView(NotificationView()) }),
         SettingModel(name: "CYC에 대해서", imageName: "idea", destination: { AnyView(EmptyView()) }),
-        SettingModel(name: "라이센스", imageName: "idea",destination: { AnyView(EmptyView()) }),
+        SettingModel(name: "라이센스", imageName: "idea",destination: { AnyView(LicenseView()) }),
     ]
     
 }
