@@ -14,6 +14,7 @@ struct TodoView: View {
     var body: some View {
         ZStack {
             VStack {
+                // MARK: - 해더
                 HStack {
                     Text("오늘 뭐해?")
                         .font(.pretendardBold_25)
@@ -29,6 +30,7 @@ struct TodoView: View {
                 }
                 .padding()
                 
+                // MARK: - 리스트
                 List {
                     ForEach(todoList) { list in
                         Text("\(list.title)")
