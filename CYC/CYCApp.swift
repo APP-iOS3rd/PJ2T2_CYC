@@ -11,7 +11,7 @@ import SwiftUI
 struct CYCApp: App {
     var body: some Scene {
         WindowGroup {
-            ProgressView()
+            ContentView()
         }
     }
 }
