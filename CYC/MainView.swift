@@ -42,6 +42,7 @@ struct MainView: View {
                         }
                         
                         // MARK: - 하단 뷰 연결
+                        //ProgressView()
                 }
             }
         }

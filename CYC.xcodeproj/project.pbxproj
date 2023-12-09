@@ -214,7 +214,6 @@
 				6317B3E32B21546B0039795E /* CYCWidget */,
 				6317B3DE2B21546B0039795E /* Frameworks */,
 				B1ABEA3F2B200D3000F3C44A /* Products */,
-				B1ABEA822B20621E00F3C44A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -232,8 +231,8 @@
 			children = (
 				B1ABEA762B204C6100F3C44A /* CYC.entitlements */,
 				B1ABEA652B200F9800F3C44A /* Info.plist */,
-				5205DD762B2039640013DF68 /* ProgressView.swift */,
 				B1ABEA692B20496D00F3C44A /* GoogleService-Info.plist */,
+				5205DD762B2039640013DF68 /* ProgressView.swift */,
 				B1ABEA412B200D3000F3C44A /* CYCApp.swift */,
 				6317B4092B2183A50039795E /* MainView.swift */,
 				6317B3CA2B2033CD0039795E /* LoginView.swift */,
@@ -290,13 +289,6 @@
 				B1ABEA672B2017E900F3C44A /* colorExtension.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		B1ABEA822B20621E00F3C44A /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
