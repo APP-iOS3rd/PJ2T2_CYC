@@ -28,7 +28,7 @@ struct AboutCYC: View {
                                 .font(.pretendardSemiBold_15)
                                 .padding(.bottom, 15)
                             
-                            Text("커밋 할 때 까지 여러분들을 귀찮게 할 수도 있어요\n하지만 꾸준함을 어필하기 위해\n1일 1커밋 같이 해봐요")
+                            Text("커밋 할 때 까지 여러분들을 귀찮게 할 수도 있어요\n하지만 꾸준함을 보여주기 위해 같이 1일 1커밋 같이 해봐요")
                                 .font(.pretendardSemiBold_15)
                         }
                         .padding(.horizontal, 20)
