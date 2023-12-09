@@ -207,6 +207,105 @@
 			path = CYCWidget;
 			sourceTree = "<group>";
 		};
+		632693642B24AC5A007A2DAF /* Progress */ = {
+			isa = PBXGroup;
+			children = (
+				5205DD762B2039640013DF68 /* ProgressView.swift */,
+			);
+			path = Progress;
+			sourceTree = "<group>";
+		};
+		632693652B24AC84007A2DAF /* Todo */ = {
+			isa = PBXGroup;
+			children = (
+				6326936D2B24AD18007A2DAF /* Model */,
+				6326936C2B24AD09007A2DAF /* ViewModel */,
+				6326936B2B24AD06007A2DAF /* View */,
+			);
+			path = Todo;
+			sourceTree = "<group>";
+		};
+		632693662B24AC9A007A2DAF /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				6326936A2B24ACF4007A2DAF /* ViewModel */,
+				632693692B24ACD7007A2DAF /* View */,
+				632693682B24ACD6007A2DAF /* Model */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		632693672B24ACBB007A2DAF /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				6317B3CC2B203B1C0039795E /* OnboardingTabView.swift */,
+				6317B3CA2B2033CD0039795E /* LoginView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		632693682B24ACD6007A2DAF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				047F359A2B21A4BB00574504 /* LicenseModel.swift */,
+				047F359B2B21A4BB00574504 /* SettingModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		632693692B24ACD7007A2DAF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				047F35942B21A4B000574504 /* LicenseView.swift */,
+				047F35912B21A4AF00574504 /* NotificationView.swift */,
+				047F35902B21A4AF00574504 /* SettingView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6326936A2B24ACF4007A2DAF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				047F35A02B21A4C900574504 /* LicenseViewModel.swift */,
+				047F35A22B21A4C900574504 /* SettingViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		6326936B2B24AD06007A2DAF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				047F35922B21A4AF00574504 /* TodoAddView.swift */,
+				047F35932B21A4B000574504 /* TodoView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6326936C2B24AD09007A2DAF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				047F35A12B21A4C900574504 /* TodoViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		6326936D2B24AD18007A2DAF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				047F359C2B21A4BB00574504 /* TodoModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6326936E2B24AD6F007A2DAF /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				B1ABEA622B200E3800F3C44A /* Extensions */,
+				B1ABEA4F2B200D5100F3C44A /* Fonts */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		B1ABEA352B200D3000F3C44A = {
 			isa = PBXGroup;
 			children = (
@@ -229,29 +328,18 @@
 		B1ABEA402B200D3000F3C44A /* CYC */ = {
 			isa = PBXGroup;
 			children = (
+				B1ABEA412B200D3000F3C44A /* CYCApp.swift */,
+				6317B4092B2183A50039795E /* MainView.swift */,
 				B1ABEA762B204C6100F3C44A /* CYC.entitlements */,
 				B1ABEA652B200F9800F3C44A /* Info.plist */,
 				B1ABEA692B20496D00F3C44A /* GoogleService-Info.plist */,
-				5205DD762B2039640013DF68 /* ProgressView.swift */,
-				B1ABEA412B200D3000F3C44A /* CYCApp.swift */,
-				6317B4092B2183A50039795E /* MainView.swift */,
-				6317B3CA2B2033CD0039795E /* LoginView.swift */,
-				6317B3CC2B203B1C0039795E /* OnboardingTabView.swift */,
-				047F35942B21A4B000574504 /* LicenseView.swift */,
-				047F35912B21A4AF00574504 /* NotificationView.swift */,
-				047F35902B21A4AF00574504 /* SettingView.swift */,
-				047F35922B21A4AF00574504 /* TodoAddView.swift */,
-				047F35932B21A4B000574504 /* TodoView.swift */,
-				047F359A2B21A4BB00574504 /* LicenseModel.swift */,
-				047F359C2B21A4BB00574504 /* TodoModel.swift */,
-				047F359B2B21A4BB00574504 /* SettingModel.swift */,
-				047F35A02B21A4C900574504 /* LicenseViewModel.swift */,
-				047F35A22B21A4C900574504 /* SettingViewModel.swift */,
-				047F35A12B21A4C900574504 /* TodoViewModel.swift */,
+				632693672B24ACBB007A2DAF /* Login */,
+				632693662B24AC9A007A2DAF /* Setting */,
+				632693652B24AC84007A2DAF /* Todo */,
+				632693642B24AC5A007A2DAF /* Progress */,
 				6317B3CE2B2045120039795E /* PersonProfile */,
 				B1ABEA452B200D3200F3C44A /* Assets.xcassets */,
-				B1ABEA622B200E3800F3C44A /* Extensions */,
-				B1ABEA4F2B200D5100F3C44A /* Fonts */,
+				6326936E2B24AD6F007A2DAF /* Helper */,
 				B1ABEA472B200D3200F3C44A /* Preview Content */,
 			);
 			path = CYC;

@@ -63,7 +63,7 @@ struct ProgressView: View{
                     .fixedSize()
                     
                 }
-                .fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
+                .fixedSize(horizontal: false, vertical: true)
                 .padding(20)
                 .onAppear {
                     progressTitle = "\(step) / \(goal)"
@@ -71,7 +71,7 @@ struct ProgressView: View{
                 }
                 
                 // MARK: Dday 관련 버튼, 입력 모달 나오는 뷰
-                ZStack(alignment: .top){
+                ZStack(alignment: .top) {
                     Button {
                         showSheet.toggle()
                     } label: {
@@ -84,7 +84,7 @@ struct ProgressView: View{
                             
                             Text("D-\(goal)")
                                 .font(.pretendardSemiBold_12)
-                                .foregroundStyle(.black)
+                                .foregroundStyle(Color.baseColor)
                                 .offset(x: -18, y: 7)
                             
                         }

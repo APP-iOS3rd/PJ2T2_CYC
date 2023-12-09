@@ -23,10 +23,13 @@ struct MainView: View {
                                 
                                 Spacer()
                                 
-                                Image("gear")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 25)
+                                
+                                NavigationLink(destination: SettingView()) {
+                                    Image("gear")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 25)
+                                }
                             }
                             .padding()
                             
@@ -42,7 +45,7 @@ struct MainView: View {
                         }
                         
                         // MARK: - 하단 뷰 연결
-                        //ProgressView()
+                        ProgressView()
                 }
             }
         }
