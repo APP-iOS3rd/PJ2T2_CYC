@@ -17,6 +17,7 @@ struct NotificationView: View {
             Color.bgColor.ignoresSafeArea(.all)
             
             VStack(alignment: .leading) {
+                
                 Toggle(isOn: $isOnNotification, label: {
                     
                     // MARK: - 알림 설정 토글
