@@ -76,7 +76,7 @@ struct ProgressView: View{
                         showSheet.toggle()
                     } label: {
                         VStack{
-                            Image(.kissPink2)
+                            Image(.kissPink)
                                 .resizable()
                                 .scaledToFit()
                                 .offset(x: -18, y: 6.5)
