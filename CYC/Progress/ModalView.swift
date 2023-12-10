@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ModalView: View {
-    @Binding var step: Int
+    @Binding var progress: Int
     @Binding var goal: Int
     @Binding var showSheet: Bool
    
@@ -20,9 +20,13 @@ struct ModalView: View {
                 }
             }
             .pickerStyle(.wheel)
-            Button("Save") {
+            Button {
                 showSheet = false
                 moveDinosaur()
+            } label: {
+                Text("저장")
+                    .font(.pretendardBold_17)
+                    .foregroundStyle(Color.baseColor)
             }
         }
         .presentationDetents([ .medium, .large])
@@ -31,10 +35,10 @@ struct ModalView: View {
     
     func moveDinosaur() {
         Task{
-            for i in 0...step {
+            for i in 0...progress {
                 try await Task.sleep(until: .now.advanced(by: .milliseconds(40)), clock: .continuous)
                 withAnimation {
-                    step = i
+                    progress = i
                 }
                 
             }

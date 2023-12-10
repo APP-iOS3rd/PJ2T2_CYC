@@ -31,22 +31,21 @@ struct ProgressBarView: View {
                     .foregroundColor(.progressBar)
                     .frame(height: 4)
             }
-            /* progress bar 움직이는 이미지 */
+            //progress bar 움직이는 이미지
             .overlay(
                     Image(.kissGreen)
                     .resizable()
                     .frame(width: 40, height: 40)
-                    .offset(x: 30, y: 0)
+                    .offset(x: 20, y: 0)
                 , alignment: .trailing
             )
             .padding(2)
             .frame(minWidth: maxProgressWidth)
             .fixedSize()
-            
         }
         .offset(x: 18, y: -6)
         .fixedSize(horizontal: false, vertical: true)
-        .padding(20)
+        .padding(.trailing, 10)
     }
 }
 
