@@ -10,6 +10,20 @@ import SwiftUI
 struct NotificationView: View {
     
     @State var isOnNotification = false
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
+    var backButton : some View {  // <-- 👀 커스텀 버튼
+        Button{
+            self.presentationMode.wrappedValue.dismiss()
+        } label: {
+            HStack {
+                Image(systemName: "chevron.left") // 화살표 Image
+                    .aspectRatio(contentMode: .fit)
+                    .foregroundStyle(.base)
+                    .bold()
+            }
+        }
+    }
     
     var body: some View {
         
@@ -40,6 +54,8 @@ struct NotificationView: View {
             .padding()
             .offset(y: -250)
         }
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: backButton)
     }
 }
 

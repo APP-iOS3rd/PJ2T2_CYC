@@ -9,34 +9,31 @@ import SwiftUI
 
 struct MainView: View {
     
-    @Environment(\.colorScheme) var colorScheme
-    
     var body: some View {
         NavigationStack {
             ZStack {
                 Color.bgColor.ignoresSafeArea(.all)
-                ScrollView {
-                    VStack {
-                        // MARK: - 네비게이션 타이틀
-                        HStack {
-                            Image("logo")
+                VStack {
+                    // MARK: - 네비게이션 타이틀
+                    HStack {
+                        Image("logo")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 55)
+                        
+                        Spacer()
+                        
+                        NavigationLink(destination: SettingView()) {
+                            Image(systemName: "gearshape.fill")
                                 .resizable()
                                 .scaledToFit()
-                                .frame(width: 70)
-                            
-                            Spacer()
-                            
-                            
-                            NavigationLink(destination: SettingView()) {
-                                // MARK: 모드에 따라서 이미지 색상 변경
-                                Image(colorScheme == .dark ? "gear" : "gearblack")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 25)
-                            }
+                                .frame(width: 25)
+                                .foregroundStyle(.base)
                         }
-                        .padding()
-                        
+                    }
+                    .padding(.horizontal)
+                    
+                    ScrollView {
                         // MARK: - 상단 텍스트
                         VStack(alignment: .leading, spacing: 8) {
                             Text("Hi, Ciu")
@@ -46,10 +43,10 @@ struct MainView: View {
                         .font(.pretendardBold_25)
                         .hSpacing(.leading)
                         .padding(.leading, 20)
+                        
+                        // MARK: - 하단 뷰 연결
+                        ProgressView()
                     }
-                    
-                    // MARK: - 하단 뷰 연결
-                    ProgressView()
                 }
             }
         }

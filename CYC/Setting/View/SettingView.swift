@@ -9,8 +9,22 @@ import SwiftUI
 
 struct SettingView: View {
     
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
+    var backButton : some View {  // <-- 👀 커스텀 버튼
+        Button{
+            self.presentationMode.wrappedValue.dismiss()
+        } label: {
+            HStack {
+                Image(systemName: "chevron.left") // 화살표 Image
+                    .aspectRatio(contentMode: .fit)
+                    .foregroundStyle(.base)
+                    .bold()
+            }
+        }
+    }
+    
     var body: some View {
-        
         NavigationStack {
             ZStack {
                 Color.bgColor.ignoresSafeArea(.all)
@@ -55,15 +69,14 @@ struct SettingView: View {
                         .offset(y: 10)
                 }
                 .padding(.top, 20)
-                
             }
-            
         }
-        
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: backButton)
     }
 }
 
 
 #Preview {
-    SettingView().preferredColorScheme(.dark)
+    SettingView()
 }
