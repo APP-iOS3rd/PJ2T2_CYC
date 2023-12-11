@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct LoginView: View {
+    
+    @ObservedObject private var loginModel = LoginModel.shared
+    
     var body: some View {
         ZStack {
             Color.bgColor.ignoresSafeArea(.all)
@@ -31,16 +34,25 @@ struct LoginView: View {
                 }
                 
                 // MARK: - Github 소셜 로그인 버튼
-                Button {
-                    // function
-                } label: {
+//                Link("Github Login", destination: loginModel.loginURL ?? URL(string: "")!)
+//                    .onOpenURL(perform: { url in
+//                        loginModel.handleCodeFromURL(url)
+//                    })
+                
+                Link(destination: loginModel.loginURL ?? URL(string: "")!,
+                     label: {
                     Image("githubbutton")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 350, height: 50)
-                }
+                })
                 .padding()
-                
+                .onOpenURL(perform: { url in
+                    if loginModel.handleCodeFromURL(url) {
+                        LoginModel.shared.get_access_token()
+                    }
+                })
+                Text(loginModel.userLogin ?? "111")
                 Text("2023, Check Your Commit all rights reserved.\nPowered by PJ2T2_CYC")
                     .font(.pretendardLight_11)
                     .multilineTextAlignment(.center)
