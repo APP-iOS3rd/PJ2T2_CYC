@@ -9,16 +9,19 @@
 /* Begin PBXBuildFile section */
 		047F35952B21A4B000574504 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047F35902B21A4AF00574504 /* SettingView.swift */; };
 		047F35962B21A4B000574504 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047F35912B21A4AF00574504 /* NotificationView.swift */; };
-		047F35972B21A4B000574504 /* TodoAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047F35922B21A4AF00574504 /* TodoAddView.swift */; };
 		047F35982B21A4B000574504 /* TodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047F35932B21A4B000574504 /* TodoView.swift */; };
 		047F35992B21A4B000574504 /* LicenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047F35942B21A4B000574504 /* LicenseView.swift */; };
 		047F359D2B21A4BB00574504 /* LicenseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047F359A2B21A4BB00574504 /* LicenseModel.swift */; };
 		047F359E2B21A4BB00574504 /* SettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047F359B2B21A4BB00574504 /* SettingModel.swift */; };
 		047F359F2B21A4BB00574504 /* TodoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047F359C2B21A4BB00574504 /* TodoModel.swift */; };
 		047F35A32B21A4C900574504 /* LicenseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047F35A02B21A4C900574504 /* LicenseViewModel.swift */; };
-		047F35A42B21A4C900574504 /* TodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047F35A12B21A4C900574504 /* TodoViewModel.swift */; };
 		047F35A52B21A4C900574504 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047F35A22B21A4C900574504 /* SettingViewModel.swift */; };
+		04EA90242B26E4FC00DDC99E /* TodoPreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EA90232B26E4FC00DDC99E /* TodoPreView.swift */; };
 		5205DD772B2039640013DF68 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5205DD762B2039640013DF68 /* ProgressView.swift */; };
+		5215F1A42B25CDB500CE1733 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5215F1A32B25CDB500CE1733 /* ModalView.swift */; };
+		5215F1A62B25D30800CE1733 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5215F1A52B25D30800CE1733 /* ProgressBarView.swift */; };
+		5215F1A82B25D44700CE1733 /* DdayButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5215F1A72B25D44700CE1733 /* DdayButtonView.swift */; };
+		5215F1AC2B26077B00CE1733 /* ProgressTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5215F1AB2B26077B00CE1733 /* ProgressTextView.swift */; };
 		6317B3CB2B2033CD0039795E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317B3CA2B2033CD0039795E /* LoginView.swift */; };
 		6317B3CD2B203B1C0039795E /* OnboardingTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317B3CC2B203B1C0039795E /* OnboardingTabView.swift */; };
 		6317B3D22B2045450039795E /* PersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317B3D12B2045450039795E /* PersonModel.swift */; };
@@ -95,16 +98,19 @@
 /* Begin PBXFileReference section */
 		047F35902B21A4AF00574504 /* SettingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		047F35912B21A4AF00574504 /* NotificationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
-		047F35922B21A4AF00574504 /* TodoAddView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoAddView.swift; sourceTree = "<group>"; };
 		047F35932B21A4B000574504 /* TodoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoView.swift; sourceTree = "<group>"; };
 		047F35942B21A4B000574504 /* LicenseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicenseView.swift; sourceTree = "<group>"; };
 		047F359A2B21A4BB00574504 /* LicenseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicenseModel.swift; sourceTree = "<group>"; };
 		047F359B2B21A4BB00574504 /* SettingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingModel.swift; sourceTree = "<group>"; };
 		047F359C2B21A4BB00574504 /* TodoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoModel.swift; sourceTree = "<group>"; };
 		047F35A02B21A4C900574504 /* LicenseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicenseViewModel.swift; sourceTree = "<group>"; };
-		047F35A12B21A4C900574504 /* TodoViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoViewModel.swift; sourceTree = "<group>"; };
 		047F35A22B21A4C900574504 /* SettingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
+		04EA90232B26E4FC00DDC99E /* TodoPreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoPreView.swift; sourceTree = "<group>"; };
 		5205DD762B2039640013DF68 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		5215F1A32B25CDB500CE1733 /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
+		5215F1A52B25D30800CE1733 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
+		5215F1A72B25D44700CE1733 /* DdayButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DdayButtonView.swift; sourceTree = "<group>"; };
+		5215F1AB2B26077B00CE1733 /* ProgressTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressTextView.swift; sourceTree = "<group>"; };
 		6317B3CA2B2033CD0039795E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		6317B3CC2B203B1C0039795E /* OnboardingTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTabView.swift; sourceTree = "<group>"; };
 		6317B3D12B2045450039795E /* PersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonModel.swift; sourceTree = "<group>"; };
@@ -217,6 +223,10 @@
 			isa = PBXGroup;
 			children = (
 				5205DD762B2039640013DF68 /* ProgressView.swift */,
+				5215F1A32B25CDB500CE1733 /* ModalView.swift */,
+				5215F1A52B25D30800CE1733 /* ProgressBarView.swift */,
+				5215F1A72B25D44700CE1733 /* DdayButtonView.swift */,
+				5215F1AB2B26077B00CE1733 /* ProgressTextView.swift */,
 			);
 			path = Progress;
 			sourceTree = "<group>";
@@ -225,7 +235,6 @@
 			isa = PBXGroup;
 			children = (
 				6326936D2B24AD18007A2DAF /* Model */,
-				6326936C2B24AD09007A2DAF /* ViewModel */,
 				6326936B2B24AD06007A2DAF /* View */,
 			);
 			path = Todo;
@@ -234,6 +243,7 @@
 		632693662B24AC9A007A2DAF /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				6317B3CE2B2045120039795E /* PersonProfile */,
 				6326936A2B24ACF4007A2DAF /* ViewModel */,
 				632693692B24ACD7007A2DAF /* View */,
 				632693682B24ACD6007A2DAF /* Model */,
@@ -283,18 +293,10 @@
 		6326936B2B24AD06007A2DAF /* View */ = {
 			isa = PBXGroup;
 			children = (
-				047F35922B21A4AF00574504 /* TodoAddView.swift */,
 				047F35932B21A4B000574504 /* TodoView.swift */,
+				04EA90232B26E4FC00DDC99E /* TodoPreView.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		6326936C2B24AD09007A2DAF /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				047F35A12B21A4C900574504 /* TodoViewModel.swift */,
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		6326936D2B24AD18007A2DAF /* Model */ = {
@@ -345,7 +347,6 @@
 				632693662B24AC9A007A2DAF /* Setting */,
 				632693652B24AC84007A2DAF /* Todo */,
 				632693642B24AC5A007A2DAF /* Progress */,
-				6317B3CE2B2045120039795E /* PersonProfile */,
 				B1ABEA452B200D3200F3C44A /* Assets.xcassets */,
 				6326936E2B24AD6F007A2DAF /* Helper */,
 				B1ABEA472B200D3200F3C44A /* Preview Content */,
@@ -529,9 +530,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5215F1A42B25CDB500CE1733 /* ModalView.swift in Sources */,
 				6317B40A2B2183A50039795E /* MainView.swift in Sources */,
 				6317B3D62B2049C60039795E /* AboutCYC.swift in Sources */,
-				047F35972B21A4B000574504 /* TodoAddView.swift in Sources */,
 				6317B3D22B2045450039795E /* PersonModel.swift in Sources */,
 				047F35962B21A4B000574504 /* NotificationView.swift in Sources */,
 				6317B3CD2B203B1C0039795E /* OnboardingTabView.swift in Sources */,
@@ -540,15 +541,19 @@
 				5205DD772B2039640013DF68 /* ProgressView.swift in Sources */,
 				64DE4B9D2B26DE2400AD4995 /* keys.swift in Sources */,
 				64DE4B9F2B26DECF00AD4995 /* LoginModel.swift in Sources */,
+				04EA90242B26E4FC00DDC99E /* TodoPreView.swift in Sources */,
+				5215F1A82B25D44700CE1733 /* DdayButtonView.swift in Sources */,
 				047F359F2B21A4BB00574504 /* TodoModel.swift in Sources */,
 				047F359E2B21A4BB00574504 /* SettingModel.swift in Sources */,
 				6317B3F72B2154A00039795E /* AppIntent.swift in Sources */,
 				B1ABEA422B200D3000F3C44A /* CYCApp.swift in Sources */,
+				5215F1A62B25D30800CE1733 /* ProgressBarView.swift in Sources */,
 				047F35A42B21A4C900574504 /* TodoViewModel.swift in Sources */,
 				047F35A32B21A4C900574504 /* LicenseViewModel.swift in Sources */,
 				6317B3D82B20514D0039795E /* CustomSpacing.swift in Sources */,
 				047F35992B21A4B000574504 /* LicenseView.swift in Sources */,
 				6317B3CB2B2033CD0039795E /* LoginView.swift in Sources */,
+				5215F1AC2B26077B00CE1733 /* ProgressTextView.swift in Sources */,
 				047F35952B21A4B000574504 /* SettingView.swift in Sources */,
 				047F35982B21A4B000574504 /* TodoView.swift in Sources */,
 				047F35A52B21A4C900574504 /* SettingViewModel.swift in Sources */,

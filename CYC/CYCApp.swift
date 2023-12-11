@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 import FirebaseCore
 import FirebaseMessaging
 
@@ -51,18 +52,31 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 }
 
 @main
-struct YourApp: App {
-    // register app delegate for Firebase setup
+struct CYCApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
+    // MARK: - SwiftData 컨테이너
+    var sharedModelContainer: ModelContainer = {
+        do {
+            let schema = Schema([
+                TodoModel.self,
+            ])
+            let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
+
+            return try ModelContainer(for: schema, configurations: [modelConfiguration])
+        } catch {
+            fatalError("Could not create ModelContainer: \(error)")
+        }
+    }()
     
     var body: some Scene {
         WindowGroup {
-            LoginView()
+            MainView()
+                .onAppear(perform: UIApplication.shared.addTapGestureRecognizer)
         }
+        .modelContainer(sharedModelContainer)
     }
 }
-
 
 extension AppDelegate : MessagingDelegate {
     
@@ -110,7 +124,23 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
         print("didReceive: userInfo: ", userInfo)
         completionHandler()
     }
-    
-    
-    
+}
+
+// MARK: - 화면 터치시 키보드 내려감
+
+extension UIApplication {
+    func addTapGestureRecognizer() {
+        guard let window = windows.first else { return }
+        let tapGesture = UITapGestureRecognizer(target: window, action: #selector(UIView.endEditing))
+        tapGesture.requiresExclusiveTouchType = false
+        tapGesture.cancelsTouchesInView = false
+        tapGesture.delegate = self
+        window.addGestureRecognizer(tapGesture)
+    }
+}
+
+extension UIApplication: UIGestureRecognizerDelegate {
+    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
 }
