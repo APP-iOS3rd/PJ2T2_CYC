@@ -57,7 +57,7 @@ struct TodoPreView: View {
                                     .foregroundColor(Color.baseColor)
                             }
                             .offset(y: 10)
-                            .padding(.leading, 15)
+                            .padding(.leading, 20)
                         }
                     }
                     .scrollContentBackground(.hidden)
