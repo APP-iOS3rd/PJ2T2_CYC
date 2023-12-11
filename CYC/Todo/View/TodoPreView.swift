@@ -31,12 +31,13 @@ struct TodoPreView: View {
                             .font(.pretendardSemiBold_17)
                             .foregroundColor(Color.baseColor)
                     }
+                    .position(x: 80, y: 30)
                     .padding(.leading, 10)
-                    .offset(y: 5)
                     
                     
                     Divider()
                         .frame(width: 350)
+                        .offset(x: 20)
                     
                     // MARK: - Todo 미리보기 바디
                     VStack(spacing: 10) {
@@ -56,6 +57,7 @@ struct TodoPreView: View {
                                     .foregroundColor(Color.baseColor)
                             }
                             .offset(y: 10)
+                            .padding(.leading, 15)
                         }
                     }
                     .scrollContentBackground(.hidden)
