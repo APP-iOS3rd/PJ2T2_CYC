@@ -47,6 +47,9 @@
 		6317B4032B2154D20039795E /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1ABEA522B200E0B00F3C44A /* Pretendard-SemiBold.otf */; };
 		6317B4042B2154D40039795E /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1ABEA542B200E0B00F3C44A /* Pretendard-Thin.otf */; };
 		6317B40A2B2183A50039795E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317B4092B2183A50039795E /* MainView.swift */; };
+		64DE4B9D2B26DE2400AD4995 /* keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DE4B9C2B26DE2400AD4995 /* keys.swift */; };
+		64DE4B9F2B26DECF00AD4995 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DE4B9E2B26DECF00AD4995 /* LoginModel.swift */; };
+		64DE4BA22B26E00500AD4995 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 64DE4BA12B26E00500AD4995 /* Alamofire */; };
 		B1ABEA422B200D3000F3C44A /* CYCApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ABEA412B200D3000F3C44A /* CYCApp.swift */; };
 		B1ABEA462B200D3200F3C44A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1ABEA452B200D3200F3C44A /* Assets.xcassets */; };
 		B1ABEA492B200D3200F3C44A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1ABEA482B200D3200F3C44A /* Preview Assets.xcassets */; };
@@ -118,6 +121,8 @@
 		6317B3EC2B21546D0039795E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6317B3EE2B21546D0039795E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6317B4092B2183A50039795E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		64DE4B9C2B26DE2400AD4995 /* keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = keys.swift; sourceTree = "<group>"; };
+		64DE4B9E2B26DECF00AD4995 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		B1ABEA3E2B200D3000F3C44A /* CYC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CYC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1ABEA412B200D3000F3C44A /* CYCApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CYCApp.swift; sourceTree = "<group>"; };
 		B1ABEA452B200D3200F3C44A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -153,6 +158,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1ABEA842B20621E00F3C44A /* FirebaseMessaging in Frameworks */,
+				64DE4BA22B26E00500AD4995 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +246,8 @@
 			children = (
 				6317B3CC2B203B1C0039795E /* OnboardingTabView.swift */,
 				6317B3CA2B2033CD0039795E /* LoginView.swift */,
+				64DE4B9C2B26DE2400AD4995 /* keys.swift */,
+				64DE4B9E2B26DECF00AD4995 /* LoginModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -416,6 +424,7 @@
 			name = CYC;
 			packageProductDependencies = (
 				B1ABEA832B20621E00F3C44A /* FirebaseMessaging */,
+				64DE4BA12B26E00500AD4995 /* Alamofire */,
 			);
 			productName = CYC;
 			productReference = B1ABEA3E2B200D3000F3C44A /* CYC.app */;
@@ -450,6 +459,7 @@
 			mainGroup = B1ABEA352B200D3000F3C44A;
 			packageReferences = (
 				B1ABEA772B20617500F3C44A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				64DE4BA02B26DF0000AD4995 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = B1ABEA3F2B200D3000F3C44A /* Products */;
 			projectDirPath = "";
@@ -528,6 +538,8 @@
 				047F359D2B21A4BB00574504 /* LicenseModel.swift in Sources */,
 				B1ABEA642B200E5800F3C44A /* fontExtension.swift in Sources */,
 				5205DD772B2039640013DF68 /* ProgressView.swift in Sources */,
+				64DE4B9D2B26DE2400AD4995 /* keys.swift in Sources */,
+				64DE4B9F2B26DECF00AD4995 /* LoginModel.swift in Sources */,
 				047F359F2B21A4BB00574504 /* TodoModel.swift in Sources */,
 				047F359E2B21A4BB00574504 /* SettingModel.swift in Sources */,
 				6317B3F72B2154A00039795E /* AppIntent.swift in Sources */,
@@ -826,6 +838,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		64DE4BA02B26DF0000AD4995 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.8.1;
+			};
+		};
 		B1ABEA772B20617500F3C44A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -837,6 +857,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		64DE4BA12B26E00500AD4995 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 64DE4BA02B26DF0000AD4995 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		B1ABEA832B20621E00F3C44A /* FirebaseMessaging */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B1ABEA772B20617500F3C44A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
