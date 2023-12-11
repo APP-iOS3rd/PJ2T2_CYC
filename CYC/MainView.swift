@@ -48,8 +48,7 @@ struct MainView: View {
                         .padding(.leading, 20)
                         
                         // MARK: - 하단 뷰 연결
-                        ProgressView()
-                        
+                        ProgressView()   
                         // MARK: - 알림장 미리보기
                         TodoPreView()
                     }
