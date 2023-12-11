@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct TodoViewModel {
-    var todoList:[TodoModel] = [
-        TodoModel(title: "알고리즘 풀기"),TodoModel(title: "Swift Data 공부"), TodoModel(title: "UIKit")
-    ]
-}
+//final class TodoViewModel {
+//    var todoList:[TodoModel] = [
+//        TodoModel(title: "알고리즘 풀기"),TodoModel(title: "Swift Data 공부"), TodoModel(title: "UIKit")
+//    ]
+//}

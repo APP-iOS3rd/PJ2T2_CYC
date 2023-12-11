@@ -6,9 +6,14 @@
 //
 
 import Foundation
+import SwiftData
 
-struct TodoModel: Identifiable {
-    let id = UUID()
-    let title: String
-    
+@Model
+final class TodoModel: Identifiable {
+    var id = UUID()
+    var title: String
+
+    init(title: String = "") {
+        self.title = title
+    }
 }

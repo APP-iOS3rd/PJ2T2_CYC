@@ -38,11 +38,12 @@ struct NotificationView: View {
                     .padding(.top, 5)
             }
             .padding()
-            .offset(y: -250)
+            .offset(y: -275)
         }
     }
 }
 
+
 #Preview {
-    NotificationView().preferredColorScheme(.dark)
+    TodoView().preferredColorScheme(.dark)
 }
