@@ -6,8 +6,11 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct MainView: View {
+    
+    @Query private var todoModel: [TodoModel]
     
     var body: some View {
         NavigationStack {
@@ -45,7 +48,9 @@ struct MainView: View {
                         .padding(.leading, 20)
                         
                         // MARK: - 하단 뷰 연결
-                        ProgressView()
+                        ProgressView()   
+                        // MARK: - 알림장 미리보기
+                        TodoPreView()
                     }
                 }
             }
