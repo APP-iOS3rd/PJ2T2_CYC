@@ -55,6 +55,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 struct CYCApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
+    // MARK: - SwiftData 컨테이너
     var sharedModelContainer: ModelContainer = {
         do {
             let schema = Schema([
@@ -76,8 +77,6 @@ struct CYCApp: App {
         .modelContainer(sharedModelContainer)
     }
 }
-
-
 
 extension AppDelegate : MessagingDelegate {
     
@@ -124,9 +123,8 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
         let userInfo = response.notification.request.content.userInfo
         print("didReceive: userInfo: ", userInfo)
         completionHandler()
-    } 
+    }
 }
-
 
 // MARK: - 화면 터치시 키보드 내려감
 

@@ -10,11 +10,27 @@ import SwiftUI
 struct LicenseView: View {
     
     let info = LicenseViewModel().licenseInfo
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
+    var backButton : some View {  // <-- 👀 커스텀 버튼
+        Button{
+            self.presentationMode.wrappedValue.dismiss()
+        } label: {
+            HStack {
+                Image(systemName: "chevron.left") // 화살표 Image
+                    .aspectRatio(contentMode: .fit)
+                    .foregroundStyle(.base)
+                    .bold()
+            }
+        }
+    }
     
     var body: some View {
         
         VStack(alignment: .leading) {
-           // MARK: - 해더
+            
+            
+            // MARK: - 해더
             Text("라이센스")
                 .font(.pretendardBold_25)
                 .padding(.bottom, 5)
@@ -36,6 +52,8 @@ struct LicenseView: View {
         }
         .padding()
         .background(Color.bgColor)
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: backButton)
     }
 }
 

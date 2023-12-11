@@ -19,7 +19,7 @@ struct TodoView: View {
     var body: some View {
         ZStack {
             VStack {
-                // MARK: - 해더
+                // MARK: - 헤더
                 HStack {
                     Text("오늘 뭐해?")
                         .font(.pretendardBold_25)
@@ -78,11 +78,6 @@ struct TodoView: View {
     }
 }
 
-
-
-#Preview {
-    TodoView().preferredColorScheme(.dark)
-}
 
 #Preview {
     TodoView().preferredColorScheme(.dark)

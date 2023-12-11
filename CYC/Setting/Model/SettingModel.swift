@@ -5,7 +5,6 @@
 //  Created by 김명현 on 12/6/23.
 //
 
-import Foundation
 import SwiftUI
 
 struct SettingModel:Identifiable, Hashable {
