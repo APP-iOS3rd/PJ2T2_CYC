@@ -9,6 +9,7 @@ import SwiftUI
 import SwiftData
 import UserNotifications
 
+
 @main
 struct CYCApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate //AppDelegate 생성하고 @main 에 연결
@@ -55,3 +56,5 @@ extension UIApplication: UIGestureRecognizerDelegate {
         return true
     }
 }
+
+
