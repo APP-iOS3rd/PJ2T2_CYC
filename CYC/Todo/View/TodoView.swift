@@ -12,12 +12,11 @@ struct TodoView: View {
     
     @Environment(\.dismiss) var dismiss
     @Environment(\.modelContext) private var modelContext
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Query private var todoModel: [TodoModel]
     
     var backButton : some View {  // <-- 👀 커스텀 버튼
         Button{
-            self.presentationMode.wrappedValue.dismiss()
+            dismiss()
         } label: {
             HStack {
                 Image(systemName: "chevron.left") // 화살표 Image
