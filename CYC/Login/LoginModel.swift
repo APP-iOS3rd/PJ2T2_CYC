@@ -64,7 +64,6 @@ class LoginModel: ObservableObject {
                     self.access_token = accessToken
                     print(self.access_token!)
                     self.getUser()
-                    self.getUserEvents()
                 }
                 
             case let .failure(error):
@@ -87,9 +86,8 @@ class LoginModel: ObservableObject {
                    headers: headers).responseDecodable(of: User.self) { response in
             switch response.result {
             case .success(let user):
-                print(user.login)
                 self.userLogin = user.login
-                print(self.userLogin)
+                self.getUserEvents()
             case .failure(let error):
                 print("Error: \(error.localizedDescription)")
             }
@@ -108,13 +106,12 @@ class LoginModel: ObservableObject {
             let parameters = ["per_page": 300,
                               "page": num]
             
-            AF.request("https://api.github.com/users/Mminy62/events",
+            AF.request("https://api.github.com/users/\(self.userLogin ?? "")/events",
                        method: .get, parameters: parameters,
                        headers: headers)
             .responseDecodable(of: [Event].self) { response in
                 switch response.result {
                 case .success(let values):
-                    print(values)
                     for event in values {
                         let repoOwner = event.repo.name.split(separator: "/")[0]
                         if event.type == EventType.pullRequestEvent.rawValue{
