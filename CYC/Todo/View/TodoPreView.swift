@@ -45,7 +45,7 @@ struct TodoPreView: View {
                             HStack {
                                 Image(systemName: "circle.fill")
                                     .resizable()
-                                    .frame(width: 10, height: 10)
+                                    .frame(width: 8, height: 8)
                                     .foregroundColor(Color.baseColor)
                                     .padding(.leading, 20)
                                 Spacer()

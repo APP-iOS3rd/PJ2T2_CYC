@@ -32,6 +32,7 @@ struct TodoView: View {
     
     var body: some View {
         ZStack {
+            Color.bgColor.ignoresSafeArea(.all)
             VStack {
                 // MARK: - 헤더
                 HStack {
@@ -46,6 +47,7 @@ struct TodoView: View {
                 List {
                     ForEach(todoModel) { list in
                         Text("\(list.title)")
+                            .listRowBackground(Color.containerColor)
                     }
                     .onDelete(perform: deleteTodos)
                 }
@@ -69,11 +71,13 @@ struct TodoView: View {
                 }
             }
         }
+        .scrollContentBackground(.hidden)
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: backButton)
+        
     }
     
-     
+    
     
     // MARK: - CRUD 함수
     
