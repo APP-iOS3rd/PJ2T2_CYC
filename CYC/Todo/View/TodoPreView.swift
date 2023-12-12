@@ -33,19 +33,18 @@ struct TodoPreView: View {
                     }
                     .position(x: 80, y: 30)
                     .padding(.leading, 10)
-                    
+                    .frame(height: 50)
                     
                     Divider()
                         .frame(width: 350)
-                        .offset(x: 20)
-                    
+                        .offset(x: 22)
                     // MARK: - Todo 미리보기 바디
-                    VStack(spacing: 10) {
+
                         ForEach(todoModel.prefix(3)) { list in
                             HStack {
                                 Image(systemName: "circle.fill")
                                     .resizable()
-                                    .frame(width: 10, height: 10)
+                                    .frame(width: 6, height: 6)
                                     .foregroundColor(Color.baseColor)
                                     .padding(.leading, 20)
                                 Spacer()
@@ -59,17 +58,16 @@ struct TodoPreView: View {
                             .offset(y: 10)
                             .padding(.leading, 20)
                         }
-                    }
-                    .scrollContentBackground(.hidden)
-                    .frame(width: 350)
-                    .offset(y: -15) 
+                        .scrollContentBackground(.hidden)
+                        .frame(width: 350)
+                        .offset(y: -15)
+                        Spacer()
+                            .frame(height: todoModel.count == 1 ? 95 : (todoModel.count == 2 ? 50 : 0))
                 }
             }
         }
-        
     }
 }
-
 
 #Preview {
     TodoPreView()
