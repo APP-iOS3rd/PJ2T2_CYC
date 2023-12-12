@@ -19,3 +19,15 @@ extension UserDefaults {
         return string(forKey: UserDefaults.userLoginKey)
     }
 }
+
+extension UserDefaults {
+    private static let userAcessToken = "acessToken"
+
+    func setAccessToken(_ token: String) {
+        set(token, forKey: UserDefaults.userAcessToken)
+    }
+
+    func getAccessToken() -> String? {
+        return string(forKey: UserDefaults.userAcessToken)
+    }
+}
