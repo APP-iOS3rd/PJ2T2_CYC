@@ -9,7 +9,8 @@ import SwiftUI
 import SwiftData
 
 struct MainView: View {
-    
+    @AppStorage("isLoggedIn") var isloggedInVIew: Bool = false
+    @ObservedObject private var loginModel = LoginModel.shared
     @Query private var todoModel: [TodoModel]
     
     var body: some View {
@@ -40,6 +41,8 @@ struct MainView: View {
                         // MARK: - 상단 텍스트
                         VStack(alignment: .leading, spacing: 8) {
                             Text("Hi, Ciu")
+                            
+                            Text(loginModel.userLogin ?? "123")
                             
                             Text("오늘 커밋 잡쉈어?")
                         }
