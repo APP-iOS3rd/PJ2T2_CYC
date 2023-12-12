@@ -57,6 +57,7 @@ struct MainView: View {
                         // MARK: - 알림장 미리보기
                         TodoPreView()
                     }
+                    .scrollIndicators(.hidden)
                 }
             }
         }
