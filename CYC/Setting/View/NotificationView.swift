@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct NotificationView: View {
     
     @AppStorage("notification") var isOnNotification: Bool = false
@@ -62,7 +63,7 @@ struct NotificationView: View {
         let triggerDate = Calendar.current.date(byAdding: .minute, value: 1, to: Date())! // 예: 현재로부터 1분 후
         
         if isOnNotification {
-
+        
             LocalNotificationHelper
                 .shared
                 .pushScheduledNotification(title: "Check Your Commit",

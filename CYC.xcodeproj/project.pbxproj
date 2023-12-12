@@ -71,8 +71,8 @@
 		B1ABEA682B2017E900F3C44A /* colorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ABEA672B2017E900F3C44A /* colorExtension.swift */; };
 		B1ABEA6A2B20496E00F3C44A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B1ABEA692B20496D00F3C44A /* GoogleService-Info.plist */; };
 		B1ABEA842B20621E00F3C44A /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = B1ABEA832B20621E00F3C44A /* FirebaseMessaging */; };
+		B1E959872B285EE000DF64A4 /* LocalNotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E959862B285EE000DF64A4 /* LocalNotificationHelper.swift */; };
 		B1EE4F032B275B3B0097436B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EE4F022B275B3B0097436B /* AppDelegate.swift */; };
-		B1EE4F092B275F2C0097436B /* PushNotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EE4F082B275F2C0097436B /* PushNotificationHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,8 +153,8 @@
 		B1ABEA672B2017E900F3C44A /* colorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colorExtension.swift; sourceTree = "<group>"; };
 		B1ABEA692B20496D00F3C44A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B1ABEA762B204C6100F3C44A /* CYC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CYC.entitlements; sourceTree = "<group>"; };
+		B1E959862B285EE000DF64A4 /* LocalNotificationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationHelper.swift; sourceTree = "<group>"; };
 		B1EE4F022B275B3B0097436B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B1EE4F082B275F2C0097436B /* PushNotificationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -357,7 +357,7 @@
 			children = (
 				B1ABEA412B200D3000F3C44A /* CYCApp.swift */,
 				B1EE4F022B275B3B0097436B /* AppDelegate.swift */,
-				B1EE4F082B275F2C0097436B /* PushNotificationHelper.swift */,
+				B1E959862B285EE000DF64A4 /* LocalNotificationHelper.swift */,
 				6317B4092B2183A50039795E /* MainView.swift */,
 				647986F72B27038900BA0691 /* StartView.swift */,
 				B1ABEA762B204C6100F3C44A /* CYC.entitlements */,
@@ -560,6 +560,7 @@
 				6317B3CD2B203B1C0039795E /* OnboardingTabView.swift in Sources */,
 				047F359D2B21A4BB00574504 /* LicenseModel.swift in Sources */,
 				B1ABEA642B200E5800F3C44A /* fontExtension.swift in Sources */,
+				B1E959872B285EE000DF64A4 /* LocalNotificationHelper.swift in Sources */,
 				5205DD772B2039640013DF68 /* ProgressView.swift in Sources */,
 				64DE4B9F2B26DECF00AD4995 /* LoginModel.swift in Sources */,
 				04EA90242B26E4FC00DDC99E /* TodoPreView.swift in Sources */,
