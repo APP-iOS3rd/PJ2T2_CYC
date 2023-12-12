@@ -13,8 +13,17 @@ class LoginModel: ObservableObject {
     static let shared = LoginModel()
     
     @Published var code: String?
-    @Published var access_token: String?
+//    @Published var access_token: String?
     @Published var testCase:[String:Int] = [:]
+    
+    // accesstoken 을 UserDefaults 저장하는 이유?
+    // 커밋 기록을 불러올때 필요함
+    // 로그인은 1회성이기 때문에 액세스 토큰을 만들어서 저장해 앱에 로그인 할때마다 불러옴
+    @Published var access_token: String? {
+        didSet {
+            UserDefaults.standard.setAccessToken(access_token ?? "")
+        }
+    }
     
     // 다른 뷰에서 유저닉네임 받아주기 위해 선언
     // UserDefaults로 선언해서 값을 저장해 앱이 종료 되더라도 유저닉네임이 저장된다
@@ -26,6 +35,7 @@ class LoginModel: ObservableObject {
     
     init() {
         self.userLogin = UserDefaults.standard.getUserLogin()
+        self.access_token = UserDefaults.standard.getAccessToken()
     }
     
     let scope = "user"
@@ -87,6 +97,7 @@ class LoginModel: ObservableObject {
             switch response.result {
             case .success(let user):
                 self.userLogin = user.login
+                print(self.userLogin ?? "외않되")
                 self.getUserEvents()
             case .failure(let error):
                 print("Error: \(error.localizedDescription)")
