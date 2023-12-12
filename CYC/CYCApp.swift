@@ -73,6 +73,7 @@ struct CYCApp: App {
         WindowGroup {
             MainView()
                 .onAppear(perform: UIApplication.shared.addTapGestureRecognizer)
+                
         }
         .modelContainer(sharedModelContainer)
     }

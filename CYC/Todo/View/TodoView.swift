@@ -39,7 +39,7 @@ struct TodoView: View {
                     Text("오늘 뭐해?")
                         .font(.pretendardBold_25)
                     Spacer()
-                    EditButton()
+                    
                 }
                 .padding()
                 
@@ -62,7 +62,6 @@ struct TodoView: View {
                                 .stroke(Color.baseColor, lineWidth: 1) // 테두리 색과 두께 설정
                         )
                         .padding(.leading)
-                    
                     Button(action: { addTodo() }, label: {
                         Text("추 가")
                             .foregroundColor(Color.baseColor)
@@ -90,6 +89,7 @@ struct TodoView: View {
                 textFieldText = ""
             }
         }
+        print(modelContext)
     }
     
     private func deleteTodos(offsets: IndexSet) {

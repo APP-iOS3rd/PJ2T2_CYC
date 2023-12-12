@@ -20,7 +20,7 @@ struct TodoPreView: View {
                 Rectangle()
                     .fill(Color.containerColor)
                     .frame(width: 350, height: 200)
-                    .cornerRadius(8.0)
+                    .cornerRadius(15.0)
                 VStack(alignment: .leading) {
                     // MARK: - Todo 미리보기 헤더
                     HStack {
@@ -30,15 +30,19 @@ struct TodoPreView: View {
                         Text("오늘 뭐해?")
                             .font(.pretendardSemiBold_17)
                             .foregroundColor(Color.baseColor)
+                            .padding(.leading, 10)
                     }
-                    .position(x: 80, y: 30)
                     .padding(.leading, 10)
                     .frame(height: 50)
+                    .offset(y: 5)
+                    
                     
                     Divider()
                         .frame(width: 350)
-                        .offset(x: 22)
                     // MARK: - Todo 미리보기 바디
+                    
+                    Spacer()
+                        .frame(height: todoModel.count == 0 ? 140 : 0)
 
                         ForEach(todoModel.prefix(3)) { list in
                             HStack {
@@ -56,13 +60,12 @@ struct TodoPreView: View {
                                     .foregroundColor(Color.baseColor)
                             }
                             .offset(y: 10)
-                            .padding(.leading, 20)
                         }
                         .scrollContentBackground(.hidden)
                         .frame(width: 350)
-                        .offset(y: -15)
+                        .offset(y: -10)
                         Spacer()
-                            .frame(height: todoModel.count == 1 ? 95 : (todoModel.count == 2 ? 50 : 0))
+                            .frame(height: todoModel.count == 1 ? 110 : (todoModel.count == 2 ? 60 : 10))
                 }
             }
         }
