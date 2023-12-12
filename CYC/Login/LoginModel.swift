@@ -84,6 +84,7 @@ class LoginModel: ObservableObject {
     
     struct User: Decodable {
         let login: String
+        let name: String
     }
     
     // 유저정보를 받아오기 위한 함수
@@ -96,7 +97,7 @@ class LoginModel: ObservableObject {
                    headers: headers).responseDecodable(of: User.self) { response in
             switch response.result {
             case .success(let user):
-                self.userLogin = user.login
+                self.userLogin = user.name
                 print(self.userLogin ?? "외않되")
                 self.getUserEvents()
             case .failure(let error):
