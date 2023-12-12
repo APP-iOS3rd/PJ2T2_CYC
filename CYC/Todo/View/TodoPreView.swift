@@ -13,6 +13,10 @@ struct TodoPreView: View {
     
     @Query private var todoModel: [TodoModel]
     
+    var sortedTodoModel: [TodoModel] { // 작성 시간 순서대로 정렬
+           return todoModel.sorted(by: { $0.createdAt < $1.createdAt })
+       }
+    
     var body: some View {
         
         NavigationLink(destination: TodoView()) {
@@ -44,7 +48,7 @@ struct TodoPreView: View {
                     Spacer()
                         .frame(height: todoModel.count == 0 ? 140 : 0)
 
-                        ForEach(todoModel.prefix(3)) { list in
+                    ForEach(sortedTodoModel.prefix(3)) { list in
                             HStack {
                                 Image(systemName: "circle.fill")
                                     .resizable()

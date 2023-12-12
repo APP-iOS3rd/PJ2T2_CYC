@@ -15,20 +15,24 @@ struct TodoView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Query private var todoModel: [TodoModel]
     
-    var backButton : some View {  // <-- 👀 커스텀 버튼
+    @State var textFieldText = ""
+    
+    var sortedTodoModel: [TodoModel] { // 작성 시간 순서대로 정렬
+        return todoModel.sorted(by: { $0.createdAt < $1.createdAt })
+    }
+    
+    var backButton : some View {
         Button{
             self.presentationMode.wrappedValue.dismiss()
         } label: {
             HStack {
-                Image(systemName: "chevron.left") // 화살표 Image
+                Image(systemName: "chevron.left")
                     .aspectRatio(contentMode: .fit)
                     .foregroundStyle(.base)
                     .bold()
             }
         }
     }
-    
-    @State var textFieldText = ""
     
     var body: some View {
         ZStack {
@@ -45,10 +49,10 @@ struct TodoView: View {
                 
                 // MARK: - 리스트
                 List {
-                    ForEach(todoModel) { list in
+                    ForEach(sortedTodoModel) { list in
                         Text("\(list.title)")
                             .listRowBackground(Color.containerColor)
-                            
+                        
                     }
                     .onDelete(perform: deleteTodos)
                 }
@@ -77,7 +81,7 @@ struct TodoView: View {
         .navigationBarItems(leading: backButton)
     }
     
-     
+    
     
     // MARK: - CRUD 함수
     
@@ -94,8 +98,10 @@ struct TodoView: View {
     
     private func deleteTodos(offsets: IndexSet) {
         withAnimation {
-            for index in offsets {
-                modelContext.delete(todoModel[index])
+            // Sort the indices in ascending order
+            let sortedIndices = offsets.sorted()
+            for index in sortedIndices {
+                modelContext.delete(sortedTodoModel[index])
             }
         }
     }

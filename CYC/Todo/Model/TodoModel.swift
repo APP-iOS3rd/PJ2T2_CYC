@@ -12,6 +12,8 @@ import SwiftData
 final class TodoModel: Identifiable {
     var id = UUID()
     var title: String
+    var createdAt = Date()
+
 
 
     init(title: String = "") {
