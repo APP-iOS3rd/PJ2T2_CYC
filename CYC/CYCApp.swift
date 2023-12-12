@@ -30,7 +30,7 @@ struct CYCApp: App {
     
     var body: some Scene {
         WindowGroup {
-            MainView()
+            StartView()
                 .onAppear(perform: UIApplication.shared.addTapGestureRecognizer)
                 
         }
