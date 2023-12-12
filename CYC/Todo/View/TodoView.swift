@@ -48,6 +48,7 @@ struct TodoView: View {
                     ForEach(todoModel) { list in
                         Text("\(list.title)")
                             .listRowBackground(Color.containerColor)
+                            
                     }
                     .onDelete(perform: deleteTodos)
                 }
@@ -70,22 +71,24 @@ struct TodoView: View {
                     })
                 }
             }
+            
         }
         .scrollContentBackground(.hidden)
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: backButton)
-        
     }
     
-    
+     
     
     // MARK: - CRUD 함수
     
     private func addTodo() {
         withAnimation {
             let newTodo = TodoModel(title: textFieldText)
-            modelContext.insert(newTodo)
-            textFieldText = ""
+            if !newTodo.title.isEmpty {
+                modelContext.insert(newTodo)
+                textFieldText = ""
+            }
         }
     }
     
