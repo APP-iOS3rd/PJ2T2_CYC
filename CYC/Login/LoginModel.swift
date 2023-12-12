@@ -14,6 +14,7 @@ class LoginModel: ObservableObject {
     
     @Published var code: String?
     @Published var access_token: String?
+    @Published var testCase:[String:Int] = [:]
     
     // 다른 뷰에서 유저닉네임 받아주기 위해 선언
     // UserDefaults로 선언해서 값을 저장해 앱이 종료 되더라도 유저닉네임이 저장된다
@@ -63,6 +64,7 @@ class LoginModel: ObservableObject {
                     self.access_token = accessToken
                     print(self.access_token!)
                     self.getUser()
+                    self.getUserEvents()
                 }
                 
             case let .failure(error):
@@ -90,6 +92,57 @@ class LoginModel: ObservableObject {
                 print(self.userLogin)
             case .failure(let error):
                 print("Error: \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    
+    // 유저이벤트를 받아오기 위한 함수(push, pull request)
+    func getUserEvents() {
+        let headers: HTTPHeaders = ["Accept": "application/vnd.github+json",
+                                    "Authorization": "Bearer \(access_token!)"]
+        let pageNum = [1, 2]
+        var pushEvents:[String:Int] = [:]
+        
+        for num in pageNum{
+            let parameters = ["per_page": 300,
+                              "page": num]
+            
+            AF.request("https://api.github.com/users/Mminy62/events",
+                       method: .get, parameters: parameters,
+                       headers: headers)
+            .responseDecodable(of: [Event].self) { response in
+                switch response.result {
+                case .success(let values):
+                    print(values)
+                    for event in values {
+                        let repoOwner = event.repo.name.split(separator: "/")[0]
+                        if event.type == EventType.pullRequestEvent.rawValue{
+                            let key = String(event.createdAt.prefix(10))
+                            if pushEvents.keys.contains(key){
+                                pushEvents[key]! += 2
+                            }
+                            else{
+                                pushEvents[key] = 2
+                            }
+                        }
+                        if event.type == EventType.pushEvent.rawValue && self.userLogin! == repoOwner{
+                            let key = String(event.createdAt.prefix(10))
+                            let value = (event.payload.commits ?? []).count
+                            
+                            if pushEvents.keys.contains(key){
+                                pushEvents[key]! += value + 1
+                            }
+                            else{
+                                pushEvents[key] = value + 1
+                            }
+                        }
+                    }
+                    self.testCase = pushEvents
+                    
+                case .failure(let error):
+                    print("Error: \(error)")
+                }
             }
         }
     }

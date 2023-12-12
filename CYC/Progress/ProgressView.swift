@@ -12,7 +12,7 @@ struct ProgressView: View {
     @State private var showSheet: Bool = false
     
     // MARK: 커밋 변수
-    @State private var step: Int = 20
+    @State private var step: Int = 50
     @State private var progress: Int = 0
     @State private var goal: Int = 100
 
