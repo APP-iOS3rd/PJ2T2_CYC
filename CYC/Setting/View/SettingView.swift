@@ -34,17 +34,16 @@ struct SettingView: View {
                     // MARK: - 헤더
                     Text("설정")
                         .font(.pretendardBold_25)
-                        .padding(.horizontal, 25)
+                        .padding(.horizontal, 15)
                         
                     
                     // MARK: - 설정
                     List {
                         Section {
                             ForEach(SettingViewModel().settings, id: \.self) { setting in
-                                
                                 NavigationLink(destination: setting.destination) {
                                     Label(setting.name, image: setting.imageName)
-                                        .font(.system(size: 17, weight: .semibold))
+                                        .font(.pretendardSemiBold_17)
                                 }
                             }
                             .listRowBackground(Color.containerColor)
@@ -60,14 +59,16 @@ struct SettingView: View {
                     }
                     .scrollContentBackground(.hidden)
                     
-                    Text("2023, Check Your Commit all rights reserved.")
-                        .frame(maxWidth: .infinity, alignment: .center)
-                        .font(.pretendardLight_11)
-                        .offset(y: 10)
-                    Text("Powered by PJ2T2_CYC")
-                        .frame(maxWidth: .infinity, alignment: .center)
-                        .font(.pretendardLight_11)
-                        .offset(y: 10)
+                    VStack {
+                        Text("2023, Check Your Commit all rights reserved.")
+                            .frame(maxWidth: .infinity, alignment: .center)
+                            .font(.pretendardLight_11)
+                            .offset(y: 10)
+                        Text("Powered by PJ2T2_CYC")
+                            .frame(maxWidth: .infinity, alignment: .center)
+                            .font(.pretendardLight_11)
+                            .offset(y: 10)
+                    }
                 }
                 .padding(.top, 15)
             }

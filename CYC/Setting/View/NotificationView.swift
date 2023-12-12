@@ -53,7 +53,7 @@ struct NotificationView: View {
                     .padding(.top, 5)
             }
             .padding(.horizontal)
-            .offset(y: -265)
+            .offset(y: -258)
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: backButton)
