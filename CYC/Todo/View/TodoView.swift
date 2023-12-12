@@ -51,36 +51,35 @@ struct TodoView: View {
                     ForEach(sortedTodoModel) { list in
                         Text("\(list.title)")
                             .listRowBackground(Color.containerColor)
-                        
                     }
                     .onDelete(perform: deleteTodos)
                 }
                 
                 // MARK: - 텍스트필드, 할 일 추가버튼
-                HStack {
-                    TextField("일정을 입력해주세요", text: $textFieldText)
-                        .textFieldStyle(.roundedBorder)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 8)
-                                .stroke(Color.baseColor, lineWidth: 1) // 테두리 색과 두께 설정
-                        )
-                        .padding(.leading)
-                    Button(action: { addTodo() }, label: {
-                        Text("추 가")
-                            .foregroundColor(Color.baseColor)
-                            .bold()
-                            .padding()
-                    })
-                }
+                
+                TextField("일정을 입력해주세요", text: $textFieldText)
+                    .textFieldStyle(.roundedBorder)
+                    .overlay(
+                        HStack {
+                            Spacer()
+                            
+                            Button {
+                                addTodo()
+                            } label: {
+                                Image(systemName: "arrow.up.circle.fill")
+                                    .foregroundStyle(Color.green)
+                                    .padding()
+                            }
+                        }
+                    )
+                    .padding(.horizontal)
+                    .padding(.bottom, 15)
             }
-            
         }
         .scrollContentBackground(.hidden)
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: backButton)
     }
-    
-    
     
     // MARK: - CRUD 함수
     
@@ -105,7 +104,6 @@ struct TodoView: View {
         }
     }
 }
-
 
 #Preview {
     TodoView().preferredColorScheme(.dark)

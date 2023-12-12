@@ -29,12 +29,13 @@ struct SettingView: View {
             ZStack {
                 Color.bgColor.ignoresSafeArea(.all)
                 
-                VStack(alignment: .leading, spacing: -2) {
+                VStack(alignment: .leading, spacing: -15) {
                     
                     // MARK: - 헤더
                     Text("설정")
                         .font(.pretendardBold_25)
                         .padding(.horizontal, 25)
+                        
                     
                     // MARK: - 설정
                     List {
@@ -68,7 +69,7 @@ struct SettingView: View {
                         .font(.pretendardLight_11)
                         .offset(y: 10)
                 }
-                .padding(.top, 20)
+                .padding(.top, 15)
             }
         }
         .navigationBarBackButtonHidden(true)
