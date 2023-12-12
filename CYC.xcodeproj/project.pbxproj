@@ -22,6 +22,7 @@
 		5215F1A62B25D30800CE1733 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5215F1A52B25D30800CE1733 /* ProgressBarView.swift */; };
 		5215F1A82B25D44700CE1733 /* DdayButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5215F1A72B25D44700CE1733 /* DdayButtonView.swift */; };
 		5215F1AC2B26077B00CE1733 /* ProgressTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5215F1AB2B26077B00CE1733 /* ProgressTextView.swift */; };
+		5267AC852B289169009FDB2A /* keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5267AC842B289169009FDB2A /* keys.swift */; };
 		6317B3CB2B2033CD0039795E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317B3CA2B2033CD0039795E /* LoginView.swift */; };
 		6317B3CD2B203B1C0039795E /* OnboardingTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317B3CC2B203B1C0039795E /* OnboardingTabView.swift */; };
 		6317B3D22B2045450039795E /* PersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317B3D12B2045450039795E /* PersonModel.swift */; };
@@ -115,6 +116,7 @@
 		5215F1A52B25D30800CE1733 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		5215F1A72B25D44700CE1733 /* DdayButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DdayButtonView.swift; sourceTree = "<group>"; };
 		5215F1AB2B26077B00CE1733 /* ProgressTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressTextView.swift; sourceTree = "<group>"; };
+		5267AC842B289169009FDB2A /* keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = keys.swift; sourceTree = "<group>"; };
 		6317B3CA2B2033CD0039795E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		6317B3CC2B203B1C0039795E /* OnboardingTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTabView.swift; sourceTree = "<group>"; };
 		6317B3D12B2045450039795E /* PersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonModel.swift; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 			children = (
 				647986F92B27EBE900BA0691 /* extension */,
 				6317B3CC2B203B1C0039795E /* OnboardingTabView.swift */,
+				5267AC842B289169009FDB2A /* keys.swift */,
 				6317B3CA2B2033CD0039795E /* LoginView.swift */,
 				647986F52B27016B00BA0691 /* keys.swift */,
 				64DE4B9E2B26DECF00AD4995 /* LoginModel.swift */,
@@ -559,6 +562,7 @@
 				047F35962B21A4B000574504 /* NotificationView.swift in Sources */,
 				6317B3CD2B203B1C0039795E /* OnboardingTabView.swift in Sources */,
 				047F359D2B21A4BB00574504 /* LicenseModel.swift in Sources */,
+				5267AC852B289169009FDB2A /* keys.swift in Sources */,
 				B1ABEA642B200E5800F3C44A /* fontExtension.swift in Sources */,
 				B1E959872B285EE000DF64A4 /* LocalNotificationHelper.swift in Sources */,
 				5205DD772B2039640013DF68 /* ProgressView.swift in Sources */,
