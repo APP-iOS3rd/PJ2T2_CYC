@@ -34,6 +34,7 @@ struct LicenseView: View {
             Text("라이센스")
                 .font(.pretendardBold_25)
                 .padding(.bottom, 5)
+                .padding(.top, -5)
             Text("터치 시 라이센스 링크로 연결합니다")
                 .font(.pretendardLight_11)
                 .padding(.bottom, 20)
@@ -46,7 +47,7 @@ struct LicenseView: View {
                         .font(.pretendardSemiBold_15)
                         .padding(.bottom, 15)
                         .frame(maxWidth: .infinity, alignment: .leading)
-                        .foregroundColor(.white)
+                        .foregroundColor(Color.baseColor)
                 }
             }
         }

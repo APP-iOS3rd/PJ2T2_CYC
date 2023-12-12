@@ -52,7 +52,6 @@ struct TodoView: View {
                     ForEach(sortedTodoModel) { list in
                         Text("\(list.title)")
                             .listRowBackground(Color.containerColor)
-                        
                     }
                     .onDelete(perform: deleteTodos)
                 }
@@ -64,24 +63,24 @@ struct TodoView: View {
                     .overlay(
                         HStack {
                             Spacer()
-                            Button(action: { addTodo() }, label: {
+                            
+                            Button {
+                                addTodo()
+                            } label: {
                                 Image(systemName: "arrow.up.circle.fill")
                                     .foregroundStyle(Color.green)
                                     .padding()
-                            })
+                            }
                         }
                     )
                     .padding(.horizontal)
                     .padding(.bottom, 15)
             }
-            
         }
         .scrollContentBackground(.hidden)
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: backButton)
     }
-    
-    
     
     // MARK: - CRUD 함수
     
@@ -106,7 +105,6 @@ struct TodoView: View {
         }
     }
 }
-
 
 #Preview {
     TodoView().preferredColorScheme(.dark)

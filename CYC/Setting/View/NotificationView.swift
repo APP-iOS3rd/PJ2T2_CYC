@@ -51,8 +51,8 @@ struct NotificationView: View {
                     .foregroundColor(Color.logoutColor)
                     .padding(.top, 5)
             }
-            .padding()
-            .offset(y: -250)
+            .padding(.horizontal)
+            .offset(y: -265)
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: backButton)
