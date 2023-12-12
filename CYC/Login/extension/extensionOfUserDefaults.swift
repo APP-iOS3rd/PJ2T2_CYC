@@ -31,3 +31,15 @@ extension UserDefaults {
         return string(forKey: UserDefaults.userAcessToken)
     }
 }
+
+extension UserDefaults {
+    private static let userNickname = "userNickname"
+
+    func setUserName(_ name: String) {
+        set(name, forKey: UserDefaults.userNickname)
+    }
+
+    func getUserName() -> String? {
+        return string(forKey: UserDefaults.userNickname)
+    }
+}

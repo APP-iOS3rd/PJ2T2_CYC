@@ -40,7 +40,7 @@ struct MainView: View {
                     ScrollView {
                         // MARK: - 상단 텍스트
                         VStack(alignment: .leading, spacing: 8) {
-                            Text("Hi, \(loginModel.userLogin ?? "CYC")")
+                            Text("Hi, \(loginModel.userName ?? "CYC")")
                             
                             Text("오늘 커밋 잡쉈어?")
                         }
