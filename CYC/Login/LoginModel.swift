@@ -25,6 +25,15 @@ class LoginModel: ObservableObject {
         }
     }
     
+    // userName의 선언
+    // API를 받아오기 위해선 userID 부분이 필요하지만
+    // 우리가 뷰에 보여줘야 하는 부분은 유저의 닉네임 부분이여서 추가 선언
+    @Published var userName: String? {
+        didSet {
+            UserDefaults.standard.setUserName(userName ?? "")
+        }
+    }
+    
     // 다른 뷰에서 유저닉네임 받아주기 위해 선언
     // UserDefaults로 선언해서 값을 저장해 앱이 종료 되더라도 유저닉네임이 저장된다
     @Published var userLogin: String? {
@@ -36,6 +45,7 @@ class LoginModel: ObservableObject {
     init() {
         self.userLogin = UserDefaults.standard.getUserLogin()
         self.access_token = UserDefaults.standard.getAccessToken()
+        self.userName = UserDefaults.standard.getUserName()
     }
     
     let scope = "user"
@@ -97,7 +107,9 @@ class LoginModel: ObservableObject {
                    headers: headers).responseDecodable(of: User.self) { response in
             switch response.result {
             case .success(let user):
-                self.userLogin = user.name
+                self.userLogin = user.login
+                self.userName = user.name
+                print(self.userName ?? "외않되")
                 print(self.userLogin ?? "외않되")
                 self.getUserEvents()
             case .failure(let error):
