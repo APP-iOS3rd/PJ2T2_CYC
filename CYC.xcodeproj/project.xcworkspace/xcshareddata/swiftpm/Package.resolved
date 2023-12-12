@@ -64,6 +64,15 @@
       }
     },
     {
+      "identity" : "grassview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/agilestarskim/GrassView.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "4a56e08df54dfde56d0032a858bcfbf7d9a3f04a"
+      }
+    },
+    {
       "identity" : "grpc-binary",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/google/grpc-binary.git",

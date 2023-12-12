@@ -22,6 +22,10 @@
 		5215F1A62B25D30800CE1733 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5215F1A52B25D30800CE1733 /* ProgressBarView.swift */; };
 		5215F1A82B25D44700CE1733 /* DdayButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5215F1A72B25D44700CE1733 /* DdayButtonView.swift */; };
 		5215F1AC2B26077B00CE1733 /* ProgressTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5215F1AB2B26077B00CE1733 /* ProgressTextView.swift */; };
+		5267AC852B289169009FDB2A /* keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5267AC842B289169009FDB2A /* keys.swift */; };
+		5267AC882B28987F009FDB2A /* CommitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5267AC872B28987F009FDB2A /* CommitView.swift */; };
+		5267AC8C2B28A722009FDB2A /* GrassView in Frameworks */ = {isa = PBXBuildFile; productRef = 5267AC8B2B28A722009FDB2A /* GrassView */; };
+		5267AC8E2B28A7A1009FDB2A /* EventsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5267AC8D2B28A7A1009FDB2A /* EventsModel.swift */; };
 		6317B3CB2B2033CD0039795E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317B3CA2B2033CD0039795E /* LoginView.swift */; };
 		6317B3CD2B203B1C0039795E /* OnboardingTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317B3CC2B203B1C0039795E /* OnboardingTabView.swift */; };
 		6317B3D22B2045450039795E /* PersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317B3D12B2045450039795E /* PersonModel.swift */; };
@@ -115,6 +119,9 @@
 		5215F1A52B25D30800CE1733 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		5215F1A72B25D44700CE1733 /* DdayButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DdayButtonView.swift; sourceTree = "<group>"; };
 		5215F1AB2B26077B00CE1733 /* ProgressTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressTextView.swift; sourceTree = "<group>"; };
+		5267AC842B289169009FDB2A /* keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = keys.swift; sourceTree = "<group>"; };
+		5267AC872B28987F009FDB2A /* CommitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitView.swift; sourceTree = "<group>"; };
+		5267AC8D2B28A7A1009FDB2A /* EventsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsModel.swift; sourceTree = "<group>"; };
 		6317B3CA2B2033CD0039795E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		6317B3CC2B203B1C0039795E /* OnboardingTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTabView.swift; sourceTree = "<group>"; };
 		6317B3D12B2045450039795E /* PersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonModel.swift; sourceTree = "<group>"; };
@@ -172,6 +179,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1ABEA842B20621E00F3C44A /* FirebaseMessaging in Frameworks */,
+				5267AC8C2B28A722009FDB2A /* GrassView in Frameworks */,
 				64DE4BA22B26E00500AD4995 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -179,6 +187,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5267AC862B289830009FDB2A /* Grass */ = {
+			isa = PBXGroup;
+			children = (
+				5267AC902B28A7AA009FDB2A /* View */,
+				5267AC8F2B28A7A6009FDB2A /* Model */,
+			);
+			path = Grass;
+			sourceTree = "<group>";
+		};
+		5267AC8F2B28A7A6009FDB2A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5267AC8D2B28A7A1009FDB2A /* EventsModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5267AC902B28A7AA009FDB2A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5267AC872B28987F009FDB2A /* CommitView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		6317B3CE2B2045120039795E /* PersonProfile */ = {
 			isa = PBXGroup;
 			children = (
@@ -264,6 +297,7 @@
 			children = (
 				647986F92B27EBE900BA0691 /* extension */,
 				6317B3CC2B203B1C0039795E /* OnboardingTabView.swift */,
+				5267AC842B289169009FDB2A /* keys.swift */,
 				6317B3CA2B2033CD0039795E /* LoginView.swift */,
 				647986F52B27016B00BA0691 /* keys.swift */,
 				64DE4B9E2B26DECF00AD4995 /* LoginModel.swift */,
@@ -365,6 +399,7 @@
 				B1ABEA692B20496D00F3C44A /* GoogleService-Info.plist */,
 				632693672B24ACBB007A2DAF /* Login */,
 				632693662B24AC9A007A2DAF /* Setting */,
+				5267AC862B289830009FDB2A /* Grass */,
 				632693652B24AC84007A2DAF /* Todo */,
 				632693642B24AC5A007A2DAF /* Progress */,
 				B1ABEA452B200D3200F3C44A /* Assets.xcassets */,
@@ -446,6 +481,7 @@
 			packageProductDependencies = (
 				B1ABEA832B20621E00F3C44A /* FirebaseMessaging */,
 				64DE4BA12B26E00500AD4995 /* Alamofire */,
+				5267AC8B2B28A722009FDB2A /* GrassView */,
 			);
 			productName = CYC;
 			productReference = B1ABEA3E2B200D3000F3C44A /* CYC.app */;
@@ -481,6 +517,7 @@
 			packageReferences = (
 				B1ABEA772B20617500F3C44A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				64DE4BA02B26DF0000AD4995 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				5267AC8A2B28A355009FDB2A /* XCRemoteSwiftPackageReference "GrassView" */,
 			);
 			productRefGroup = B1ABEA3F2B200D3000F3C44A /* Products */;
 			projectDirPath = "";
@@ -559,6 +596,7 @@
 				047F35962B21A4B000574504 /* NotificationView.swift in Sources */,
 				6317B3CD2B203B1C0039795E /* OnboardingTabView.swift in Sources */,
 				047F359D2B21A4BB00574504 /* LicenseModel.swift in Sources */,
+				5267AC852B289169009FDB2A /* keys.swift in Sources */,
 				B1ABEA642B200E5800F3C44A /* fontExtension.swift in Sources */,
 				B1E959872B285EE000DF64A4 /* LocalNotificationHelper.swift in Sources */,
 				5205DD772B2039640013DF68 /* ProgressView.swift in Sources */,
@@ -566,11 +604,13 @@
 				04EA90242B26E4FC00DDC99E /* TodoPreView.swift in Sources */,
 				5215F1A82B25D44700CE1733 /* DdayButtonView.swift in Sources */,
 				047F359F2B21A4BB00574504 /* TodoModel.swift in Sources */,
+				5267AC882B28987F009FDB2A /* CommitView.swift in Sources */,
 				047F359E2B21A4BB00574504 /* SettingModel.swift in Sources */,
 				647986F82B27038900BA0691 /* StartView.swift in Sources */,
 				6317B3F72B2154A00039795E /* AppIntent.swift in Sources */,
 				B1ABEA422B200D3000F3C44A /* CYCApp.swift in Sources */,
 				5215F1A62B25D30800CE1733 /* ProgressBarView.swift in Sources */,
+				5267AC8E2B28A7A1009FDB2A /* EventsModel.swift in Sources */,
 				047F35A32B21A4C900574504 /* LicenseViewModel.swift in Sources */,
 				6317B3D82B20514D0039795E /* CustomSpacing.swift in Sources */,
 				047F35992B21A4B000574504 /* LicenseView.swift in Sources */,
@@ -868,6 +908,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		5267AC8A2B28A355009FDB2A /* XCRemoteSwiftPackageReference "GrassView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/agilestarskim/GrassView.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		64DE4BA02B26DF0000AD4995 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
@@ -887,6 +935,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5267AC8B2B28A722009FDB2A /* GrassView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5267AC8A2B28A355009FDB2A /* XCRemoteSwiftPackageReference "GrassView" */;
+			productName = GrassView;
+		};
 		64DE4BA12B26E00500AD4995 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 64DE4BA02B26DF0000AD4995 /* XCRemoteSwiftPackageReference "Alamofire" */;

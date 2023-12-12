@@ -40,9 +40,7 @@ struct MainView: View {
                     ScrollView {
                         // MARK: - 상단 텍스트
                         VStack(alignment: .leading, spacing: 8) {
-                            Text("Hi, Ciu")
-                            
-                            Text(loginModel.userLogin ?? "123")
+                            Text("Hi, \(loginModel.userLogin ?? "CYC")")
                             
                             Text("오늘 커밋 잡쉈어?")
                         }
@@ -51,7 +49,11 @@ struct MainView: View {
                         .padding(.leading, 20)
                         
                         // MARK: - 하단 뷰 연결
-                        ProgressView()   
+                        ProgressView()
+                        
+                        // MARK: - 잔디 뷰 연결
+                        CommitView()
+                        
                         // MARK: - 알림장 미리보기
                         TodoPreView()
                     }
