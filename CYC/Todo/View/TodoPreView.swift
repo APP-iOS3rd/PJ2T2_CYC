@@ -39,48 +39,21 @@ struct TodoPreView: View {
                         .frame(width: 350)
                         .offset(x: 22)
                     // MARK: - Todo 미리보기 바디
-                    if todoModel.count == 1 {
-                        ForEach(todoModel.prefix(1)) { list in
-                            HStack {
-                                Image(systemName: "circle.fill")
-                                    .todoPreviewImageModifier()
-                                Spacer()
-                                Text("\(list.title)")
-                                    .todoPreviewTextModifier()
-                            }
-                            .offset(y: 10)
-                            .padding(.leading, 20)
-                        }
-                        .scrollContentBackground(.hidden)
-                        .frame(width: 350)
-                        .offset(y: -15)
-                        Spacer()
-                            .frame(height: 95)
-                    } else if todoModel.count == 2 {
-                        ForEach(todoModel.prefix(2)) { list in
-                            HStack {
-                                Image(systemName: "circle.fill")
-                                    .todoPreviewImageModifier()
-                                Spacer()
-                                Text("\(list.title)")
-                                    .todoPreviewTextModifier()
-                            }
-                            .offset(y: 10)
-                            .padding(.leading, 20)
-                        }
-                        .scrollContentBackground(.hidden)
-                        .frame(width: 350)
-                        .offset(y: -15)
-                        Spacer()
-                            .frame(height: 50)
-                    } else {
+
                         ForEach(todoModel.prefix(3)) { list in
                             HStack {
                                 Image(systemName: "circle.fill")
-                                    .todoPreviewImageModifier()
+                                    .resizable()
+                                    .frame(width: 6, height: 6)
+                                    .foregroundColor(Color.baseColor)
+                                    .padding(.leading, 20)
                                 Spacer()
                                 Text("\(list.title)")
-                                    .todoPreviewTextModifier()
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    .padding(10)
+                                    .listRowBackground(Color.containerColor)
+                                    .font(.pretendardSemiBold_15)
+                                    .foregroundColor(Color.baseColor)
                             }
                             .offset(y: 10)
                             .padding(.leading, 20)
@@ -88,33 +61,11 @@ struct TodoPreView: View {
                         .scrollContentBackground(.hidden)
                         .frame(width: 350)
                         .offset(y: -15)
-                    }
+                        Spacer()
+                            .frame(height: todoModel.count == 1 ? 95 : (todoModel.count == 2 ? 50 : 0))
                 }
             }
         }
-    }
-}
-
-extension Image {
-    func todoPreviewImageModifier() -> some View {
-        self
-            .resizable()
-            .frame(width: 6, height: 6)
-            .foregroundColor(Color.baseColor)
-            .padding(.leading, 20)
-        
-    }
-}
-
-extension Text {
-    func todoPreviewTextModifier() -> some View {
-        self
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(10)
-            .listRowBackground(Color.containerColor)
-            .font(.pretendardSemiBold_15)
-            .foregroundColor(Color.baseColor)
-        
     }
 }
 
