@@ -139,4 +139,11 @@ class LocalNotificationHelper {
             .current()
             .removeDeliveredNotifications(withIdentifiers: identifiers)
     }
+    
+    func removeAllNotifications() {
+        UNUserNotificationCenter
+            .current().removeAllDeliveredNotifications()
+        UNUserNotificationCenter
+            .current().removeAllPendingNotificationRequests()
+    }
 }
