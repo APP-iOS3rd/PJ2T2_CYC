@@ -7,10 +7,23 @@
 
 import SwiftUI
 
+class NotificationSettings: ObservableObject {
+    @Published var isOnNotification: Bool {
+        didSet {
+            UserDefaults.standard.set(isOnNotification, forKey: "isOnNotification")
+        }
+    }
+    
+    init() {
+        self.isOnNotification = UserDefaults.standard.bool(forKey: "isOnNotification")
+    }
+}
 
 struct NotificationView: View {
     
-    @AppStorage("notification") var isOnNotification: Bool = false
+    @AppStorage("notification") var isOnNotification: Bool = UserDefaults.standard.bool(forKey: "notification")
+    //@StateObject var settings = NotificationSettings()
+    
     @Environment(\.dismiss) var dismiss
     
     var backButton : some View {  // <-- 👀 커스텀 버튼
@@ -53,7 +66,7 @@ struct NotificationView: View {
                     .padding(.top, 5)
             }
             .padding(.horizontal)
-            .offset(y: -258)
+            .offset(y: -265)
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: backButton)
@@ -63,7 +76,15 @@ struct NotificationView: View {
         let triggerDate = Calendar.current.date(byAdding: .minute, value: 1, to: Date())! // 예: 현재로부터 1분 후
         
         if isOnNotification {
-        
+            print("알림 on")
+            let triggerDate = Calendar.current.date(byAdding: .minute, value: 1, to: Date())! // 예: 현재로부터 5분 후
+            
+            LocalNotificationHelper
+                .shared
+                .pushReservedNotification(title: "테스트",
+                                          body: "1분뒤",
+                                          date: triggerDate,
+                                          identifier: "RESERVED_NOTI")
             LocalNotificationHelper
                 .shared
                 .pushScheduledNotification(title: "Check Your Commit",
@@ -101,7 +122,8 @@ struct NotificationView: View {
                                            hour: 23,
                                            identifier: "SCHEDULED_NOTI")
         } else {
-            LocalNotificationHelper.shared.removePendingNotification(identifiers: ["SCHEDULED_NOTI"])
+            print("알림 off")
+            LocalNotificationHelper.shared.removeAllNotifications()
         }
     }
 }
