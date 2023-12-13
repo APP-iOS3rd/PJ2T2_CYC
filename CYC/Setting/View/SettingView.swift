@@ -10,6 +10,8 @@ import SwiftUI
 struct SettingView: View {
     
     @Environment(\.dismiss) var dismiss
+    @ObservedObject private var loginModel = LoginModel.shared
+    @AppStorage("isLoggedIn") var isloggedInVIew: Bool = true
     
     var backButton : some View {  // <-- 👀 커스텀 버튼
         Button{
@@ -51,10 +53,15 @@ struct SettingView: View {
                         
                         // MARK: - 로그아웃
 //                        NavigationLink(destination: loginView()) {
+                        Button {
+                            loginModel.logout()
+                            isloggedInVIew = false
+                        } label: {
                             Label("로그아웃", image: "logout")
                                 .font(.pretendardSemiBold_17)
                                 .foregroundColor(Color.logoutColor)
                                 .listRowBackground(Color.containerColor)
+                        }
 //                        }
                     }
                     .scrollContentBackground(.hidden)
