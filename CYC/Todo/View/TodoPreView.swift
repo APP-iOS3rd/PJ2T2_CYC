@@ -5,17 +5,12 @@
 //  Created by 김명현 on 12/11/23.
 //
 
-
 import SwiftUI
 import SwiftData
 
 struct TodoPreView: View {
     
     @Query private var todoModel: [TodoModel]
-    
-    var sortedTodoModel: [TodoModel] { // 작성 시간 순서대로 정렬
-           return todoModel.sorted(by: { $0.createdAt < $1.createdAt })
-       }
     
     var body: some View {
         
@@ -28,9 +23,6 @@ struct TodoPreView: View {
                 VStack(alignment: .leading) {
                     // MARK: - Todo 미리보기 헤더
                     HStack {
-                        Image("drawing")
-                            .resizable()
-                            .frame(width: 40, height: 40)
                         Text("오늘 뭐해?")
                             .font(.pretendardSemiBold_17)
                             .foregroundColor(Color.baseColor)
@@ -40,15 +32,13 @@ struct TodoPreView: View {
                     .frame(height: 50)
                     .offset(y: 5)
                     
-                    
-                    Divider()
-                        .frame(width: 350)
+                
                     // MARK: - Todo 미리보기 바디
                     
                     Spacer()
                         .frame(height: todoModel.count == 0 ? 140 : 0)
 
-                    ForEach(sortedTodoModel.prefix(3)) { list in
+                        ForEach(todoModel.prefix(3)) { list in
                             HStack {
                                 Image(systemName: "circle.fill")
                                     .resizable()
@@ -75,6 +65,7 @@ struct TodoPreView: View {
         }
     }
 }
+
 
 #Preview {
     TodoPreView()
