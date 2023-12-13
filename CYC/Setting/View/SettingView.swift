@@ -83,6 +83,7 @@ struct SettingView: View {
         .scrollDisabled(true)
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: backButton)
+        .DismissGesture()
     }
 }
 

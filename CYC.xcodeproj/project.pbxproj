@@ -60,6 +60,7 @@
 		647986FB2B27EC0B00BA0691 /* extensionOfUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647986FA2B27EC0B00BA0691 /* extensionOfUserDefaults.swift */; };
 		64DE4B9F2B26DECF00AD4995 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DE4B9E2B26DECF00AD4995 /* LoginModel.swift */; };
 		64DE4BA22B26E00500AD4995 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 64DE4BA12B26E00500AD4995 /* Alamofire */; };
+		B195CF762B29EEDE00D72460 /* DismissGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = B195CF752B29EEDE00D72460 /* DismissGesture.swift */; };
 		B1ABEA422B200D3000F3C44A /* CYCApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ABEA412B200D3000F3C44A /* CYCApp.swift */; };
 		B1ABEA462B200D3200F3C44A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1ABEA452B200D3200F3C44A /* Assets.xcassets */; };
 		B1ABEA492B200D3200F3C44A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1ABEA482B200D3200F3C44A /* Preview Assets.xcassets */; };
@@ -144,6 +145,7 @@
 		647986F72B27038900BA0691 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		647986FA2B27EC0B00BA0691 /* extensionOfUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensionOfUserDefaults.swift; sourceTree = "<group>"; };
 		64DE4B9E2B26DECF00AD4995 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		B195CF752B29EEDE00D72460 /* DismissGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissGesture.swift; sourceTree = "<group>"; };
 		B1ABEA3E2B200D3000F3C44A /* CYC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CYC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1ABEA412B200D3000F3C44A /* CYCApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CYCApp.swift; sourceTree = "<group>"; };
 		B1ABEA452B200D3200F3C44A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -444,6 +446,7 @@
 				B1ABEA632B200E5800F3C44A /* fontExtension.swift */,
 				6317B3D72B20514D0039795E /* CustomSpacing.swift */,
 				B1ABEA672B2017E900F3C44A /* colorExtension.swift */,
+				B195CF752B29EEDE00D72460 /* DismissGesture.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -611,6 +614,7 @@
 				5205DD772B2039640013DF68 /* ProgressView.swift in Sources */,
 				64DE4B9F2B26DECF00AD4995 /* LoginModel.swift in Sources */,
 				04EA90242B26E4FC00DDC99E /* TodoPreView.swift in Sources */,
+				B195CF762B29EEDE00D72460 /* DismissGesture.swift in Sources */,
 				5215F1A82B25D44700CE1733 /* DdayButtonView.swift in Sources */,
 				047F359F2B21A4BB00574504 /* TodoModel.swift in Sources */,
 				5267AC882B28987F009FDB2A /* CommitView.swift in Sources */,
@@ -651,7 +655,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = ND6356Y385;
+				DEVELOPMENT_TEAM = A8L5QZ969G;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CYCWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = CYCWidget;
@@ -662,7 +666,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.cw.CYC.CYCWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = thanky.CYC.CYCWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -678,7 +682,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = ND6356Y385;
+				DEVELOPMENT_TEAM = A8L5QZ969G;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CYCWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = CYCWidget;
@@ -689,7 +693,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.cw.CYC.CYCWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = thanky.CYC.CYCWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -827,7 +831,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CYC/Preview Content\"";
-				DEVELOPMENT_TEAM = ND6356Y385;
+				DEVELOPMENT_TEAM = A8L5QZ969G;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CYC/Info.plist;
@@ -842,7 +846,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.cw.CYC;
+				PRODUCT_BUNDLE_IDENTIFIER = thanky.CYC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -860,7 +864,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CYC/Preview Content\"";
-				DEVELOPMENT_TEAM = ND6356Y385;
+				DEVELOPMENT_TEAM = A8L5QZ969G;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CYC/Info.plist;
@@ -875,7 +879,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.cw.CYC;
+				PRODUCT_BUNDLE_IDENTIFIER = thanky.CYC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

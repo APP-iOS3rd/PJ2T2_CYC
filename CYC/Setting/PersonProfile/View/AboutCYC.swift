@@ -67,6 +67,7 @@ struct AboutCYC: View {
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: backButton)
+        .DismissGesture()
     }
 }
 

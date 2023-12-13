@@ -101,6 +101,7 @@ struct TodoView: View {
             .scrollContentBackground(.hidden)
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading: backButton)
+            .DismissGesture()
         }
     }
     
