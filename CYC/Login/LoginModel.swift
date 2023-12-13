@@ -7,15 +7,12 @@
 
 import Foundation
 import Alamofire
+import SwiftSoup
 
 class LoginModel: ObservableObject {
-    
     static let shared = LoginModel()
     
     @Published var code: String?
-//    @Published var access_token: String?
-    @Published var testCase:[String:Int] = [:]
-    
     // accesstoken 을 UserDefaults 저장하는 이유?
     // 커밋 기록을 불러올때 필요함
     // 로그인은 1회성이기 때문에 액세스 토큰을 만들어서 저장해 앱에 로그인 할때마다 불러옴
@@ -42,6 +39,9 @@ class LoginModel: ObservableObject {
         }
     }
     
+    var results: [(String, String)] = []
+    @Published var testCase:[String:Int] = [:]
+    
     init() {
         self.userLogin = UserDefaults.standard.getUserLogin()
         self.access_token = UserDefaults.standard.getAccessToken()
@@ -50,6 +50,10 @@ class LoginModel: ObservableObject {
     
     let scope = "user"
     
+    struct User: Decodable {
+        let login: String
+        let name: String
+    }
     
     // 깃허브 api 에서 제공하는 형식의 로그인 페이지 연결 URL
     var loginURL: URL? {
@@ -92,11 +96,6 @@ class LoginModel: ObservableObject {
         }
     }
     
-    struct User: Decodable {
-        let login: String
-        let name: String
-    }
-    
     // 유저정보를 받아오기 위한 함수
     func getUser() {
         let headers: HTTPHeaders = ["Accept": "application/vnd.github+json",
@@ -111,7 +110,7 @@ class LoginModel: ObservableObject {
                 self.userName = user.name
                 print(self.userName ?? "외않되")
                 print(self.userLogin ?? "외않되")
-                self.getUserEvents()
+                self.getCommitData()
             case .failure(let error):
                 print("Error: \(error.localizedDescription)")
             }
@@ -119,51 +118,61 @@ class LoginModel: ObservableObject {
     }
     
     
-    // 유저이벤트를 받아오기 위한 함수(push, pull request)
-    func getUserEvents() {
-        let headers: HTTPHeaders = ["Accept": "application/vnd.github+json",
-                                    "Authorization": "Bearer \(access_token!)"]
-        let pageNum = [1, 2]
-        var pushEvents:[String:Int] = [:]
-        
-        for num in pageNum{
-            let parameters = ["per_page": 300,
-                              "page": num]
-            
-            AF.request("https://api.github.com/users/\(self.userLogin ?? "")/events",
-                       method: .get, parameters: parameters,
-                       headers: headers)
-            .responseDecodable(of: [Event].self) { response in
-                switch response.result {
-                case .success(let values):
-                    for event in values {
-                        let repoOwner = event.repo.name.split(separator: "/")[0]
-                        if event.type == EventType.pullRequestEvent.rawValue{
-                            let key = String(event.createdAt.prefix(10))
-                            if pushEvents.keys.contains(key){
-                                pushEvents[key]! += 2
-                            }
-                            else{
-                                pushEvents[key] = 2
-                            }
-                        }
-                        if event.type == EventType.pushEvent.rawValue && self.userLogin! == repoOwner{
-                            let key = String(event.createdAt.prefix(10))
-                            let value = (event.payload.commits ?? []).count
-                            
-                            if pushEvents.keys.contains(key){
-                                pushEvents[key]! += value + 1
-                            }
-                            else{
-                                pushEvents[key] = value + 1
-                            }
-                        }
-                    }
-                    self.testCase = pushEvents
-                    
-                case .failure(let error):
-                    print("Error: \(error)")
+    
+    func getCommitData() {
+        if let url = URL(string: "http://github.com/users/\(self.userLogin!)/contributions") {
+            let task = URLSession.shared.dataTask(with: url) { data, response, error in
+                if let error = error {
+                    print("Error fetching data: \(error.localizedDescription)")
+                    return
                 }
+                if let data = data, let html = String(data: data, encoding: .utf8) {
+                    do {
+                        let parsedHtml = try SwiftSoup.parse(html)
+                        let dailyContribution = try parsedHtml.select("td")
+                        
+                        let validCommits = dailyContribution.compactMap { element -> (String, String)? in
+                            guard
+                                let dateString = try? element.attr("data-date"),
+                                let levelString = try? element.attr("data-level"),
+                                !dateString.isEmpty
+                            else { return nil }
+                            
+                            return (dateString, levelString)
+                        }
+                        self.dataToDictionary(validCommits)
+                        
+                    } catch {
+                        print("Error parsing HTML: \(error.localizedDescription)")
+                    }
+                } else {
+                    print("No data received")
+                }
+            }
+            task.resume()
+            
+        } else {
+            print("Invalid URL")
+        }
+    }
+    
+    
+    func dataToDictionary(_ data: [(String, String)]){
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        // 데이터를 날짜를 기준으로 정렬
+//        let sortedData = data.sorted { left, right in
+//            if let leftDate = dateFormatter.date(from: left.0), let rightDate = dateFormatter.date(from: right.0) {
+//                return leftDate < rightDate
+//            }
+//            return false
+//        }
+        // 정렬된 데이터를 딕셔너리로 변환하고 날짜를 String으로 변환하여 데이터를 Int로 변경
+        for tuple in data {
+            if let date = dateFormatter.date(from: tuple.0) {
+                let dateString = dateFormatter.string(from: date)
+                let dataInt = Int(tuple.1) ?? 0 // 데이터를 Int로 변환, 실패하면 기본값 0
+                self.testCase[dateString] = dataInt + 4
             }
         }
     }

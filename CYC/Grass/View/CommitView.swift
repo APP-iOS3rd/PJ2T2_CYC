@@ -32,7 +32,7 @@ struct CommitView: View {
             // 바로 시작되게되면 로그인 부분에서 받아오기 전에 해당 함수가 실행되어 url 부분에서 오류발생
             // 딜레이를 줘서 후에 실행되도록 변경
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
-                loginModel.getUserEvents()
+                loginModel.getCommitData()
             }
         }
     }
