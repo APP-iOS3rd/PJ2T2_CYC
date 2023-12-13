@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct StartView: View {
-    
     @AppStorage("isLoggedIn") var isloggedInVIew: Bool = false
     
     var body: some View {

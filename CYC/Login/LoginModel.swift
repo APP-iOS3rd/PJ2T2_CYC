@@ -167,4 +167,34 @@ class LoginModel: ObservableObject {
             }
         }
     }
+    
+    func logout() {
+        
+        // GitHub에 로그아웃을 위한 URL을 생성합니다.
+        let logoutURL = "https://api.github.com/applications/Iv1.\(client_id)/grant"
+        
+        // 클라이언트 시크릿을 사용하여 요청을 인증합니다.
+        let headers: HTTPHeaders = ["Accept": "application/vnd.github+json",
+                                    "Authorization": "Bearer \(access_token!)",
+                                    "X-GitHub-Api-Version": "2022-11-28"]
+        
+        let params = ["access_token": access_token!] as Dictionary
+        
+        // Alamofire를 사용하여 DELETE 요청을 수행합니다.
+        AF.request(logoutURL, 
+                   method: .delete, parameters: params, encoder: JSONParameterEncoder.default,
+                   headers: headers).response { response in
+            // 로그아웃이 성공하면 현재 세션을 종료합니다.
+            if let statusCode = response.response?.statusCode, statusCode == 204 {
+                print("Logout successful")
+            } else {
+                // 로그아웃에 실패하면 에러 메시지를 출력합니다.
+                print("Logout failed")
+                print(response.response)
+                if let error = response.error {
+                    print("Error: \(error)")
+                }
+            }
+        }
+    }
 }
