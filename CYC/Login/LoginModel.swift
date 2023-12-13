@@ -175,10 +175,10 @@ class LoginModel: ObservableObject {
         
         // 클라이언트 시크릿을 사용하여 요청을 인증합니다.
         let headers: HTTPHeaders = ["Accept": "application/vnd.github+json",
-                                    "Authorization": "Bearer VY65mFeOfCkinUfioNFzS1xyjwdD8m1sjvEu",
+                                    "Authorization": "Bearer \(access_token!)",
                                     "X-GitHub-Api-Version": "2022-11-28"]
         
-        let params = ["access_token": "VY65mFeOfCkinUfioNFzS1xyjwdD8m1sjvEu"] as Dictionary
+        let params = ["access_token": access_token!] as Dictionary
         
         // Alamofire를 사용하여 DELETE 요청을 수행합니다.
         AF.request(logoutURL, 
