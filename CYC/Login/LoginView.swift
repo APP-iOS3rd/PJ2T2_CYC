@@ -45,7 +45,7 @@ struct LoginView: View {
                 .padding()
                 .onOpenURL(perform: { url in
                     if loginModel.handleCodeFromURL(url) {
-                        LoginModel.shared.get_access_token()
+                        loginModel.get_access_token()
                         isloggedInVIew = true
                     }
                 })

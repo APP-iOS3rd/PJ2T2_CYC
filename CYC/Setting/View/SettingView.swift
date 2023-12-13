@@ -73,6 +73,7 @@ struct SettingView: View {
                 .padding(.top, 15)
             }
         }
+        .scrollDisabled(true)
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: backButton)
     }
