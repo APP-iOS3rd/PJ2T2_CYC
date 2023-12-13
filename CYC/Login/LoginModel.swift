@@ -160,19 +160,12 @@ class LoginModel: ObservableObject {
     func dataToDictionary(_ data: [(String, String)]){
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
-        // 데이터를 날짜를 기준으로 정렬
-//        let sortedData = data.sorted { left, right in
-//            if let leftDate = dateFormatter.date(from: left.0), let rightDate = dateFormatter.date(from: right.0) {
-//                return leftDate < rightDate
-//            }
-//            return false
-//        }
         // 정렬된 데이터를 딕셔너리로 변환하고 날짜를 String으로 변환하여 데이터를 Int로 변경
         for tuple in data {
             if let date = dateFormatter.date(from: tuple.0) {
                 let dateString = dateFormatter.string(from: date)
                 let dataInt = Int(tuple.1) ?? 0 // 데이터를 Int로 변환, 실패하면 기본값 0
-                self.testCase[dateString] = dataInt + 4
+                self.testCase[dateString] = dataInt * 3
             }
         }
     }
