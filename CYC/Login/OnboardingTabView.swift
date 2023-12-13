@@ -25,9 +25,29 @@ struct OnboardingTabView: View {
                     .frame(width: 153, height: 82)
             }
             .tag(0)
-            Text("Second Image")
+            
+            VStack {
+                Image("angry")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 177, height: 161)
+                Image("grass")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 153, height: 82)
+            }
                 .tag(1)
-            Text("Third Image")
+            
+            VStack {
+                Image("surprise")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 177, height: 161)
+                Image("grass")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 153, height: 82)
+            }
                 .tag(2)
         })
         .tabViewStyle(PageTabViewStyle())
