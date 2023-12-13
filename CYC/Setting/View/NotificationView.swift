@@ -22,8 +22,6 @@ class NotificationSettings: ObservableObject {
 struct NotificationView: View {
     
     @AppStorage("notification") var isOnNotification: Bool = UserDefaults.standard.bool(forKey: "notification")
-    //@StateObject var settings = NotificationSettings()
-    
     @Environment(\.dismiss) var dismiss
     
     var backButton : some View {  // <-- 👀 커스텀 버튼
@@ -70,6 +68,7 @@ struct NotificationView: View {
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: backButton)
+        .DismissGesture()
     }
     
     func techNotification() {
@@ -78,7 +77,6 @@ struct NotificationView: View {
         if isOnNotification {
             print("알림 on")
             LocalNotificationHelper.shared.printPendingNotification()
-            let triggerDate = Calendar.current.date(byAdding: .minute, value: 1, to: Date())! // 예: 현재로부터 5분 후
             
             LocalNotificationHelper
                 .shared
@@ -135,3 +133,6 @@ struct NotificationView: View {
 #Preview {
     NotificationView().preferredColorScheme(.dark)
 }
+
+
+

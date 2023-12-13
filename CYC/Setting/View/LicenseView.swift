@@ -55,6 +55,7 @@ struct LicenseView: View {
         .background(Color.bgColor)
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: backButton)
+        .DismissGesture()
     }
 }
 
