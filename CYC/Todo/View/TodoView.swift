@@ -114,7 +114,7 @@ struct TodoView: View {
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading: backButton)
             //            .ignoresSafeArea(.keyboard)
-            
+            .DismissGesture()
         }
     }
     
