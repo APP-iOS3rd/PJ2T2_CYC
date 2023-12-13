@@ -11,7 +11,7 @@ struct SettingView: View {
     
     @Environment(\.dismiss) var dismiss
     
-    var backButton : some View {  // <-- 👀 커스텀 버튼
+    var backButton : some View {
         Button{
             dismiss()
         } label: {

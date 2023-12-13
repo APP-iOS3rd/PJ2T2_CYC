@@ -16,6 +16,7 @@
 		047F359F2B21A4BB00574504 /* TodoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047F359C2B21A4BB00574504 /* TodoModel.swift */; };
 		047F35A32B21A4C900574504 /* LicenseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047F35A02B21A4C900574504 /* LicenseViewModel.swift */; };
 		047F35A52B21A4C900574504 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047F35A22B21A4C900574504 /* SettingViewModel.swift */; };
+		04C2B9462B29325F000F1C79 /* keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C2B9452B29325F000F1C79 /* keys.swift */; };
 		04EA90242B26E4FC00DDC99E /* TodoPreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EA90232B26E4FC00DDC99E /* TodoPreView.swift */; };
 		5205DD772B2039640013DF68 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5205DD762B2039640013DF68 /* ProgressView.swift */; };
 		5215F1A42B25CDB500CE1733 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5215F1A32B25CDB500CE1733 /* ModalView.swift */; };
@@ -114,6 +115,7 @@
 		047F359C2B21A4BB00574504 /* TodoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoModel.swift; sourceTree = "<group>"; };
 		047F35A02B21A4C900574504 /* LicenseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicenseViewModel.swift; sourceTree = "<group>"; };
 		047F35A22B21A4C900574504 /* SettingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
+		04C2B9452B29325F000F1C79 /* keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = keys.swift; sourceTree = "<group>"; };
 		04EA90232B26E4FC00DDC99E /* TodoPreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoPreView.swift; sourceTree = "<group>"; };
 		5205DD762B2039640013DF68 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		5215F1A32B25CDB500CE1733 /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
@@ -302,6 +304,7 @@
 				B1E959902B29917300DF64A4 /* keys.swift */,
 				6317B3CA2B2033CD0039795E /* LoginView.swift */,
 				64DE4B9E2B26DECF00AD4995 /* LoginModel.swift */,
+				04C2B9452B29325F000F1C79 /* keys.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -599,6 +602,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5215F1A42B25CDB500CE1733 /* ModalView.swift in Sources */,
+				04C2B9462B29325F000F1C79 /* keys.swift in Sources */,
 				6317B40A2B2183A50039795E /* MainView.swift in Sources */,
 				6317B3D62B2049C60039795E /* AboutCYC.swift in Sources */,
 				647986FB2B27EC0B00BA0691 /* extensionOfUserDefaults.swift in Sources */,
