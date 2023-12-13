@@ -24,21 +24,20 @@ struct TodoView: View {
     }
     
     var backButton : some View {  // <-- 👀 커스텀 버튼
-            Button{
-                dismiss()
-            } label: {
-                HStack {
-                    Image(systemName: "chevron.left") // 화살표 Image
-                        .aspectRatio(contentMode: .fit)
-                        .foregroundStyle(.base)
-                        .bold()
-                }
+        Button{
+            dismiss()
+        } label: {
+            HStack {
+                Image(systemName: "chevron.left") // 화살표 Image
+                    .aspectRatio(contentMode: .fit)
+                    .foregroundStyle(.base)
+                    .bold()
             }
         }
-
+    }
+    
     var body: some View {
         NavigationStack {
-            
             ZStack {
                 Color.bgColor.ignoresSafeArea(.all)
                 
@@ -49,32 +48,44 @@ struct TodoView: View {
                         .padding(.top, 10)
                     List {
                         ForEach(sortedTodoModel) { todo in
-                                HStack {
-                                    Button {
-                                        toggleCompleted(todo)
-                                    } label: {
-                                        Image(systemName: todo.completed ? "checkmark.circle.fill" : "circle")
-                                    }
-                                    .foregroundStyle(todo.completed ? Color.green : Color.base)
+                            HStack {
+                                Button {
+                                    toggleCompleted(todo)
+                                } label: {
+                                    Image(systemName: todo.completed ? "checkmark.circle.fill" : "circle")
+                                }
+                                .foregroundStyle(todo.completed ? Color.green : Color.base)
+                                
+                                if todo.createdAt == sortedTodoModel.last?.createdAt {
+                                    Text(todo.title)
+                                        .foregroundStyle(todo.completed ? Color.gray : Color.base)
+                                        .font(.pretendardSemiBold_15)
                                     
+                                } else {
                                     Text(todo.title)
                                         .foregroundStyle(todo.completed ? Color.gray : Color.base)
                                         .font(.pretendardSemiBold_15)
                                 }
-                                .listRowBackground(Color.bgColor)
+                            }
+                            .listRowBackground(Color.bgColor)
                         }
                         .onDelete(perform: deleteTodos)
                         
                         if isTextFieldShown {
-                            TextField("일정을 입력해주세요", text: $textFieldText, onCommit: {
-                                if !textFieldText.isEmpty {
-                                    addTodo()
-                                }
-                            })
+                            
+                            HStack{
+                                Image(systemName: "circle")
+                                
+                                TextField("일정을 입력해주세요", text: $textFieldText, onCommit: {
+                                    if !textFieldText.isEmpty {
+                                        addTodo()
+                                    }
+                                })    
+                                .font(.pretendardSemiBold_15)
+                            }
+                            .scrollContentBackground(.hidden)
                             .listRowBackground(Color.bgColor)
                             .background(Color.bgColor)
-                            .padding(.leading, 20)
-                            
                         }
                     }
                     .padding(.top, -20)
@@ -92,8 +103,9 @@ struct TodoView: View {
                                 .frame(width: 20, height: 20)
                             Text("새로운 일정")
                         }
-                        .padding(.leading, 30)
+                        .padding(.leading, 25)
                         .padding(.bottom, 10)
+                        
                     }
                     .foregroundColor(Color.baseColor)
                 }
@@ -101,6 +113,8 @@ struct TodoView: View {
             .scrollContentBackground(.hidden)
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading: backButton)
+            //            .ignoresSafeArea(.keyboard)
+            
         }
     }
     
@@ -119,7 +133,7 @@ struct TodoView: View {
     private func deleteTodos(offsets: IndexSet) {
         withAnimation {
             for index in offsets {
-                modelContext.delete(todoModel[index])
+                modelContext.delete(sortedTodoModel[index])
             }
         }
     }
