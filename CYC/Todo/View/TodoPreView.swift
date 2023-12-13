@@ -15,23 +15,22 @@ struct TodoPreView: View {
     var body: some View {
         
         NavigationLink(destination: TodoView()) {
-            ZStack {
+            ZStack(alignment: .leading) {
                 Rectangle()
                     .fill(Color.containerColor)
                     .frame(width: 350, height: 200)
                     .cornerRadius(15.0)
                 VStack(alignment: .leading) {
                     // MARK: - Todo 미리보기 헤더
-                    HStack {
                         Text("오늘 뭐해?")
                             .font(.pretendardSemiBold_17)
                             .foregroundColor(Color.baseColor)
-                            .padding(.leading, 10)
-                    }
-                    .padding(.leading, 10)
-                    .frame(height: 50)
-                    .offset(y: 5)
+                            .padding(.leading, 20)
+                            .padding(.top, 10)
                     
+                    
+                    Divider()
+                        .frame(width: 350)
                 
                     // MARK: - Todo 미리보기 바디
                     
@@ -53,11 +52,11 @@ struct TodoPreView: View {
                                     .font(.pretendardSemiBold_15)
                                     .foregroundColor(Color.baseColor)
                             }
-                            .offset(y: 10)
+                            .offset(y: 25)
                         }
                         .scrollContentBackground(.hidden)
                         .frame(width: 350)
-                        .offset(y: -10)
+                        .offset(y: -20)
                         Spacer()
                             .frame(height: todoModel.count == 1 ? 110 : (todoModel.count == 2 ? 60 : 10))
                 }
