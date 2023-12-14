@@ -18,6 +18,7 @@ struct MainView: View {
     @State private var colorScheme: ColorScheme? = nil
     @State var show = true
     
+    // MARK: 커밋 변수
     var body: some View {
         NavigationStack {
             ZStack {
@@ -72,10 +73,6 @@ struct MainView: View {
                         ProgressView()
                             .padding(.horizontal, 5)
                         
-//                        RoundedRectangle(cornerRadius: 15.0)
-//                            .frame(width: 150, height: 3)
-//                            .padding(.horizontal, 15)
-//                            .foregroundStyle(Color(.systemGray3))
                         
                         // MARK: - 잔디 뷰 연결
                         CommitView()
@@ -90,6 +87,9 @@ struct MainView: View {
                 DLMode(appearanceMode: $appearanceMode, colorScheme: $colorScheme, show: $show)
                     .ignoresSafeArea()
             }
+        }
+        .onAppear() {
+            loginModel.getCommitData()
         }
     }
 }

@@ -35,10 +35,13 @@ struct LoginView: View {
                 })
                 .padding()
                 .onOpenURL(perform: { url in
-                    if loginModel.handleCodeFromURL(url) {
-                        loginModel.get_access_token()
-                        isloggedInVIew = true
-                    }
+                    Task{
+                            let success = await loginModel.handleCodeFromURL(url)
+                            if success{
+                                await loginModel.get_access_token()
+                                isloggedInVIew = true
+                            }
+                        }
                 })
 
                 Text("2023, Check Your Commit all rights reserved.\nPowered by PJ2T2_CYC")

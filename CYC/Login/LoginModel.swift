@@ -11,6 +11,7 @@ import SwiftSoup
 
 class LoginModel: ObservableObject {
     static let shared = LoginModel()
+    @Published var tempday: Int = 0
     
     @Published var code: String?
     // accesstoken 을 UserDefaults 저장하는 이유?
@@ -62,7 +63,7 @@ class LoginModel: ObservableObject {
     }
     
     // 로그인 완료시 지정한 redirectURL으로 전환되는데 그 뒤의 코드 값을 얻기위한 코드
-    func handleCodeFromURL(_ url: URL) -> Bool {
+    func handleCodeFromURL(_ url: URL) async -> Bool {
         if let code = url.absoluteString.components(separatedBy: "code=").last {
             self.code = code
             return true
@@ -71,50 +72,46 @@ class LoginModel: ObservableObject {
     }
     
     // 코드값을 토대로 액세스 토큰을 얻기위한 함수
-    func get_access_token() {
+    func get_access_token() async {
         let params = ["client_id": client_id,
                       "client_secret": client_secret,
                       "code": code]
         
         let headers: HTTPHeaders = ["Accept": "application/json"]
         
-        AF.request("https://github.com/login/oauth/access_token",
-                   method: .post, parameters: params,
-                   headers: headers).responseJSON { response in
-            switch response.result {
-            case let .success(json):
-                if let dic = json as? [String: String] {
-                    let accessToken = dic["access_token"] ?? ""
-                    self.access_token = accessToken
-                    print(self.access_token!)
-                    self.getUser()
-                }
-                
-            case let .failure(error):
-                print(error)
+        do {
+            let response = try await AF.request("https://github.com/login/oauth/access_token",
+                                      method: .post, parameters: params,
+                                      headers: headers).serializingDecodable([String: String].self).value
+            if let token = response["access_token"]{
+                self.access_token = token
+                print(self.access_token!)
+                await self.getUser()
             }
+        } catch {
+            print(error.localizedDescription)
         }
     }
+    
     
     // 유저정보를 받아오기 위한 함수
-    func getUser() {
+    func getUser() async {
+        guard let token = self.access_token else { return }
         let headers: HTTPHeaders = ["Accept": "application/vnd.github+json",
                                     "Authorization": "Bearer \(access_token!)"]
-        
-        AF.request("https://api.github.com/user",
-                   method: .get, parameters: [:],
-                   headers: headers).responseDecodable(of: User.self) { response in
-            switch response.result {
-            case .success(let user):
-                self.userLogin = user.login
-                self.userName = user.name
-                self.getCommitData()
-            case .failure(let error):
-                print("Error: \(error.localizedDescription)")
-            }
+
+        do {
+            let response = try await AF.request("https://api.github.com/user",
+                                                method: .get, parameters: [:],
+                                                headers: headers).serializingDecodable(User.self).value
+            self.userLogin = response.login
+            self.userName = response.name
+            print(self.userLogin!)
+            
+        } catch {
+            print(error.localizedDescription)
         }
     }
-    
     
     
     func getCommitData() {
@@ -155,8 +152,7 @@ class LoginModel: ObservableObject {
         }
     }
     
-    
-    func dataToDictionary(_ data: [(String, String)]){
+    func dataToDictionary(_ data: [(String, String)]) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         // 정렬된 데이터를 딕셔너리로 변환하고 날짜를 String으로 변환하여 데이터를 Int로 변경
@@ -167,6 +163,9 @@ class LoginModel: ObservableObject {
                 self.testCase[dateString] = dataInt * 3
             }
         }
+        self.testCase["2023-12-15"] = 3
+        tempday = findConsecutiveDates(withData: self.testCase)
+        // 여기서 모달뷰를 시켜볼까...
     }
     
     func logout() {
