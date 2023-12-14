@@ -140,8 +140,9 @@ class LoginModel: ObservableObject {
                             
                             return (dateString, levelString)
                         }
-                        self.dataToDictionary(validCommits)
-                        
+                        DispatchQueue.main.async {
+                            self.dataToDictionary(validCommits)
+                        }
                     } catch {
                         print("Error parsing HTML: \(error.localizedDescription)")
                     }
