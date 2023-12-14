@@ -88,6 +88,18 @@ Text("당신의 해결 코드를 넣어주세요!")
 ```
 </details>
 
+## 💻 개발환경 및 라이브러리
+
+    SwiftUI
+    Xcode 15.1
+    iOS 17.1
+    Language - Swift 5.5.3
+    알람 - UserNotification
+    API - Alamofire
+    Todo - SwiftData
+    GrassView - SwiftSoup
+
+
 ## ⏰ 타임라인
 
 <details>
