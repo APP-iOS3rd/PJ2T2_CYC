@@ -150,44 +150,70 @@ Text("당신의 해결 코드를 넣어주세요!")
 
 ```
 📦CYC
- ┣ 📂AD
- ┃ ┣ 📜BannerView.swift
- ┃ ┗ 📜BannerViewController.swift
- ┣ 📂Game
- ┃ ┣ 📜GameVM.swift
- ┃ ┗ 📜GameView.swift
- ┣ 📂Helpers
- ┃ ┣ 📂Font
- ┃ ┃ ┣ 📜Giants-Bold.otf
- ┃ ┃ ┗ 📜Recipekorea.ttf
- ┃ ┣ 📂Sound
- ┃ ┃ ┣ 📜buttomBGM.mp3
- ┃ ┃ ┣ 📜buttonBGM.mp3
- ┃ ┃ ┣ 📜errorBGM.mp3
- ┃ ┃ ┗ 📜mainBGM.mp3
- ┃ ┣ 📜ActivityIndicator.swift
- ┃ ┣ 📜Audio.swift
- ┃ ┣ 📜Colors.swift
- ┃ ┣ 📜Helpers.swift
- ┃ ┣ 📜infoView.swift
- ┃ ┣ 📜MultitouchRepresentable.swift
- ┃ ┗ 📜MultitouchView.swift
- ┣ 📂Main
- ┃ ┣ 📜MainVM.swift
- ┃ ┗ 📜MainView.swift
- ┣ 📂Model
- ┃ ┣ 📜School.swift
- ┃ ┗ 📜Smoke.swift
- ┣ 📂Rank
- ┃ ┗ 📜RankView.swift
- ┣ 📂Search
- ┃ ┣ 📜FirebaseManager.swift
- ┃ ┣ 📜SearchBar.swift
- ┃ ┣ 📜SearchGuide.swift
- ┃ ┣ 📜SearchVM.swift
- ┃ ┗ 📜SearchView.swift
- ┣ 📜ContentView.swift
- ┣ 📜GoogleService-Info.plist
- ┣ 📜Info.plist
- ┗ 📜TouchSchoolApp.swift
+ ┣ 📂 Main
+ ┃ ┗ 📜 MainView.swift
+ ┣ 📂 Login
+ ┃ ┃ ┣ 📂 extension
+ ┃ ┃ ┗ 📜 extensionOfUserDefaults.ttf
+ ┃ ┣ 📜 OnboardingTabView.swift
+ ┃ ┣ 📜 LoginView.swift
+ ┃ ┗ 📜 LoginModel.swift
+ ┣ 📂 Setting
+ ┃ ┣ 📂 PersonProfile
+ ┃ ┃ ┣ 📂 View
+ ┃ ┃ ┃ ┣ 📜 PersonGridView.swift
+ ┃ ┃ ┃ ┗ 📜 AboutCYC.swift
+ ┃ ┃ ┣ 📂 Model
+ ┃ ┃ ┗ ┗ 📜 PersonModel.swift
+ ┃ ┣ 📂 ViewModel
+ ┃ ┃ ┣ 📜 LicenseViewModel.swift
+ ┃ ┃ ┗ 📜 SettingViewModel.swift
+ ┃ ┣ 📂 View
+ ┃ ┃ ┣ 📜 LicenseView.swift
+ ┃ ┃ ┣ 📜 NotificationView.swift
+ ┃ ┃ ┗ 📜 SettingView.swift
+ ┃ ┣ 📂 Model
+ ┃ ┃ ┣ 📜 LicenseModel.swift
+ ┃ ┗ ┗ 📜 SettingModel.swift
+ ┣ 📂 Grass
+ ┃ ┣ 📂 View
+ ┃ ┗ ┗ 📜 CommitView.swift
+ ┣ 📂 Todo
+ ┃ ┣ 📂 View
+ ┃ ┃ ┣ 📜 TodoView.swift
+ ┃ ┃ ┗ 📜 TodoPreView.swift
+ ┃ ┣ 📂 Model
+ ┃ ┗ ┗ 📜 TodoModel.swift
+ ┣ 📂 Progress
+ ┃ ┣ 📂 View
+ ┃ ┃ ┣ 📜 ProgressView.swift
+ ┃ ┃ ┣ 📜 ModalView.swift
+ ┃ ┃ ┣ 📜 ProgressBarView.swift
+ ┃ ┃ ┣ 📜 DdayButtonView.swift
+ ┃ ┗ ┗ 📜 ProgressTextView.swift
+ ┣ 📂 Helper
+ ┃ ┣ 📂 NotificationHelper
+ ┃ ┃ ┗ 📜 LocalNotificationHelper.swift
+ ┃ ┣ 📂 DarkLightMode
+ ┃ ┃ ┣ 📜 DLMode.swift
+ ┃ ┃ ┗ 📜 UIButton.swift
+ ┃ ┣ 📂 Extensions
+ ┃ ┃ ┣ 📜 fontExtension.swift
+ ┃ ┃ ┣ 📜 CustomSpacing.swift
+ ┃ ┃ ┣ 📜 colorExtension.swift
+ ┃ ┃ ┗ 📜 DismissGesture.swift
+ ┃ ┣ 📂 Fonts
+ ┃ ┃ ┣ 📜 Pretendard-Black.otf
+ ┃ ┃ ┣ 📜 Pretendard-Bold.otf
+ ┃ ┃ ┣ 📜 Pretendard-ExtraBold.otf
+ ┃ ┃ ┣ 📜 Pretendard-ExtraLight.otf
+ ┃ ┃ ┣ 📜 Pretendard-Light.otf
+ ┃ ┃ ┣ 📜 Pretendard-Medium.otf
+ ┃ ┃ ┣ 📜 Pretendard-Regular.otf
+ ┃ ┃ ┣ 📜 Pretendard-SemiBold.otf
+ ┃ ┗ ┗ 📜 Pretendard-Thin.otf.swift
+ ┣ 📜 CYCAPP.swift
+ ┣ 📜 AppDelegate.swift
+ ┣ 📜 StartView.swift
+ ┗ 🖼️ Assets
 ```
