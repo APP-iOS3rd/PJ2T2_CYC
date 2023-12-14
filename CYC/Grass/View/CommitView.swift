@@ -20,7 +20,7 @@ struct CommitView: View {
                 .cornerRadius(15.0)
             
             VStack(alignment: .leading) {
-                Text("커밋기록")
+                Text("커밋 기록")
                     .font(.pretendardBold_17)
                     .foregroundStyle(.base)
                     .padding(.bottom, 10)
