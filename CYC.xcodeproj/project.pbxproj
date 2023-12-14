@@ -75,8 +75,6 @@
 		B1ABEA612B200E0B00F3C44A /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1ABEA582B200E0B00F3C44A /* Pretendard-ExtraLight.otf */; };
 		B1ABEA642B200E5800F3C44A /* fontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ABEA632B200E5800F3C44A /* fontExtension.swift */; };
 		B1ABEA682B2017E900F3C44A /* colorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ABEA672B2017E900F3C44A /* colorExtension.swift */; };
-		B1ABEA6A2B20496E00F3C44A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B1ABEA692B20496D00F3C44A /* GoogleService-Info.plist */; };
-		B1ABEA842B20621E00F3C44A /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = B1ABEA832B20621E00F3C44A /* FirebaseMessaging */; };
 		B1E959872B285EE000DF64A4 /* LocalNotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E959862B285EE000DF64A4 /* LocalNotificationHelper.swift */; };
 		B1EE4F032B275B3B0097436B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EE4F022B275B3B0097436B /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
@@ -161,7 +159,6 @@
 		B1ABEA632B200E5800F3C44A /* fontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fontExtension.swift; sourceTree = "<group>"; };
 		B1ABEA652B200F9800F3C44A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B1ABEA672B2017E900F3C44A /* colorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colorExtension.swift; sourceTree = "<group>"; };
-		B1ABEA692B20496D00F3C44A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B1ABEA762B204C6100F3C44A /* CYC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CYC.entitlements; sourceTree = "<group>"; };
 		B1E959862B285EE000DF64A4 /* LocalNotificationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationHelper.swift; sourceTree = "<group>"; };
 		B1EE4F022B275B3B0097436B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -181,7 +178,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1ABEA842B20621E00F3C44A /* FirebaseMessaging in Frameworks */,
 				527B5CF42B29AA3A006A7E5F /* SwiftSoup in Frameworks */,
 				5267AC8C2B28A722009FDB2A /* GrassView in Frameworks */,
 				64DE4BA22B26E00500AD4995 /* Alamofire in Frameworks */,
@@ -205,6 +201,34 @@
 				5267AC872B28987F009FDB2A /* CommitView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		52D16C4A2B2AFA80009A3226 /* NotificationHelper */ = {
+			isa = PBXGroup;
+			children = (
+				B1E959862B285EE000DF64A4 /* LocalNotificationHelper.swift */,
+			);
+			path = NotificationHelper;
+			sourceTree = "<group>";
+		};
+		52D16C4B2B2AFA9F009A3226 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5205DD762B2039640013DF68 /* ProgressView.swift */,
+				5215F1A32B25CDB500CE1733 /* ModalView.swift */,
+				5215F1A52B25D30800CE1733 /* ProgressBarView.swift */,
+				5215F1A72B25D44700CE1733 /* DdayButtonView.swift */,
+				5215F1AB2B26077B00CE1733 /* ProgressTextView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		52D16C4C2B2AFABE009A3226 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				6317B4092B2183A50039795E /* MainView.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		6317B3CE2B2045120039795E /* PersonProfile */ = {
@@ -258,11 +282,7 @@
 		632693642B24AC5A007A2DAF /* Progress */ = {
 			isa = PBXGroup;
 			children = (
-				5205DD762B2039640013DF68 /* ProgressView.swift */,
-				5215F1A32B25CDB500CE1733 /* ModalView.swift */,
-				5215F1A52B25D30800CE1733 /* ProgressBarView.swift */,
-				5215F1A72B25D44700CE1733 /* DdayButtonView.swift */,
-				5215F1AB2B26077B00CE1733 /* ProgressTextView.swift */,
+				52D16C4B2B2AFA9F009A3226 /* View */,
 			);
 			path = Progress;
 			sourceTree = "<group>";
@@ -347,6 +367,7 @@
 		6326936E2B24AD6F007A2DAF /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				52D16C4A2B2AFA80009A3226 /* NotificationHelper */,
 				6367BFA62B29858B0060E8D2 /* DarkLightMode */,
 				B1ABEA622B200E3800F3C44A /* Extensions */,
 				B1ABEA4F2B200D5100F3C44A /* Fonts */,
@@ -395,12 +416,10 @@
 			children = (
 				B1ABEA412B200D3000F3C44A /* CYCApp.swift */,
 				B1EE4F022B275B3B0097436B /* AppDelegate.swift */,
-				B1E959862B285EE000DF64A4 /* LocalNotificationHelper.swift */,
-				6317B4092B2183A50039795E /* MainView.swift */,
 				647986F72B27038900BA0691 /* StartView.swift */,
 				B1ABEA762B204C6100F3C44A /* CYC.entitlements */,
 				B1ABEA652B200F9800F3C44A /* Info.plist */,
-				B1ABEA692B20496D00F3C44A /* GoogleService-Info.plist */,
+				52D16C4C2B2AFABE009A3226 /* Main */,
 				632693672B24ACBB007A2DAF /* Login */,
 				632693662B24AC9A007A2DAF /* Setting */,
 				5267AC862B289830009FDB2A /* Grass */,
@@ -484,7 +503,6 @@
 			);
 			name = CYC;
 			packageProductDependencies = (
-				B1ABEA832B20621E00F3C44A /* FirebaseMessaging */,
 				64DE4BA12B26E00500AD4995 /* Alamofire */,
 				5267AC8B2B28A722009FDB2A /* GrassView */,
 				527B5CF32B29AA3A006A7E5F /* SwiftSoup */,
@@ -521,7 +539,6 @@
 			);
 			mainGroup = B1ABEA352B200D3000F3C44A;
 			packageReferences = (
-				B1ABEA772B20617500F3C44A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				64DE4BA02B26DF0000AD4995 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				5267AC8A2B28A355009FDB2A /* XCRemoteSwiftPackageReference "GrassView" */,
 				527B5CF22B29A9C8006A7E5F /* XCRemoteSwiftPackageReference "SwiftSoup" */,
@@ -563,7 +580,6 @@
 				B1ABEA592B200E0B00F3C44A /* Pretendard-Regular.otf in Resources */,
 				B1ABEA602B200E0B00F3C44A /* Pretendard-Light.otf in Resources */,
 				B1ABEA5D2B200E0B00F3C44A /* Pretendard-Thin.otf in Resources */,
-				B1ABEA6A2B20496E00F3C44A /* GoogleService-Info.plist in Resources */,
 				B1ABEA5F2B200E0B00F3C44A /* Pretendard-Black.otf in Resources */,
 				B1ABEA5C2B200E0B00F3C44A /* Pretendard-ExtraBold.otf in Resources */,
 				B1ABEA5B2B200E0B00F3C44A /* Pretendard-SemiBold.otf in Resources */,
@@ -940,14 +956,6 @@
 				minimumVersion = 5.8.1;
 			};
 		};
-		B1ABEA772B20617500F3C44A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 10.19.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -965,11 +973,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 64DE4BA02B26DF0000AD4995 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
-		};
-		B1ABEA832B20621E00F3C44A /* FirebaseMessaging */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B1ABEA772B20617500F3C44A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseMessaging;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
