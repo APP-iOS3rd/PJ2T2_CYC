@@ -18,6 +18,7 @@ struct TodoView: View {
     
     @State var textFieldText = ""
     @State var isTextFieldShown = false
+    @FocusState var focused: Bool
     
     var sortedTodoModel: [TodoModel] {
         return todoModel.sorted(by: { $0.createdAt < $1.createdAt })
@@ -37,9 +38,12 @@ struct TodoView: View {
     }
     
     var body: some View {
+        
         NavigationStack {
+            
             ZStack {
-                Color.bgColor.ignoresSafeArea(.all)
+                Color.bgColor
+                    .ignoresSafeArea(.all)
                 
                 VStack(alignment: .leading) {
                     Text("오늘 뭐해?")
@@ -72,7 +76,6 @@ struct TodoView: View {
                         .onDelete(perform: deleteTodos)
                         
                         if isTextFieldShown {
-                            
                             HStack{
                                 Image(systemName: "circle")
                                 
@@ -80,16 +83,26 @@ struct TodoView: View {
                                     if !textFieldText.isEmpty {
                                         addTodo()
                                     }
-                                })    
+                                })
                                 .font(.pretendardSemiBold_15)
+                                .focused($focused)
                             }
                             .scrollContentBackground(.hidden)
                             .listRowBackground(Color.bgColor)
                             .background(Color.bgColor)
+                            .onAppear {
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                    self.focused = true
+                                    
+                                }
+                            }
+                            
                         }
                     }
                     .padding(.top, -20)
                     .padding(.horizontal, -20)
+
+                    
                     
                     // MARK: - "새로운 일정" 버튼
                     
@@ -109,18 +122,21 @@ struct TodoView: View {
                     }
                     .foregroundColor(Color.baseColor)
                 }
+                
             }
             .scrollContentBackground(.hidden)
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading: backButton)
-            //            .ignoresSafeArea(.keyboard)
-            .DismissGesture()
+            //            .ignoresSafeArea(.keyboard) "새로운 일정"버튼 안올라오게함, 스크롤안댐
         }
     }
     
+    
+    
+    
     // MARK: - CRUD 함수
     
-    private func addTodo() {
+    func addTodo() {
         withAnimation {
             let newTodo = TodoModel(title: textFieldText)
             if !newTodo.title.isEmpty {
@@ -130,7 +146,7 @@ struct TodoView: View {
         }
     }
     
-    private func deleteTodos(offsets: IndexSet) {
+    func deleteTodos(offsets: IndexSet) {
         withAnimation {
             for index in offsets {
                 modelContext.delete(sortedTodoModel[index])
@@ -147,6 +163,9 @@ struct TodoView: View {
         }
     }
 }
+
+
+
 
 #Preview {
     TodoView().preferredColorScheme(.dark)
