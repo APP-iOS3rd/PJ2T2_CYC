@@ -32,8 +32,6 @@ struct TodoPreView: View {
                             .scaledToFit()
                             .frame(width: 15, height: 15)
                             .foregroundStyle(.base)
-                            .padding(.leading, -10)
-                            
                     }
                     .padding(.leading, 20)
                     .padding(.top, 10)
