@@ -108,8 +108,6 @@ class LoginModel: ObservableObject {
             case .success(let user):
                 self.userLogin = user.login
                 self.userName = user.name
-                print(self.userName ?? "외않되")
-                print(self.userLogin ?? "외않되")
                 self.getCommitData()
             case .failure(let error):
                 print("Error: \(error.localizedDescription)")
@@ -172,7 +170,6 @@ class LoginModel: ObservableObject {
     }
     
     func logout() {
-        
         // GitHub에 로그아웃을 위한 URL을 생성합니다.
         let logoutURL = "https://api.github.com/applications/Iv1.\(client_id)/grant"
         
@@ -184,7 +181,7 @@ class LoginModel: ObservableObject {
         let params = ["access_token": access_token!] as Dictionary
         
         // Alamofire를 사용하여 DELETE 요청을 수행합니다.
-        AF.request(logoutURL, 
+        AF.request(logoutURL,
                    method: .delete, parameters: params, encoder: JSONParameterEncoder.default,
                    headers: headers).response { response in
             // 로그아웃이 성공하면 현재 세션을 종료합니다.
@@ -193,11 +190,56 @@ class LoginModel: ObservableObject {
             } else {
                 // 로그아웃에 실패하면 에러 메시지를 출력합니다.
                 print("Logout failed")
-                print(response.response)
                 if let error = response.error {
                     print("Error: \(error)")
                 }
             }
         }
     }
+
+    func findConsecutiveDates(withData data: [String: Int]) -> Int {
+        // 값이 1 이상인 날짜를 찾아서 sort 해줌
+        let filteredDates = data.filter { $0.value >= 1 }.keys.sorted()
+
+        // 문자열 형식의 날짜를 Date 객체로 변환
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let dateObjects = filteredDates.compactMap { dateFormatter.date(from: $0) }.sorted()
+
+        // 연속된 날짜를 찾습니다.
+        var currentConsecutive: [String] = []
+
+        for (index, date) in dateObjects.enumerated() {
+            if index == 0 {
+                currentConsecutive.append(dateFormatter.string(from: date))
+            } else {
+                let previousDate = dateObjects[index - 1]
+                let currentDate = date
+
+                // 이전 날짜와의 일수 차이를 확인하여 연속된 경우를 판별합니다.
+                if let daysBetween = Calendar.current.dateComponents([.day], from: previousDate, to: currentDate).day, daysBetween == 1 {
+                    currentConsecutive.append(dateFormatter.string(from: date))
+                } else {
+                    currentConsecutive = [dateFormatter.string(from: date)]
+                }
+            }
+        }
+
+        print(currentDateFormatted())
+        
+        // currentDateFormatted(연속된 날짜를 저장한 배열)의 마지막값은 최근 커밋날짜가 되므로 조건문 실행으로 연속 커밋날짜 판독
+        if currentConsecutive.last == currentDateFormatted() {
+            return Int(currentConsecutive.count) + 1
+        } else {
+            return 0
+        }
+    }
+    
+    // 오늘의 날자를 String 타입으로 가져와줌
+    func currentDateFormatted() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        return dateFormatter.string(from: Date())
+    }
+    
 }
