@@ -22,7 +22,7 @@ struct ProgressTextView: View {
                 }
             
             Text("너 만나러 커밋 하는 중...")
-                .font(.pretendardBold_12)
+                .font(.pretendardSemiBold_15)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.leading, 20)

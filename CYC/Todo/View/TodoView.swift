@@ -112,8 +112,8 @@ struct TodoView: View {
                                 .frame(width: 20, height: 20)
                             Text("새로운 일정")
                         }
-                        .padding(.leading, 25)
-                        .padding(.bottom, 10)
+                        .padding([.leading, .bottom], 20)
+                        
                     }
                     .foregroundColor(Color.baseColor)
                 }

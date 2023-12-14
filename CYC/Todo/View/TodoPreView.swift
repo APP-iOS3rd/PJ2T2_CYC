@@ -22,15 +22,25 @@ struct TodoPreView: View {
                     .cornerRadius(15.0)
                 VStack(alignment: .leading) {
                     // MARK: - Todo 미리보기 헤더
+                    HStack(spacing: 230) {
                         Text("오늘 뭐해?")
-                            .font(.pretendardSemiBold_17)
-                            .foregroundColor(Color.baseColor)
-                            .padding(.leading, 20)
-                            .padding(.top, 10)
-                    
-                    
+                        .font(.pretendardBold_17)
+                        .foregroundStyle(.base)
+
+                        Image(systemName: "chevron.right")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 15, height: 15)
+                            .foregroundStyle(.base)
+                            .padding(.leading, -15)
+                            
+                    }
+                    .padding(.leading, 27)
+                    .padding(.top, 10)
+
                     Divider()
                         .frame(width: 350)
+                        .padding(.top, 5)
                 
                     // MARK: - Todo 미리보기 바디
                     

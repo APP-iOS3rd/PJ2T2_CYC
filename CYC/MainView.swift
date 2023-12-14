@@ -54,7 +54,7 @@ struct MainView: View {
                                 .foregroundStyle(.base)
                         }
                     }
-                    .padding(.horizontal)
+                    .padding(.horizontal, 22)
                     .padding(.vertical)
                     
                     ScrollView {
@@ -66,13 +66,20 @@ struct MainView: View {
                         }
                         .font(.pretendardBold_25)
                         .hSpacing(.leading)
-                        .padding(.leading, 20)
+                        .padding(.leading, 25)
                         
                         // MARK: - 하단 뷰 연결
                         ProgressView()
+                            .padding(.horizontal, 5)
+                        
+//                        RoundedRectangle(cornerRadius: 15.0)
+//                            .frame(width: 150, height: 3)
+//                            .padding(.horizontal, 15)
+//                            .foregroundStyle(Color(.systemGray3))
                         
                         // MARK: - 잔디 뷰 연결
-                        CommitView() 
+                        CommitView()
+                            .padding(.top, -15)
                         
                         // MARK: - 알림장 미리보기
                         TodoPreView()

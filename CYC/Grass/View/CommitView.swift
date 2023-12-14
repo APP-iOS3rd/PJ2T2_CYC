@@ -22,7 +22,8 @@ struct CommitView: View {
             VStack(alignment: .leading) {
                 Text("커밋기록")
                     .font(.pretendardBold_17)
-                    .padding(.vertical, 7)
+                    .foregroundStyle(.base)
+                    .padding(.bottom, 10)
                 GrassView(loginModel.testCase, row: 4, col: 10, cellColor: .green)
             }
             .padding(40)
