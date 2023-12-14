@@ -40,7 +40,6 @@ struct ModalView: View {
                 withAnimation {
                     progress = i
                 }
-                
             }
         }
     }

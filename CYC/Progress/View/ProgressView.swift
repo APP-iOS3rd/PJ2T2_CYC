@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct ProgressView: View {
+    @ObservedObject private var loginModel = LoginModel.shared
     @State private var containerWidth: CGFloat = 0
     @State private var showSheet: Bool = false
     
     // MARK: 커밋 변수
-    @State private var step: Int = 50
     @State private var progress: Int = 0
     @State private var goal: Int = 100
+    @State private var step: Int = 50
 
     // MARK: 현재 step까지 가는 progress width 조절
     var maxProgressWidth: Double {
@@ -24,13 +25,14 @@ struct ProgressView: View {
     
     var body: some View {
         VStack{
-            ProgressTextView(step: $step)
+            ProgressTextView()
             HStack{
                 ProgressBarView(containerWidth: $containerWidth, maxProgressWidth: maxProgressWidth)
-                .onAppear {
-                    progress = step
-                    ModalView(progress: $progress, goal: $goal, showSheet: $showSheet).moveDinosaur()
-                }
+                    .onAppear {
+                        progress = loginModel.tempday
+                        ModalView(progress: $progress, goal: $goal, showSheet: $showSheet).moveDinosaur()
+                    }
+
                 ZStack(alignment: .top) {
                     Button {
                         showSheet.toggle()
