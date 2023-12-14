@@ -48,18 +48,18 @@ struct SettingView: View {
                                         Image("\(setting.imageName)")
                                             .resizable()
                                             .frame(width: 26, height: 26)
-                                            .padding(.leading, -10)
                                         Text("\(setting.name)")
                                             .font(.pretendardSemiBold_17)
-                                        
+                                            .padding(.leading, 10)
                                     }
                                 }
                             }
                             .listRowBackground(Color.containerColor)
                         }
+             
                         
                         // MARK: - 로그아웃
-//                        NavigationLink(destination: loginView()) {
+
                         Button {
                             loginModel.logout()
                             isloggedInVIew = false
@@ -67,11 +67,12 @@ struct SettingView: View {
                             Label("로그아웃", image: "logout")
                                 .font(.pretendardSemiBold_17)
                                 .foregroundColor(Color.logoutColor)
-                                .listRowBackground(Color.containerColor)
                         }
-//                        }
+                        .listRowBackground(Color.containerColor)
                     }
                     .scrollContentBackground(.hidden)
+                    
+                    // MARK: - Powered by PJ2T2_CYC
                     
                     VStack {
                         Text("2023, Check Your Commit all rights reserved.")
