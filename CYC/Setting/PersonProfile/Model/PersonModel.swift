@@ -21,5 +21,6 @@ var PersonData: [Person] = [
     Person(name: "MinChae", subtitle: "iOS Developer", image: "kiss_pink", color: .minchae, link: "https://github.com/Hminchae"),
     Person(name: "Minyoung", subtitle: "iOS Developer", image: "beauty", color: .minyoung, link: "https://github.com/Mminy62"),
     Person(name: "MyungHyun", subtitle: "iOS Developer", image: "dizzy", color: .myunhyun, link: "https://github.com/kmh5038"),
-    Person(name: "SungJin", subtitle: "iOS Developer", image: "music", color: .orange, link: "https://github.com/Hsungjin")
+    Person(name: "SungJin", subtitle: "iOS Developer", image: "music", color: .sungjin, link: "https://github.com/Hsungjin"),
+    Person(name: "DongHo", subtitle: "iOS Developer", image: "in-love", color: .dongho, link: "https://github.com/hamfan524")
 ]
