@@ -5,10 +5,19 @@
 //  Created by 김명현 on 12/7/23.
 //
 
-import Foundation
+import SwiftUI
+import SwiftData
 
-struct TodoModel: Identifiable {
-    let id = UUID()
-    let title: String
-    
+@Model
+final class TodoModel: Identifiable {
+    var id = UUID()
+    var title: String
+    var createdAt = Date()
+    var completed = false
+
+    init(title: String = "") {
+        self.title = title
+    }
+
 }
+

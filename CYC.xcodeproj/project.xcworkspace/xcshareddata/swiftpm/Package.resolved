@@ -10,6 +10,15 @@
       }
     },
     {
+      "identity" : "alamofire",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Alamofire/Alamofire",
+      "state" : {
+        "revision" : "3dc6a42c7727c49bf26508e29b0a0b35f9c7e1ad",
+        "version" : "5.8.1"
+      }
+    },
+    {
       "identity" : "app-check",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/google/app-check.git",
@@ -52,6 +61,15 @@
       "state" : {
         "revision" : "bc27fad73504f3d4af235de451f02ee22586ebd3",
         "version" : "7.12.1"
+      }
+    },
+    {
+      "identity" : "grassview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/agilestarskim/GrassView.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "4a56e08df54dfde56d0032a858bcfbf7d9a3f04a"
       }
     },
     {
@@ -115,6 +133,15 @@
       "state" : {
         "revision" : "65e8f29b2d63c4e38e736b25c27b83e012159be8",
         "version" : "1.25.2"
+      }
+    },
+    {
+      "identity" : "swiftsoup",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/scinfu/SwiftSoup.git",
+      "state" : {
+        "revision" : "8b6cf29eead8841a1fa7822481cb3af4ddaadba6",
+        "version" : "2.6.1"
       }
     }
   ],

@@ -7,9 +7,35 @@
 
 import SwiftUI
 
+class NotificationSettings: ObservableObject {
+    @Published var isOnNotification: Bool {
+        didSet {
+            UserDefaults.standard.set(isOnNotification, forKey: "isOnNotification")
+        }
+    }
+    
+    init() {
+        self.isOnNotification = UserDefaults.standard.bool(forKey: "isOnNotification")
+    }
+}
+
 struct NotificationView: View {
     
-    @State var isOnNotification = false
+    @AppStorage("notification") var isOnNotification: Bool = UserDefaults.standard.bool(forKey: "notification")
+    @Environment(\.dismiss) var dismiss
+    
+    var backButton : some View {  // <-- 👀 커스텀 버튼
+        Button{
+            dismiss()
+        } label: {
+            HStack {
+                Image(systemName: "chevron.left") // 화살표 Image
+                    .aspectRatio(contentMode: .fit)
+                    .foregroundStyle(.base)
+                    .bold()
+            }
+        }
+    }
     
     var body: some View {
         
@@ -23,7 +49,7 @@ struct NotificationView: View {
                     // MARK: - 알림 설정 토글
                     Text("알림 설정")
                         .font(.pretendardBold_25)
-                })
+                }).onChange(of: isOnNotification, initial: false, techNotification)
                 
                 // MARK: - 알림 설정 상세 설명
                 Text("오후 7시부터 12시까지 정각 시간마다 알림")
@@ -37,8 +63,69 @@ struct NotificationView: View {
                     .foregroundColor(Color.logoutColor)
                     .padding(.top, 5)
             }
-            .padding()
-            .offset(y: -250)
+            .padding(.horizontal)
+            .offset(y: -265)
+        }
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: backButton)
+        .DismissGesture()
+    }
+    
+    func techNotification() {
+        let triggerDate = Calendar.current.date(byAdding: .minute, value: 1, to: Date())! // 예: 현재로부터 1분 후
+        
+        if isOnNotification {
+            print("알림 on")
+            LocalNotificationHelper.shared.printPendingNotification()
+            
+            LocalNotificationHelper
+                .shared
+                .pushReservedNotification(title: "테스트",
+                                          body: "1분뒤",
+                                          date: triggerDate,
+                                          identifier: "RESERVED_NOTI")
+            LocalNotificationHelper
+                .shared
+                .pushScheduledNotification(title: "Check Your Commit",
+                                           body: "6시인데.. 커밋 안 해요?",
+                                           hour: 18,
+                                           identifier: "SCHEDULED_NOTI18")
+            LocalNotificationHelper
+                .shared
+                .pushScheduledNotification(title: "Check Your Commit",
+                                           body: "커밋만 치고 푸시 안하신건 아니죠?",
+                                           hour: 19,
+                                           identifier: "SCHEDULED_NOTI19")
+            LocalNotificationHelper
+                .shared
+                .pushScheduledNotification(title: "Check Your Commit",
+                                           body: "커밋하고 성공시대 시작됐다. 에 듀 윌 !",
+                                           hour: 20,
+                                           identifier: "SCHEDULED_NOTI20")
+            LocalNotificationHelper
+                .shared
+                .pushScheduledNotification(title: "Check Your Commit",
+                                           body: "너의 커밋을 누르고..설레임에 푸쉬 누르다..",
+                                           hour: 21,
+                                           identifier: "SCHEDULED_NOTI21")
+            LocalNotificationHelper
+                .shared
+                .pushScheduledNotification(title: "Check Your Commit",
+                                           body: "치우랑 사귈래 커밋할래",
+                                           hour: 22,
+                                           identifier: "SCHEDULED_NOTI22")
+            LocalNotificationHelper
+                .shared
+                .pushScheduledNotification(title: "Check Your Commit",
+                                           body: "성공하면 커밋 실패하면 반역",
+                                           hour: 23,
+                                           identifier: "SCHEDULED_NOTI23")
+        } else {
+            print("알림 off")
+            LocalNotificationHelper.shared.printPendingNotification()
+            LocalNotificationHelper.shared.removeAllNotifications()
+            print("팬딩중인 알림:")
+            LocalNotificationHelper.shared.printPendingNotification()
         }
     }
 }
@@ -46,3 +133,6 @@ struct NotificationView: View {
 #Preview {
     NotificationView().preferredColorScheme(.dark)
 }
+
+
+

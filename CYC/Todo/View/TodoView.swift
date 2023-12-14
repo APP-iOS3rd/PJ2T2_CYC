@@ -6,41 +6,157 @@
 //
 
 import SwiftUI
+import SwiftData
+
 
 struct TodoView: View {
     
-    var todoList = TodoViewModel().todoList
+    @Environment(\.dismiss) var dismiss
+    @Environment(\.modelContext) private var modelContext
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @Query private var todoModel: [TodoModel]
     
-    var body: some View {
-        ZStack {
-            VStack {
-                // MARK: - 해더
-                HStack {
-                    Text("오늘 뭐해?")
-                        .font(.pretendardBold_25)
-                    Spacer()
-                    Button {
-                        
-                    } label: {
-                        Image(systemName: "plus")
-                            .resizable()
-                            .foregroundColor(Color.baseColor)
-                            .frame(width: 25,height: 25)
-                    }
-                }
-                .padding()
-                
-                // MARK: - 리스트
-                List {
-                    ForEach(todoList) { list in
-                        Text("\(list.title)")
-                    }
-                }
+    @State var textFieldText = ""
+    @State var isTextFieldShown = false
+    @FocusState var focused: Bool
+    
+    var sortedTodoModel: [TodoModel] { // 생성시간 오래된 순으로 정렬
+        return todoModel.sorted(by: { $0.createdAt < $1.createdAt })
+    }
+    
+    var backButton : some View {  // 커스텀 버튼
+        Button{
+            dismiss()
+        } label: {
+            HStack {
+                Image(systemName: "chevron.left") // 화살표 Image
+                    .aspectRatio(contentMode: .fit)
+                    .foregroundStyle(.base)
+                    .bold()
             }
         }
+    }
+    
+    var body: some View {
         
+        NavigationStack {
+            
+            ZStack {
+                Color.bgColor // 배경색 변경
+                    .ignoresSafeArea(.all)
+                
+                // MARK: - 헤더
+                
+                VStack(alignment: .leading) {
+                    Text("오늘 뭐해?")
+                        .font(.pretendardBold_25)
+                        .padding(.leading, 20)
+                        .padding(.top, 10)
+                    
+                    // MARK: - 리스트
+                    
+                    List {
+                        ForEach(sortedTodoModel) { todo in
+                            HStack {
+                                Button {
+                                    toggleCompleted(todo)
+                                } label: {    // 완료여부에 따라 이미지 변경
+                                    Image(systemName: todo.completed ? "checkmark.circle.fill" : "circle")
+                                }
+                                .foregroundStyle(todo.completed ? Color.green : Color.base) // 완료여부에 따라 이미지 색 변경
+                                
+                                Text(todo.title)
+                                    .foregroundStyle(todo.completed ? Color.gray : Color.base) // 완료여부에 따라 폰트 색 변경
+                                    .font(.pretendardSemiBold_15)
+                            }
+                            .listRowBackground(Color.bgColor)
+                        }
+                        .onDelete(perform: deleteTodos)
+                        
+                        if isTextFieldShown {   // textField 생성 조건문
+                            HStack{
+                                Image(systemName: "circle")
+                                
+                                TextField("일정을 입력해주세요", text: $textFieldText, onCommit: {
+                                    if !textFieldText.isEmpty {
+                                        addTodo()
+                                    }
+                                })
+                                .font(.pretendardSemiBold_15)
+                                .focused($focused)
+                            }
+                            .scrollContentBackground(.hidden)
+                            .listRowBackground(Color.bgColor)
+                            .background(Color.bgColor)
+                            .onAppear {  // 텍스트 필드 생성시 키보드 자동 등장
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                    self.focused = true
+                                }
+                            }
+                        }
+                    }
+                    .padding(.top, -20)
+                    .padding(.horizontal, -20)
+                    
+                    
+                    
+                    // MARK: - "새로운 일정" 버튼
+                    
+                    Button {
+                        isTextFieldShown.toggle()
+                        textFieldText = ""
+                    } label: {
+                        HStack {
+                            Image(systemName: "plus.circle.fill")
+                                .resizable()
+                                .frame(width: 20, height: 20)
+                            Text("새로운 일정")
+                        }
+                        .padding(.leading, 25)
+                        .padding(.bottom, 10)
+                    }
+                    .foregroundColor(Color.baseColor)
+                }
+                
+            }
+            .scrollContentBackground(.hidden)
+            .navigationBarBackButtonHidden(true)
+            .navigationBarItems(leading: backButton)
+//          .ignoresSafeArea(.keyboard) "새로운 일정"버튼 안올라오게함, 스크롤안댐
+        }
+    }
+    
+    
+    // MARK: - CRUD 함수
+    
+    func addTodo() {
+        withAnimation {
+            let newTodo = TodoModel(title: textFieldText)
+            if !newTodo.title.isEmpty {
+                modelContext.insert(newTodo)
+                isTextFieldShown.toggle()
+            }
+        }
+    }
+    
+    func deleteTodos(offsets: IndexSet) {
+        withAnimation {
+            for index in offsets {
+                modelContext.delete(sortedTodoModel[index])
+            }
+        }
+    }
+    
+    func toggleCompleted(_ todoItem: TodoModel) {
+        todoItem.completed.toggle()
+        do {
+            try modelContext.save()
+        } catch {
+            print(error.localizedDescription)
+        }
     }
 }
+
 
 #Preview {
     TodoView().preferredColorScheme(.dark)
