@@ -247,6 +247,273 @@ class LoginModel: ObservableObject {
 
 </details>
 
+### Step3
+
+<details>
+<summary>FCM에서 userNotifications로 전환한 이유</summary>
+
+처음 구현하고자 했던 기능의 순서는 다음과 같았다.
+
+> 1. `APNs`에 디바이스 `토큰`을 요청
+> 2. `APNs`에서 받은 디바이스 `토큰`을 `Push server`에 넘김
+> 3. `APNs`에 푸쉬알림을 보낼 데이터를 전달
+> 4. `APNs`에 있는 데이터를 받아서 유저의 폰에서 알림 전달
+
+```Swift
+import SwiftUI
+import FirebaseCore
+import FirebaseMessaging
+
+class AppDelegate: NSObject, UIApplicationDelegate {
+    func application(_ application: UIApplication,
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        FirebaseApp.configure()
+
+        // 원격 알림 등록
+        if #available(iOS 10.0, *) {
+            // For iOS 10 display notification (sent via APNS)
+            UNUserNotificationCenter.current().delegate = self
+
+            let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+            UNUserNotificationCenter.current().requestAuthorization(
+                options: authOptions,
+                completionHandler: { _, _ in }
+            )
+        } else {
+            let settings: UIUserNotificationSettings =
+            UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+            application.registerUserNotificationSettings(settings)
+        }
+
+        application.registerForRemoteNotifications()
+
+        // Firebase 가 푸시 메시지를 대신 전송할 수 있도록 대리자를 설정하는 과정 (MessagingDelegate)
+        Messaging.messaging().delegate = self
+
+
+        // 푸시 포그라운드 설정
+        UNUserNotificationCenter.current().delegate = self
+
+        return true
+        //Messaging에 등록된 토큰은 messaging:didReceiveRegistrationToken 프로토콜 메서드를 1회 호출함 - 새로 등록된 토큰이라면 애플리케이션 서버로 전송/ 아니라면 등록된 토큰을 구독 처리해줌
+    }
+
+
+    // fcm 토큰이 등록 되었을 때
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        Messaging.messaging().apnsToken = deviceToken
+    }
+}
+
+@main
+struct CYCApp: App {
+struct YourApp: App {
+    // register app delegate for Firebase setup
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    
+
+    var body: some Scene {
+        WindowGroup {
+            AboutCYC()
+        }
+    }
+}
+extension AppDelegate : MessagingDelegate {
+
+    // fcm 등록 토큰을 받았을 때
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
+        print("Firebase registration token: \(String(describing: fcmToken))")
+        let dataDict: [String: String] = ["token": fcmToken ?? ""]
+        NotificationCenter.default.post(
+            name: Notification.Name("FCMToken"),
+            object: nil,
+            userInfo: dataDict
+        )
+    }
+}
+
+extension AppDelegate : UNUserNotificationCenterDelegate {
+
+    // 푸시메세지가 앱이 켜져 있을때 나올때
+    // completionHandler로 "UNNotificationPresentationOptions"를 반환함
+    // 사용자가 머무르고 있는 화면에 따라 포그라운드 상태에서의 푸시를 보여줄지 아닐지에 대한 분기처리가 가능(ex.카톡채팅방에서 푸시를 띄우지 않는 등)
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                willPresent notification: UNNotification,
+                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+
+        let userInfo = notification.request.content.userInfo
+
+        print("willPresent: userInfo: ", userInfo)
+
+        completionHandler([.banner, .sound, .badge])
+
+        // Notification 분기처리
+        if userInfo[AnyHashable("Check Your Commit")] as? String == "project" {
+            print("CYC project")
+        }else {
+            print("NOTHING")
+        }
+    }
+
+    // 푸시메세지를 받았을 때
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                didReceive response: UNNotificationResponse,
+                                withCompletionHandler completionHandler: @escaping () -> Void) {
+        let userInfo = response.notification.request.content.userInfo
+        print("didReceive: userInfo: ", userInfo)
+        completionHandler()
+    }
+}
+```
+
+위 코드로 토큰을 받아 수동으로 Firebase messiging 서버에 직접 등록하고 앱에 알림을 받는데에 성공했다.하지만 문제는 다수 유저의 토큰을 어떻게 받아서 메시징 서버에 올려주느냐였다. 서버없이 FCM만 사용하여 다음 두 조건을 동시에 만족하는 유저에게만 알림을 줄 수 있는 방법을 생각하여야 했다.
+> - 사용자가 일정 시간에 커밋하였는가
+> - 사용자가 알림 설정 토글을 on 하였는가
+
+사용자의 정보를 서버가 저장하고 있어야 위 두 조건을 만족하는 기능을 구현할 수 있다고 결론을 내렸고, 이번 개발 기간에는 `사용자가 알림 설정 토글을 on 하였을 때` 7시 이후 매 시간마다 알림을 주는 기능만을 구현하기로 하였다. 이 기능을 구현하는데에 FCM을 굳이 사용하지 않고 내부 라이브러리인 userNotifications 을 사용하였다. 
+
+- `AppDelegate.swift`
+```Swift
+import SwiftUI
+import UserNotifications
+
+class AppDelegate: NSObject, UIApplicationDelegate {
+    
+    func application(_ application: UIApplication,
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        
+        // 앱 실행 시 사용자에게 알림 허용 권한을 받음
+        UNUserNotificationCenter.current().delegate = self
+        
+        
+        let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound] // 필요한 알림 권한을 설정
+        UNUserNotificationCenter.current().requestAuthorization(
+            options: authOptions,
+            completionHandler: { _, _ in }
+        )
+        return true
+    }
+}
+
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    
+    // Foreground(앱 켜진 상태)에서도 알림 오는 설정
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.list, .banner])
+    }
+}
+```
+앱델리게이트에서 알림권한을 설정해주었다.
+- `NotificationHelper.swift`
+```swift
+import Foundation
+import UIKit
+import UserNotifications
+
+//
+// - Note: 싱글턴으로 구현 `LocalNotificationHelper.shared`를 통해 접근
+class LocalNotificationHelper {
+    static let shared = LocalNotificationHelper()
+    
+    private init() {}
+    
+    ///Push Notification에 대한 인증 설정 함수
+    func setAuthorization() {
+        let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound] // 필요한 알림 권한을 설정
+        UNUserNotificationCenter.current().requestAuthorization(
+            options: authOptions,
+            completionHandler: { _, _ in }
+        )
+    }
+    // 하루를 주기로 특정 시간에 Notification을 보내는 코드
+    func pushScheduledNotification(title: String, body: String, hour: Int, identifier: String) {
+        
+        assert(hour >= 0 || hour <= 24, "시간은 0이상 24이하로 입력해주세요.")
+        
+        let notificationContent = UNMutableNotificationContent()
+        notificationContent.title = title
+        notificationContent.body = body
+        
+        var dateComponents = DateComponents()
+        dateComponents.hour = hour  // 알림을 보낼 시간 (24시간 형식)
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+        let request = UNNotificationRequest(identifier: identifier,
+                                            content: notificationContent,
+                                            trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(request) { error in
+            if let error = error {
+                print("Notification Error: ", error)
+            }
+        }
+    }
+    
+    /// 대기중인 Push Notification을 출력
+    func printPendingNotification() {
+        UNUserNotificationCenter.current().getPendingNotificationRequests { requests in
+            for request in requests {
+                print("Identifier: \(request.identifier)")
+                print("Title: \(request.content.title)")
+                print("Body: \(request.content.body)")
+                print("Trigger: \(String(describing: request.trigger))")
+                print("---")
+            }
+        }
+    }
+    //알림 전체삭제
+    func removeAllNotifications() {
+        UNUserNotificationCenter
+            .current().removeAllDeliveredNotifications()
+        UNUserNotificationCenter
+            .current().removeAllPendingNotificationRequests()
+    }
+}
+```
+NotificationHelper 클래스에서 알림에 필요한 함수를 구현하였다.
+- `NotificationView`
+```swift
+class NotificationSettings: ObservableObject {
+    @Published var isOnNotification: Bool {
+        didSet {
+            UserDefaults.standard.set(isOnNotification, forKey: "isOnNotification")
+        }
+    }
+    
+    init() {
+        self.isOnNotification = UserDefaults.standard.bool(forKey: "isOnNotification")
+    }
+}
+.
+.
+VStack(alignment: .leading) {
+    Toggle(isOn: $isOnNotification, label: {
+        
+        // MARK: - 알림 설정 토글
+        Text("알림 설정")
+            .font(.pretendardBold_25)
+    }).onChange(of: isOnNotification, initial: false, techNotification)
+.
+.
+func techNotification() {
+    if isOnNotification {
+      LocalNotificationHelper.shared.printPendingNotification()
+      LocalNotificationHelper
+        .shared
+        .pushScheduledNotification(title: "Check Your Commit",
+                                   body: "커밋해줘여..🫶",
+                                   hour: 18,
+                                   identifier: "SCHEDULED_NOTI18")
+    } else if {
+        LocalNotificationHelper.shared.removeAllNotifications()
+    }
+}
+.
+.
+```
+알림 설정뷰에서 토글값이 on일 때 알림이 알림센터에 올라가도록 구현하고, off 시엔 알림센터의 알림을 모두 삭제하도록 구현하였다. 
+</details>
+
 ## <img src="https://github.com/APP-iOS3rd/PJ2T2_CYC/assets/120264964/df66d998-8c93-4021-8a4b-939b88563ab3" width="40"> 개발환경 및 라이브러리
 
     SwiftUI
