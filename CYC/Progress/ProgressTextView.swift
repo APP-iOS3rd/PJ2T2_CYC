@@ -9,17 +9,15 @@ import SwiftUI
 
 struct ProgressTextView: View {
     @Binding var step: Int
-    @State private var days: Int = 0
     @ObservedObject private var loginModel = LoginModel.shared
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            let _ = days
-            Text("커밋 챌린지 \(days)일째\n")
+            Text("커밋 챌린지 \(step)일째\n")
                 .font(.pretendardBold_17)
                 .onAppear() {
-                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.5) {
-                        days = loginModel.findConsecutiveDates(withData: loginModel.testCase)
+                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.2) {
+                        self.step = loginModel.findConsecutiveDates(withData: loginModel.testCase)
                     }
                 }
             
