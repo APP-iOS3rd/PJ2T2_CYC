@@ -40,6 +40,7 @@ struct TodoView: View {
         NavigationStack {
             ZStack {
                 Color.bgColor.ignoresSafeArea(.all)
+                   
                 
                 VStack(alignment: .leading) {
                     Text("오늘 뭐해?")
@@ -80,12 +81,13 @@ struct TodoView: View {
                                     if !textFieldText.isEmpty {
                                         addTodo()
                                     }
-                                })    
+                                })
                                 .font(.pretendardSemiBold_15)
                             }
                             .scrollContentBackground(.hidden)
                             .listRowBackground(Color.bgColor)
                             .background(Color.bgColor)
+                            
                         }
                     }
                     .padding(.top, -20)
@@ -110,13 +112,17 @@ struct TodoView: View {
                     .foregroundColor(Color.baseColor)
                 }
             }
+            .DismissGesture()
             .scrollContentBackground(.hidden)
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading: backButton)
+            
             //            .ignoresSafeArea(.keyboard)
-            .DismissGesture()
+            
         }
+        
     }
+    
     
     // MARK: - CRUD 함수
     

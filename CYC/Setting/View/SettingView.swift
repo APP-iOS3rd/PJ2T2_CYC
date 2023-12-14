@@ -44,8 +44,15 @@ struct SettingView: View {
                         Section {
                             ForEach(SettingViewModel().settings, id: \.self) { setting in
                                 NavigationLink(destination: setting.destination) {
-                                    Label(setting.name, image: setting.imageName)
-                                        .font(.pretendardSemiBold_17)
+                                    HStack {
+                                        Image("\(setting.imageName)")
+                                            .resizable()
+                                            .frame(width: 26, height: 26)
+                                            .padding(.leading, -10)
+                                        Text("\(setting.name)")
+                                            .font(.pretendardSemiBold_17)
+                                        
+                                    }
                                 }
                             }
                             .listRowBackground(Color.containerColor)
