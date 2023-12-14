@@ -32,10 +32,10 @@ struct TodoPreView: View {
                             .scaledToFit()
                             .frame(width: 15, height: 15)
                             .foregroundStyle(.base)
-                            .padding(.leading, -15)
+                            .padding(.leading, -10)
                             
                     }
-                    .padding(.leading, 27)
+                    .padding(.leading, 20)
                     .padding(.top, 10)
 
                     Divider()
