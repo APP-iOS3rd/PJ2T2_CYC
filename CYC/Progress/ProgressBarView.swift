@@ -18,7 +18,7 @@ struct ProgressBarView: View {
                 RoundedRectangle(cornerRadius: 60)
                     .foregroundColor(.bgColor)
                     .onAppear {
-                        containerWidth = geo.size.width
+                        containerWidth = UIScreen.main.bounds.width - 90
                     }
             }
             RoundedRectangle(cornerRadius: 60)
