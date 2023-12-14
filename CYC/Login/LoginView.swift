@@ -20,15 +20,6 @@ struct LoginView: View {
                 Spacer()
                     .frame(height: 100)
                 
-                // MARK: - 상단 텍스트 바 텍스트 라인
-                VStack(spacing: 8) {
-                    Text("머징 보고있나?")
-                        .font(.pretendardBold_25)
-                    Text("우리는 머징을 따라간다\n 참고했다 정도?\n(사실 거의 다 따라했다)")
-                        .font(.pretendardBold_15)
-                }
-                .multilineTextAlignment(.center)
-                
                 // MARK: - 중간 온보딩 뷰
                 VStack {
                     OnboardingTabView()

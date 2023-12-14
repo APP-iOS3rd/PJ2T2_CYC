@@ -72,7 +72,7 @@ struct MainView: View {
                         ProgressView()
                         
                         // MARK: - 잔디 뷰 연결
-                        CommitView()
+                        CommitView() 
                         
                         // MARK: - 알림장 미리보기
                         TodoPreView()
