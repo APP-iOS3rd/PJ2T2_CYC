@@ -78,19 +78,12 @@ struct NotificationView: View {
         let triggerDate = Calendar.current.date(byAdding: .minute, value: 1, to: Date())! // 예: 현재로부터 1분 후
         
         if isOnNotification {
-            print("알림 on")
             LocalNotificationHelper.shared.printPendingNotification()
             
             LocalNotificationHelper
                 .shared
-                .pushReservedNotification(title: "테스트",
-                                          body: "1분뒤",
-                                          date: triggerDate,
-                                          identifier: "RESERVED_NOTI")
-            LocalNotificationHelper
-                .shared
                 .pushScheduledNotification(title: "Check Your Commit",
-                                           body: "6시인데.. 커밋 안 해요?",
+                                           body: "커밋해줘여..🫶",
                                            hour: 18,
                                            identifier: "SCHEDULED_NOTI18")
             LocalNotificationHelper
@@ -124,7 +117,6 @@ struct NotificationView: View {
                                            hour: 23,
                                            identifier: "SCHEDULED_NOTI23")
         } else {
-            print("알림 off")
             LocalNotificationHelper.shared.printPendingNotification()
             LocalNotificationHelper.shared.removeAllNotifications()
             print("팬딩중인 알림:")
