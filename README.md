@@ -46,7 +46,7 @@
 
 |라이트 모드|다크 모드|
 |:--:|:--:|
-|<img src="-" width="300">|<img src="-" width="300">|
+|<img src="https://github.com/APP-iOS3rd/PJ2T2_CYC/assets/120264964/fca4d518-9f9b-4f7e-a72f-fa45129843ef" width="300">|<img src="https://github.com/APP-iOS3rd/PJ2T2_CYC/assets/120264964/17639f09-f73f-4de2-97b9-607e01b44148" width="300">|
 
 ## <img src="https://github.com/APP-iOS3rd/PJ2T2_CYC/assets/120264964/df66d998-8c93-4021-8a4b-939b88563ab3" width="40"> 타임라인
 
