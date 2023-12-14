@@ -1,8 +1,8 @@
 # <img src="https://github.com/APP-iOS3rd/PJ2T2_CYC/assets/120264964/df66d998-8c93-4021-8a4b-939b88563ab3" width="40"> PJ2T2_CYC <img src="https://github.com/APP-iOS3rd/PJ2T2_CYC/assets/120264964/df66d998-8c93-4021-8a4b-939b88563ab3" width="40">
 
-## 📖 목차
+## <img src="https://github.com/APP-iOS3rd/PJ2T2_CYC/assets/120264964/df66d998-8c93-4021-8a4b-939b88563ab3" width="40"> 목차
 
-1. [소개](#🌱-소개)
+1. [소개](#-소개)
 2. [주요기능](#❗-주요기능)
 3. [실행화면](#📱-실행-화면)
 4. [트러블슈팅](#❓-트러블-슈팅)
@@ -10,25 +10,25 @@
 6. [타임라인](#⏰-타임라인)
 7. [Tree](#🌲-tree)
 
-## 🌱 소개
+## <img src="https://github.com/APP-iOS3rd/PJ2T2_CYC/assets/120264964/df66d998-8c93-4021-8a4b-939b88563ab3" width="40"> 소개
 
 ### 1일 1커밋을 하고 싶은데 자꾸 까먹어.. 알림 있었으면 좋겠다..
 
 > `열정 많은 개발자`, push 해야되는데 잊어버린 마감 급한 개발자 등등을 위한 1일 1커밋 강요앱  
 > 저희 CYC(Check your commit)는 크게 commit 알림 기능, 간단한 todo list를 갖고 있습니다.
 
-#### 🧑🏻‍💻 팀원
+#### <img src="https://github.com/APP-iOS3rd/PJ2T2_CYC/assets/120264964/df66d998-8c93-4021-8a4b-939b88563ab3" width="40"> 팀원
 
 |[강치우](https://github.com/kangciu)|[김명현](https://github.com/kmh5038)|[이민영](https://github.com/Mminy62)|[황민채](https://github.com/Hminchae)|[황성진](https://github.com/Hsungjin)|
 |-----------|-----------|-----------|------------|------------|
 |<img src="https://avatars.githubusercontent.com/u/112779139?v=4" width="100">|<img src="https://avatars.githubusercontent.com/u/144766297?v=4" width="100">|<img src="https://avatars.githubusercontent.com/u/66752398?v=4" width="100">|<img src="https://avatars.githubusercontent.com/u/103357078?v=4" width="100">|<img src="https://avatars.githubusercontent.com/u/120264964?s=400&u=cfba7c275af35a6823aee13f536b5a08d8f71a52&v=4" width="100">|
 
-#### 🔗 Links
+#### <img src="https://github.com/APP-iOS3rd/PJ2T2_CYC/assets/120264964/df66d998-8c93-4021-8a4b-939b88563ab3" width="40"> Links
 
 - [📄 Notion](https://grateful-lemongrass-93f.notion.site/Check-Your-Commit-6142b220db1a43cc90dd2a45bf8d1062?pvs=4)
 - [🖌️ Figma](https://www.figma.com/file/R6VtqCKvHOqAfwCT4eJigH/Check-Your-Commit?type=design&node-id=0%3A1&mode=design&t=sPzQFRbQJtw6fSGw-1)
 
-## ❗ 주요기능
+## <img src="https://github.com/APP-iOS3rd/PJ2T2_CYC/assets/120264964/df66d998-8c93-4021-8a4b-939b88563ab3" width="40"> 주요기능
 
 1. 깃허브 OAuth를 통한 로그인 연동
    - OAuth AcessToken을 바탕으로 유저 정보를 활용
@@ -38,17 +38,17 @@
 3. 오늘 커밋을 위해 할일을 기록하는 TodoList
 4. 알람을 통해 일정시간마다 커밋 체크
 
-## 📱 실행 화면
+## <img src="https://github.com/APP-iOS3rd/PJ2T2_CYC/assets/120264964/df66d998-8c93-4021-8a4b-939b88563ab3" width="40"> 실행 화면
 
 |앱 화면|
 |:--:|
-|<img src="https://github.com/APP-iOS3rd/PJ2T2_CYC/assets/120264964/193b35cd-5c10-44bb-9e5c-4f0e31c664fe" width="">|
+|<img src="https://github.com/APP-iOS3rd/PJ2T2_CYC/assets/120264964/ca70e57d-05f5-4bbb-a779-0b0bf6c4a989" width="">|
 
 |라이트 모드|다크 모드|
 |:--:|:--:|
 |<img src="-" width="300">|<img src="-" width="300">|
 
-## ❓ 트러블 슈팅
+## <img src="https://github.com/APP-iOS3rd/PJ2T2_CYC/assets/120264964/07efd7af-52fa-4a0a-9c65-ade6de6275ed" width="40"> 트러블 슈팅
 
 ### Step1
 
@@ -88,7 +88,7 @@ Text("당신의 해결 코드를 넣어주세요!")
 ```
 </details>
 
-## 💻 개발환경 및 라이브러리
+## <img src="https://github.com/APP-iOS3rd/PJ2T2_CYC/assets/120264964/df66d998-8c93-4021-8a4b-939b88563ab3" width="40"> 개발환경 및 라이브러리
 
     SwiftUI
     Xcode 15.1
@@ -100,7 +100,7 @@ Text("당신의 해결 코드를 넣어주세요!")
     GrassView - SwiftSoup
 
 
-## ⏰ 타임라인
+## <img src="https://github.com/APP-iOS3rd/PJ2T2_CYC/assets/120264964/df66d998-8c93-4021-8a4b-939b88563ab3" width="40"> 타임라인
 
 <details>
 <summary>Step 1 타임라인</summary>
@@ -146,7 +146,7 @@ Text("당신의 해결 코드를 넣어주세요!")
 
 </details>
 
-## 🌲 Tree
+## <img src="https://github.com/APP-iOS3rd/PJ2T2_CYC/assets/120264964/df66d998-8c93-4021-8a4b-939b88563ab3" width="40"> Tree
 
 ```
 📦CYC
