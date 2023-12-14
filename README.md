@@ -17,13 +17,13 @@
 > `열정 많은 개발자`, push 해야되는데 잊어버린 마감 급한 개발자 등등을 위한 1일 1커밋 강요앱  
 > 저희 CYC(Check your commit)는 크게 commit 알림 기능, 간단한 todo list를 갖고 있습니다.
 
-#### <img src="https://github.com/APP-iOS3rd/PJ2T2_CYC/assets/120264964/df66d998-8c93-4021-8a4b-939b88563ab3" width="40"> 팀원
+#### 👨‍👩‍👧‍👦 팀원
 
 |[강치우](https://github.com/kangciu)|[김명현](https://github.com/kmh5038)|[이민영](https://github.com/Mminy62)|[황민채](https://github.com/Hminchae)|[황성진](https://github.com/Hsungjin)|
 |-----------|-----------|-----------|------------|------------|
 |<img src="https://avatars.githubusercontent.com/u/112779139?v=4" width="100">|<img src="https://avatars.githubusercontent.com/u/144766297?v=4" width="100">|<img src="https://avatars.githubusercontent.com/u/66752398?v=4" width="100">|<img src="https://avatars.githubusercontent.com/u/103357078?v=4" width="100">|<img src="https://avatars.githubusercontent.com/u/120264964?s=400&u=cfba7c275af35a6823aee13f536b5a08d8f71a52&v=4" width="100">|
 
-#### <img src="https://github.com/APP-iOS3rd/PJ2T2_CYC/assets/120264964/df66d998-8c93-4021-8a4b-939b88563ab3" width="40"> Links
+#### 🔗 Links
 
 - [📄 Notion](https://grateful-lemongrass-93f.notion.site/Check-Your-Commit-6142b220db1a43cc90dd2a45bf8d1062?pvs=4)
 - [🖌️ Figma](https://www.figma.com/file/R6VtqCKvHOqAfwCT4eJigH/Check-Your-Commit?type=design&node-id=0%3A1&mode=design&t=sPzQFRbQJtw6fSGw-1)
