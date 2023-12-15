@@ -34,7 +34,8 @@ struct DLMode: View {
                         .bold()
                         .font(.title)
                         .foregroundStyle(.primary)
-                        .padding([.horizontal, .vertical])
+                        .padding(.vertical)
+                        .padding(.horizontal, 23)
                         
                         HStack(spacing: 40) {
                             

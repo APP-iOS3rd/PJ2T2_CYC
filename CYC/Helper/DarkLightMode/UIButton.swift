@@ -57,7 +57,7 @@ struct UIButton: View {
                 .background(.bg, in: RoundedRectangle(cornerRadius: 10))
             
         }
-        .scaleEffect(currentMode == mode ? 1.1 : 0.9)
+        .scaleEffect(currentMode == mode ? 1.0 : 0.9)
         .animation(.default, value: currentMode)
     }
 }

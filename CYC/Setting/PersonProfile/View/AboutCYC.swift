@@ -47,6 +47,7 @@ struct AboutCYC: View {
                         }
                         .padding(.horizontal, 20)
                         .padding(.bottom, 30)
+                        
                         // MARK: - With
                         VStack(alignment: .leading, spacing: 0) {
                                 Text("함께하신 분들")
@@ -60,6 +61,21 @@ struct AboutCYC: View {
                             }
                             .padding()
                         }
+                        
+                        // MARK: - Contribute
+                        VStack(alignment: .leading, spacing: 0) {
+                                Text("도움을 주신 분들")
+                                .font(.pretendardBold_25)
+                                .padding(.horizontal, 20)
+                            
+                            LazyVGrid(columns: columns, spacing: 15){
+                                ForEach(0..<ContributeData.count, id: \.self) { person in
+                                    PersonGridView(person: ContributeData[person])
+                                }
+                            }
+                            .padding()
+                        }
+                        .padding(.vertical)
                     }
                 }
                 .scrollIndicators(.hidden)
