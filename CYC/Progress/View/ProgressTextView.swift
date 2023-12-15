@@ -11,8 +11,8 @@ struct ProgressTextView: View {
     @ObservedObject private var loginModel = LoginModel.shared
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            Text("커밋 챌린지 \(loginModel.tempday)일째\n")
+        VStack(alignment: .leading, spacing: -10) {
+            Text("커밋 챌린지 \(loginModel.commitDay)일째\n")
                 .font(.pretendardBold_17)
             
             Text("너 만나러 커밋 하는 중...")

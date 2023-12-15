@@ -11,7 +11,8 @@ import SwiftSoup
 
 class LoginModel: ObservableObject {
     static let shared = LoginModel()
-    @Published var tempday: Int = 0
+    
+    @Published var commitDay: Int = 0
     
     @Published var code: String?
     // accesstoken 을 UserDefaults 저장하는 이유?
@@ -135,8 +136,12 @@ class LoginModel: ObservableObject {
                             
                             return (dateString, levelString)
                         }
+                        // 준비되면 바로 연속일수 뿌리기, 공룡 움직이기 -> flag로 MainView에서 바로 처리
                         DispatchQueue.main.async {
-                            self.dataToDictionary(validCommits)
+                            if self.dataToDictionary(validCommits){
+                                self.commitDay = self.findConsecutiveDates(withData: self.testCase)
+                                ModalView().moveDinosaur()
+                            }
                         }
                     } catch {
                         print("Error parsing HTML: \(error.localizedDescription)")
@@ -152,7 +157,7 @@ class LoginModel: ObservableObject {
         }
     }
     
-    func dataToDictionary(_ data: [(String, String)]) {
+    func dataToDictionary(_ data: [(String, String)]) -> Bool {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         // 정렬된 데이터를 딕셔너리로 변환하고 날짜를 String으로 변환하여 데이터를 Int로 변경
@@ -163,9 +168,7 @@ class LoginModel: ObservableObject {
                 self.testCase[dateString] = dataInt * 3
             }
         }
-        self.testCase["2023-12-15"] = 3
-        tempday = findConsecutiveDates(withData: self.testCase)
-        // 여기서 모달뷰를 시켜볼까...
+        return true
     }
     
     func logout() {
@@ -223,8 +226,8 @@ class LoginModel: ObservableObject {
                 }
             }
         }
-
-        print(currentDateFormatted())
+        // 가장 최신 날짜 - 디버깅용
+//        print(currentDateFormatted())
         
         // currentDateFormatted(연속된 날짜를 저장한 배열)의 마지막값은 최근 커밋날짜가 되므로 조건문 실행으로 연속 커밋날짜 판독
         if currentConsecutive.last == currentDateFormatted() {

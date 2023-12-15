@@ -12,6 +12,7 @@ struct MainView: View {
     
     @AppStorage("isLoggedIn") var isloggedInVIew: Bool = false
     @ObservedObject private var loginModel = LoginModel.shared
+    @ObservedObject private var progressModel = ProgressModel.shared
     @Query private var todoModel: [TodoModel]
     
     @State private var appearanceMode: AppearanceMode = .System
