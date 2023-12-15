@@ -9,40 +9,34 @@ import SwiftUI
 
 struct ProgressView: View {
     @ObservedObject private var loginModel = LoginModel.shared
-    @State private var containerWidth: CGFloat = 0
-    @State private var showSheet: Bool = false
-    
-    // MARK: 커밋 변수
-    @State private var progress: Int = 0
-    @State private var goal: Int = 100
-    @State private var step: Int = 50
+    @ObservedObject private var progressModel = ProgressModel.shared
 
-    // MARK: 현재 step까지 가는 progress width 조절
+    // MARK: 현재 CommitDay까지 가는 progress width 조절
     var maxProgressWidth: Double {
-        let progressWidth = CGFloat(Double(progress) / Double(goal)) * containerWidth
-        return min(progressWidth, containerWidth)
+        let progressWidth = CGFloat(Double(progressModel.progress) / Double(progressModel.goal)) * progressModel.containerWidth
+        return min(progressWidth, progressModel.containerWidth)
     }
     
     var body: some View {
         VStack{
             ProgressTextView()
             HStack{
-                ProgressBarView(containerWidth: $containerWidth, maxProgressWidth: maxProgressWidth)
+                ProgressBarView(maxProgressWidth: maxProgressWidth)
                     .onAppear {
-                        progress = loginModel.tempday
-                        ModalView(progress: $progress, goal: $goal, showSheet: $showSheet).moveDinosaur()
+                        progressModel.progress = loginModel.commitDay
+                        ModalView().moveDinosaur()
                     }
 
                 ZStack(alignment: .top) {
                     Button {
-                        showSheet.toggle()
+                        progressModel.showSheet.toggle()
                     } label: {
-                        DdayButtonView(goal: $goal)
+                        DdayButtonView(goal: $progressModel.goal)
                     }
                     .tint(.clear)
                     .buttonStyle(.borderedProminent)
-                    .sheet(isPresented: $showSheet) {
-                        ModalView(progress: $progress, goal: $goal, showSheet: $showSheet)
+                    .sheet(isPresented: $progressModel.showSheet) {
+                        ModalView()
                     }
                 }
             }
