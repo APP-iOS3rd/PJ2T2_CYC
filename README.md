@@ -516,6 +516,7 @@ func techNotification() {
 
 ### Step4
 
+<details>
 <summary>OnTapGesture사용</summary>
 - TodoList 사용 시 빈 화면 터치 했을때, 텍스트필드를 생성하려했지만 리스트 스와이프 삭제 할 때도 텍스트필드가 생성됨.
 ```swift
