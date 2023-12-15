@@ -156,6 +156,30 @@ func getUser() {
 
 </details>
 
+<details>
+<summary>GitHub contribution graph에 SwiftSoup 사용한 이유</summary>
+
+```Swift
+let parsedHtml = try SwiftSoup.parse(htmlURL)
+let dailyContribution = try parsedHtml.select("td")
+
+let validCommits = dailyContribution.compactMap { element -> (String, String)? in
+    guard
+        let dateString = try? element.attr("data-date"),
+        let levelString = try? element.attr("data-level"),
+        !dateString.isEmpty
+    else { return nil }
+
+    return (dateString, levelString)
+}
+```
+> 1. Github profile에 있는 깃헙 잔디에 대한 데이터를 api로 제공해주지 않음
+> 2. commits history만 제공하지만 각 repo별로 history로 제공하거나, user events로 전체 commit을 복잡한 구조로 제공
+> 3. 하지만 제일 중요한건 무엇보다 api의 업데이트가 느려서 commit을 한 후 최대 8시간 후에 반영 됨
+> 4. 그러므로 가능한 빨리 반영되는 메인의 contribution graph를 통해 받아오기 위해 웹 크롤링 라이브러리를 사용하여 data를 받음
+
+</details>
+
 ### Step2
 
 <details>
