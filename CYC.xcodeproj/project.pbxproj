@@ -24,6 +24,7 @@
 		5215F1AC2B26077B00CE1733 /* ProgressTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5215F1AB2B26077B00CE1733 /* ProgressTextView.swift */; };
 		5267AC882B28987F009FDB2A /* CommitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5267AC872B28987F009FDB2A /* CommitView.swift */; };
 		5267AC8C2B28A722009FDB2A /* GrassView in Frameworks */ = {isa = PBXBuildFile; productRef = 5267AC8B2B28A722009FDB2A /* GrassView */; };
+		526D7F612B2B853800420776 /* ProgressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526D7F602B2B853800420776 /* ProgressModel.swift */; };
 		527B5CF42B29AA3A006A7E5F /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 527B5CF32B29AA3A006A7E5F /* SwiftSoup */; };
 		630BE2B02B2B63FB00495164 /* keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630BE2AF2B2B63FB00495164 /* keys.swift */; };
 		6317B3CB2B2033CD0039795E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317B3CA2B2033CD0039795E /* LoginView.swift */; };
@@ -120,6 +121,7 @@
 		5215F1A72B25D44700CE1733 /* DdayButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DdayButtonView.swift; sourceTree = "<group>"; };
 		5215F1AB2B26077B00CE1733 /* ProgressTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressTextView.swift; sourceTree = "<group>"; };
 		5267AC872B28987F009FDB2A /* CommitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitView.swift; sourceTree = "<group>"; };
+		526D7F602B2B853800420776 /* ProgressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressModel.swift; sourceTree = "<group>"; };
 		630BE2AF2B2B63FB00495164 /* keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = keys.swift; sourceTree = "<group>"; };
 		6317B3CA2B2033CD0039795E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		6317B3CC2B203B1C0039795E /* OnboardingTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTabView.swift; sourceTree = "<group>"; };
@@ -187,6 +189,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5232CA032B2BE9E8004F1916 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				526D7F602B2B853800420776 /* ProgressModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		5267AC862B289830009FDB2A /* Grass */ = {
 			isa = PBXGroup;
 			children = (
@@ -282,6 +292,7 @@
 		632693642B24AC5A007A2DAF /* Progress */ = {
 			isa = PBXGroup;
 			children = (
+				5232CA032B2BE9E8004F1916 /* Model */,
 				52D16C4B2B2AFA9F009A3226 /* View */,
 			);
 			path = Progress;
@@ -616,6 +627,7 @@
 				647986FB2B27EC0B00BA0691 /* extensionOfUserDefaults.swift in Sources */,
 				6317B3D22B2045450039795E /* PersonModel.swift in Sources */,
 				B1EE4F032B275B3B0097436B /* AppDelegate.swift in Sources */,
+				526D7F612B2B853800420776 /* ProgressModel.swift in Sources */,
 				047F35962B21A4B000574504 /* NotificationView.swift in Sources */,
 				63DCF4292B29749F005DA6C9 /* DLMode.swift in Sources */,
 				6317B3CD2B203B1C0039795E /* OnboardingTabView.swift in Sources */,
@@ -843,7 +855,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CYC/Preview Content\"";
-				DEVELOPMENT_TEAM = ND6356Y385;
+				DEVELOPMENT_TEAM = 8383VR3NFP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CYC/Info.plist;
@@ -875,7 +887,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CYC/Preview Content\"";
-				DEVELOPMENT_TEAM = ND6356Y385;
+				DEVELOPMENT_TEAM = 8383VR3NFP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CYC/Info.plist;

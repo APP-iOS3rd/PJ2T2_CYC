@@ -8,20 +8,19 @@
 import SwiftUI
 
 struct ModalView: View {
-    @Binding var progress: Int
-    @Binding var goal: Int
-    @Binding var showSheet: Bool
-   
+    @ObservedObject var loginModel = LoginModel.shared
+    @ObservedObject var progressModel = ProgressModel.shared
+
     var body: some View {
         VStack{
-            Picker("Your D-day", selection: $goal) {
-                ForEach(1...100, id: \.self) { number in
+            Picker("Your D-day", selection: $progressModel.goal) {
+                ForEach(1...365, id: \.self) { number in
                     Text("\(number)")
                 }
             }
             .pickerStyle(.wheel)
             Button {
-                showSheet = false
+                progressModel.showSheet = false
                 moveDinosaur()
             } label: {
                 Text("저장")
@@ -33,12 +32,13 @@ struct ModalView: View {
         .presentationBackground(.thinMaterial)
     }
     
+    // Animation에 대한 함수는 뷰에서만 정의 가능
     func moveDinosaur() {
         Task{
-            for i in 0...progress {
+            for i in 0...loginModel.commitDay {
                 try await Task.sleep(until: .now.advanced(by: .milliseconds(40)), clock: .continuous)
                 withAnimation {
-                    progress = i
+                    progressModel.progress = i
                 }
             }
         }

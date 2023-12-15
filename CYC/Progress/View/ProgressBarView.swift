@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct ProgressBarView: View {
-    @Binding var containerWidth: CGFloat
+    @ObservedObject var progressModel = ProgressModel.shared
+    
     var maxProgressWidth: Double
     
     var body: some View {
@@ -18,7 +19,7 @@ struct ProgressBarView: View {
                 RoundedRectangle(cornerRadius: 60)
                     .foregroundColor(.bgColor)
                     .onAppear {
-                        containerWidth = UIScreen.main.bounds.width - 95
+                        progressModel.containerWidth = UIScreen.main.bounds.width - 95
                     }
             }
             RoundedRectangle(cornerRadius: 60)
