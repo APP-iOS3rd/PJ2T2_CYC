@@ -514,6 +514,44 @@ func techNotification() {
 알림 설정뷰에서 토글값이 on일 때 알림이 알림센터에 올라가도록 구현하고, off 시엔 알림센터의 알림을 모두 삭제하도록 구현하였다. 
 </details>
 
+### Step4
+
+<summary>OnTapGesture사용</summary>
+- TodoList 사용 시 빈 화면 터치 했을때, 텍스트필드를 생성하려했지만 리스트 스와이프 삭제 할 때도 텍스트필드가 생성됨.
+```swift
+@State var isTextFieldShown = false
+
+
+.onTapGesture {
+        if !isTextFieldShown {
+              isTextFieldShown.toggle()
+            }
+        }
+```
+- TodoList 사용 시 텍스트필드에 텍스트를 입력하고 빈 화면을 터치하면 텍스트 저장을 구현하려 했지만, 리스트 스와이프 삭제 할 때도 함수가 작동.
+```swift
+func addTodo() {
+        withAnimation {
+            let newTodo = TodoModel(title: textFieldText)
+            if !newTodo.title.isEmpty {
+                modelContext.insert(newTodo)
+                isTextFieldShown.toggle()
+            }
+        }
+    }
+
+
+.onTapGesture {
+    withAnimation{
+        addTodo()   // 텍스트 추가 함수
+        textFieldText = ""  // 추가 후 텍스트필드 비워주기
+    }
+}
+
+```
+<details>
+
+
 ## <img src="https://github.com/APP-iOS3rd/PJ2T2_CYC/assets/120264964/df66d998-8c93-4021-8a4b-939b88563ab3" width="40"> 개발환경 및 라이브러리
 
     SwiftUI
