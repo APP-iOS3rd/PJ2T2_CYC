@@ -575,10 +575,27 @@ func addTodo() {
 }
 ```
 
-
-
-
 </details>
+
+<details>
+   <summary>DispatchQueue.main.async로 UIView 속도 향상</summary>
+   
+   ```swift
+   // 준비되면 바로 연속일수 뿌리기, 공룡 움직이기 -> MainView에서 바로 처리
+   DispatchQueue.main.async {
+       if self.dataToDictionary(validCommits){
+           self.commitDay = self.findConsecutiveDates(withData: self.testCase)
+           ModalView().moveDinosaur() // 프로그래스바의 공룡이 움직이는 함수
+       }
+   }
+   ```
+   
+> 1. onAppear에 UIView의 업데이트 함수를 넣었지만, 커밋 연속 일수와 프로그래스바가 다른 뷰에 들어갔다가 나와야지만 제대로 나오는 문제가 있었음
+> - Alamofire로 api 요청 함수는 자동으로 비동기 처리되므로 main thread에서 데이터를 가져오지 않았고
+> - UIView가 onAppear되는 시점과 데이터가 들어오는 시점 차이가 생기면서 다른 뷰에 들어갔다가 UIview를 다시 표시할때 제대로 생기는 것이 발견됨
+> 2. UIView를 업데이트하는 데이터 함수는 DispatchQueue.main.async로 빼서 사용해주고 await 사용이 미숙해 if문으로 데이터가 들어왔는지 판별함
+</details>
+
 
 ## <img src="https://github.com/APP-iOS3rd/PJ2T2_CYC/assets/120264964/df66d998-8c93-4021-8a4b-939b88563ab3" width="40"> 개발환경 및 라이브러리
 
