@@ -40,14 +40,13 @@ struct TodoView: View {
     var body: some View {
         
         NavigationStack {
-            
             ZStack {
                 Color.bgColor // 배경색 변경
                     .ignoresSafeArea(.all)
                     // MARK: - 헤더
                     VStack(alignment: .leading) {
                         Text("할 일 목록")
-                            .font(.pretendardBold_20)
+                            .font(.pretendardBold_25)
                             .padding(.leading, 20)
                             .padding(.top, 10)
                         

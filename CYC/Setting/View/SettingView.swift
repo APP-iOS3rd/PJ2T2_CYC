@@ -35,7 +35,7 @@ struct SettingView: View {
                     
                     // MARK: - 헤더
                     Text("설정")
-                        .font(.pretendardBold_25)
+                        .font(.pretendardBold_23)
                         .padding(.horizontal, 15)
                         
                     
@@ -66,7 +66,7 @@ struct SettingView: View {
                         } label: {
                             Label("로그아웃", image: "logout")
                                 .font(.pretendardSemiBold_17)
-                                .foregroundColor(Color.logoutColor)
+                                .foregroundStyle(.logout)
                         }
                         .listRowBackground(Color.containerColor)
                     }
@@ -85,7 +85,7 @@ struct SettingView: View {
                             .offset(y: 10)
                     }
                 }
-                .padding(.top, 15)
+                .padding(.top, 5)
             }
         }
         .scrollDisabled(true)

@@ -34,6 +34,7 @@ extension Font {
     static let pretendardBold_15: Font = .custom("Pretendard-Bold", size: 15)
     static let pretendardBold_17: Font = .custom("Pretendard-Bold", size: 17)
     static let pretendardBold_20: Font = .custom("Pretendard-Bold", size: 20)
+    static let pretendardBold_23: Font = .custom("Pretendard-Bold", size: 23)
     static let pretendardBold_25: Font = .custom("Pretendard-Bold", size: 25)
     
     //ExtraBold
