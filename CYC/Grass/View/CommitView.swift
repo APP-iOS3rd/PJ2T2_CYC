@@ -10,6 +10,8 @@ import GrassView
 
 struct CommitView: View {
     @ObservedObject private var loginModel = LoginModel.shared
+    @State private var showColorModal = false
+    @State private var cellColor: Color = .green
     
     var body: some View {
         ZStack{
@@ -23,7 +25,21 @@ struct CommitView: View {
                     .font(.pretendardBold_17)
                     .foregroundStyle(.base)
                     .padding(.bottom, 10)
-                GrassView(loginModel.testCase, row: 4, col: 10, cellColor: .green)
+                ZStack{
+                    GrassView(loginModel.testCase, row: 4, col: 10, cellColor: cellColor)
+                    RoundedRectangle(cornerRadius: 15.0)
+                        .frame(width: 320, height: 120)
+                        .foregroundStyle(Color(white: 1.0, opacity: 0.001))
+                    
+                }
+                .gesture(
+                    TapGesture()
+                        .onEnded{ _ in
+                            showColorModal.toggle()
+                        })
+                .sheet(isPresented: $showColorModal){
+                    ColorModalView(cellColor: $cellColor, showColorModal: $showColorModal)
+                }
             }
             .padding(40)
         }

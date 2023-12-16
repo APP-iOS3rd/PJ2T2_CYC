@@ -23,6 +23,8 @@
 		5215F1A62B25D30800CE1733 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5215F1A52B25D30800CE1733 /* ProgressBarView.swift */; };
 		5215F1A82B25D44700CE1733 /* DdayButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5215F1A72B25D44700CE1733 /* DdayButtonView.swift */; };
 		5215F1AC2B26077B00CE1733 /* ProgressTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5215F1AB2B26077B00CE1733 /* ProgressTextView.swift */; };
+		5257BDE02B2D9CBE006FDD79 /* ColorModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5257BDDF2B2D9CBE006FDD79 /* ColorModalView.swift */; };
+		5257BDE22B2DB744006FDD79 /* GrassColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5257BDE12B2DB744006FDD79 /* GrassColor.swift */; };
 		5267AC882B28987F009FDB2A /* CommitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5267AC872B28987F009FDB2A /* CommitView.swift */; };
 		5267AC8C2B28A722009FDB2A /* GrassView in Frameworks */ = {isa = PBXBuildFile; productRef = 5267AC8B2B28A722009FDB2A /* GrassView */; };
 		526D7F612B2B853800420776 /* ProgressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526D7F602B2B853800420776 /* ProgressModel.swift */; };
@@ -122,6 +124,8 @@
 		5215F1A52B25D30800CE1733 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		5215F1A72B25D44700CE1733 /* DdayButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DdayButtonView.swift; sourceTree = "<group>"; };
 		5215F1AB2B26077B00CE1733 /* ProgressTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressTextView.swift; sourceTree = "<group>"; };
+		5257BDDF2B2D9CBE006FDD79 /* ColorModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorModalView.swift; sourceTree = "<group>"; };
+		5257BDE12B2DB744006FDD79 /* GrassColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrassColor.swift; sourceTree = "<group>"; };
 		5267AC872B28987F009FDB2A /* CommitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitView.swift; sourceTree = "<group>"; };
 		526D7F602B2B853800420776 /* ProgressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressModel.swift; sourceTree = "<group>"; };
 		63071C232B2D88400008CF15 /* NavigationViewStyleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewStyleHelper.swift; sourceTree = "<group>"; };
@@ -203,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				5267AC902B28A7AA009FDB2A /* View */,
+				5257BDE12B2DB744006FDD79 /* GrassColor.swift */,
 			);
 			path = Grass;
 			sourceTree = "<group>";
@@ -211,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				5267AC872B28987F009FDB2A /* CommitView.swift */,
+				5257BDDF2B2D9CBE006FDD79 /* ColorModalView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -639,7 +645,9 @@
 				B1ABEA642B200E5800F3C44A /* fontExtension.swift in Sources */,
 				B1E959872B285EE000DF64A4 /* LocalNotificationHelper.swift in Sources */,
 				5205DD772B2039640013DF68 /* ProgressView.swift in Sources */,
+				5257BDE22B2DB744006FDD79 /* GrassColor.swift in Sources */,
 				64DE4B9F2B26DECF00AD4995 /* LoginModel.swift in Sources */,
+				5257BDE02B2D9CBE006FDD79 /* ColorModalView.swift in Sources */,
 				04EA90242B26E4FC00DDC99E /* TodoPreView.swift in Sources */,
 				5215F1A82B25D44700CE1733 /* DdayButtonView.swift in Sources */,
 				047F359F2B21A4BB00574504 /* TodoModel.swift in Sources */,
