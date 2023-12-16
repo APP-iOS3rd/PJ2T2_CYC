@@ -13,6 +13,8 @@ struct SettingView: View {
     @ObservedObject private var loginModel = LoginModel.shared
     @AppStorage("isLoggedIn") var isloggedInVIew: Bool = true
     
+    @State private var showingAlert = false
+    
     var backButton : some View {
         Button{
             dismiss()
@@ -59,21 +61,32 @@ struct SettingView: View {
              
                         
                         // MARK: - 로그아웃
-
                         Button {
-                            loginModel.logout()
-                            isloggedInVIew = false
+                            showingAlert.toggle()
                         } label: {
-                            Label("로그아웃", image: "logout")
-                                .font(.pretendardSemiBold_17)
-                                .foregroundStyle(.logout)
+                            HStack(spacing: 24) {
+                                Image(systemName: "trash.fill")
+                                
+                                Text("로그아웃")
+                            }
+                            .font(.pretendardBold_17)
+                            .foregroundStyle(.logout)
                         }
                         .listRowBackground(Color.containerColor)
+                        .alert("정말 로그아웃 하시겠어요?", isPresented: $showingAlert) {
+                            Button("로그아웃", role: .destructive) {
+                                loginModel.logout()
+                                isloggedInVIew = false
+                            }
+                            
+                            Button("닫기", role: .cancel) {
+                                showingAlert = false
+                            }
+                        }
                     }
                     .scrollContentBackground(.hidden)
                     
                     // MARK: - Powered by PJ2T2_CYC
-                    
                     VStack {
                         Text("2023, Check Your Commit all rights reserved.")
                             .frame(maxWidth: .infinity, alignment: .center)
