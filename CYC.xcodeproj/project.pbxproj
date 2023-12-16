@@ -56,6 +56,7 @@
 		6317B4042B2154D40039795E /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1ABEA542B200E0B00F3C44A /* Pretendard-Thin.otf */; };
 		6317B40A2B2183A50039795E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317B4092B2183A50039795E /* MainView.swift */; };
 		6367BFA52B29824B0060E8D2 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6367BFA42B29824B0060E8D2 /* UIButton.swift */; };
+		6398A3F92B2D80300074E118 /* Contributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6398A3F82B2D80300074E118 /* Contributes.swift */; };
 		63DCF4292B29749F005DA6C9 /* DLMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DCF4282B29749F005DA6C9 /* DLMode.swift */; };
 		647986F82B27038900BA0691 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647986F72B27038900BA0691 /* StartView.swift */; };
 		647986FB2B27EC0B00BA0691 /* extensionOfUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647986FA2B27EC0B00BA0691 /* extensionOfUserDefaults.swift */; };
@@ -140,6 +141,7 @@
 		6317B3EE2B21546D0039795E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6317B4092B2183A50039795E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		6367BFA42B29824B0060E8D2 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		6398A3F82B2D80300074E118 /* Contributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contributes.swift; sourceTree = "<group>"; };
 		63DCF4282B29749F005DA6C9 /* DLMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DLMode.swift; sourceTree = "<group>"; };
 		647986F72B27038900BA0691 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		647986FA2B27EC0B00BA0691 /* extensionOfUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensionOfUserDefaults.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 			children = (
 				6317B3D32B2045860039795E /* PersonGridView.swift */,
 				6317B3D52B2049C60039795E /* AboutCYC.swift */,
+				6398A3F82B2D80300074E118 /* Contributes.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -653,6 +656,7 @@
 				6317B3CB2B2033CD0039795E /* LoginView.swift in Sources */,
 				5215F1AC2B26077B00CE1733 /* ProgressTextView.swift in Sources */,
 				047F35952B21A4B000574504 /* SettingView.swift in Sources */,
+				6398A3F92B2D80300074E118 /* Contributes.swift in Sources */,
 				047F35982B21A4B000574504 /* TodoView.swift in Sources */,
 				047F35A52B21A4C900574504 /* SettingViewModel.swift in Sources */,
 				B1ABEA682B2017E900F3C44A /* colorExtension.swift in Sources */,
@@ -679,7 +683,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = H545GGT7HM;
+				DEVELOPMENT_TEAM = ND6356Y385;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CYCWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = CYCWidget;
@@ -690,7 +694,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = thanky.CYC.CYCWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cw.CYC.CYCWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -706,7 +710,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = H545GGT7HM;
+				DEVELOPMENT_TEAM = ND6356Y385;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CYCWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = CYCWidget;
@@ -717,7 +721,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = thanky.CYC.CYCWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cw.CYC.CYCWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -855,7 +859,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CYC/Preview Content\"";
-				DEVELOPMENT_TEAM = H545GGT7HM;
+				DEVELOPMENT_TEAM = ND6356Y385;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CYC/Info.plist;
@@ -869,7 +873,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = thanky.CYC;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cw.CYC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -887,7 +891,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CYC/Preview Content\"";
-				DEVELOPMENT_TEAM = H545GGT7HM;
+				DEVELOPMENT_TEAM = ND6356Y385;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CYC/Info.plist;
@@ -901,7 +905,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = thanky.CYC;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cw.CYC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

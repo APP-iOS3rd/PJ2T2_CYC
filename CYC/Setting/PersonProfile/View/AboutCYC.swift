@@ -34,9 +34,15 @@ struct AboutCYC: View {
                     // MARK: - Intro
                     VStack(alignment: .leading) {
                         VStack(alignment: .leading, spacing: 8) {
+                            
+                            Image("logo1")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 55)
+                            
                             Text("CYC는 어떤 앱인가요?")
-                                .font(.pretendardBold_25)
-                                .padding(.vertical, 15)
+                                .font(.pretendardBold_20)
+                                .padding(.vertical, 10)
                                 
                             Text("CYC(Check Your Commit)은 주인장이 커밋을 자주 잊곤 해서 다른 사람들도 이런 불편함이 있지 않을까? 해서 만들어진 앱이에요")
                                 .font(.pretendardSemiBold_15)
@@ -50,9 +56,20 @@ struct AboutCYC: View {
                         
                         // MARK: - With
                         VStack(alignment: .leading, spacing: 0) {
-                                Text("함께하신 분들")
-                                .font(.pretendardBold_25)
-                                .padding(.horizontal, 20)
+                            HStack {
+                                Text("만든 사람들")
+                                    .font(.pretendardBold_20)
+                                    .padding(.horizontal, 20)
+                                
+                                Spacer()
+                                
+                                NavigationLink(destination: Contributes()) {
+                                    Text("더보기")
+                                        .font(.pretendardSemiBold_15)
+                                        .foregroundStyle(.base)
+                                        .padding(.trailing, 25)
+                                }
+                            }
                             
                             LazyVGrid(columns: columns, spacing: 15){
                                 ForEach(0..<PersonData.count, id: \.self) { person in
@@ -61,22 +78,8 @@ struct AboutCYC: View {
                             }
                             .padding()
                         }
-                        
-                        // MARK: - Contribute
-                        VStack(alignment: .leading, spacing: 0) {
-                                Text("도움을 주신 분들")
-                                .font(.pretendardBold_25)
-                                .padding(.horizontal, 20)
-                            
-                            LazyVGrid(columns: columns, spacing: 15){
-                                ForEach(0..<ContributeData.count, id: \.self) { person in
-                                    PersonGridView(person: ContributeData[person])
-                                }
-                            }
-                            .padding()
-                        }
-                        .padding(.vertical)
                     }
+                    .padding(.top, 5)
                 }
                 .scrollIndicators(.hidden)
             }
