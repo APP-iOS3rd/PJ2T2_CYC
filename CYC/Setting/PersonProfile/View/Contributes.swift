@@ -10,6 +10,20 @@ import SwiftUI
 struct Contributes: View {
     
     @State private var columns = Array(repeating: GridItem(.flexible(), spacing: 15), count: 2)
+    @Environment(\.dismiss) var dismiss
+    
+    var backButton : some View {  // <-- 👀 커스텀 버튼
+        Button{
+            dismiss()
+        } label: {
+            HStack {
+                Image(systemName: "chevron.left") // 화살표 Image
+                    .aspectRatio(contentMode: .fit)
+                    .foregroundStyle(.base)
+                    .bold()
+            }
+        }
+    }
     
     var body: some View {
         ZStack {
@@ -47,7 +61,12 @@ struct Contributes: View {
                 }
                 .padding(.top, 5)
             }
+            .scrollIndicators(.hidden)
         }
+        .navigationTitle("도움을 주신 분들")
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: backButton)
     }
 }
 

@@ -44,85 +44,78 @@ struct TodoView: View {
             ZStack {
                 Color.bgColor // 배경색 변경
                     .ignoresSafeArea(.all)
-                
-                // MARK: - 헤더
-                
-                VStack(alignment: .leading) {
-                    Text("오늘 뭐해?")
-                        .font(.pretendardBold_25)
-                        .padding(.leading, 20)
-                        .padding(.top, 10)
-                    
-                    // MARK: - 리스트
-                    
-                    List {
-                        ForEach(sortedTodoModel) { todo in
-                            HStack {
-                                Button {
-                                    toggleCompleted(todo)
-                                } label: {    // 완료여부에 따라 이미지 변경
-                                    Image(systemName: todo.completed ? "checkmark.circle.fill" : "circle")
-                                }
-                                .foregroundStyle(todo.completed ? Color.green : Color.base) // 완료여부에 따라 이미지 색 변경
-                                
-                                Text(todo.title)
-                                    .foregroundStyle(todo.completed ? Color.gray : Color.base) // 완료여부에 따라 폰트 색 변경
-                                    .font(.pretendardSemiBold_15)
-                            }
-                            .listRowBackground(Color.bgColor)
-                        }
-                        .onDelete(perform: deleteTodos)
+                    // MARK: - 헤더
+                    VStack(alignment: .leading) {
+                        Text("할 일 목록")
+                            .font(.pretendardBold_20)
+                            .padding(.leading, 20)
+                            .padding(.top, 10)
                         
-                        if isTextFieldShown {   // textField 생성 조건문
-                            HStack{
-                                Image(systemName: "circle")
-                                
-                                TextField("일정을 입력해주세요", text: $textFieldText, onCommit: {
-                                    if !textFieldText.isEmpty {
-                                        addTodo()
+                        // MARK: - 리스트
+                        List {
+                            ForEach(sortedTodoModel) { todo in
+                                HStack {
+                                    Button {
+                                        toggleCompleted(todo)
+                                    } label: {    // 완료여부에 따라 이미지 변경
+                                        Image(systemName: todo.completed ? "checkmark.circle.fill" : "circle")
                                     }
-                                })
-                                .font(.pretendardSemiBold_15)
-                                .focused($focused)
+                                    .foregroundStyle(todo.completed ? Color.green : Color.base) // 완료여부에 따라 이미지 색 변경
+                                    
+                                    Text(todo.title)
+                                        .foregroundStyle(todo.completed ? Color.gray : Color.base) // 완료여부에 따라 폰트 색 변경
+                                        .font(.pretendardSemiBold_15)
+                                }
+                                .listRowBackground(Color.bgColor)
                             }
-                            .scrollContentBackground(.hidden)
-                            .listRowBackground(Color.bgColor)
-                            .background(Color.bgColor)
-                            .onAppear {  // 텍스트 필드 생성시 키보드 자동 등장
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                                    self.focused = true
+                            .onDelete(perform: deleteTodos)
+                            
+                            if isTextFieldShown {   // textField 생성 조건문
+                                HStack{
+                                    Image(systemName: "circle")
+                                    
+                                    TextField("일정을 입력해주세요", text: $textFieldText, onCommit: {
+                                        if !textFieldText.isEmpty {
+                                            addTodo()
+                                        }
+                                    })
+                                    .font(.pretendardSemiBold_15)
+                                    .focused($focused)
+                                }
+                                .scrollContentBackground(.hidden)
+                                .listRowBackground(Color.bgColor)
+                                .background(Color.bgColor)
+                                .onAppear {  // 텍스트 필드 생성시 키보드 자동 등장
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                        self.focused = true
+                                    }
                                 }
                             }
                         }
-                    }
-                    .padding(.top, -20)
-                    .padding(.horizontal, -20)
-                    
-                    
-                    
-                    // MARK: - "새로운 일정" 버튼
-                    
-                    Button {
-                        isTextFieldShown.toggle()
-                        textFieldText = ""
-                    } label: {
-                        HStack {
-                            Image(systemName: "plus.circle.fill")
-                                .resizable()
-                                .frame(width: 20, height: 20)
-                            Text("새로운 일정")
+                        .scrollDisabled(true)
+                        .padding(.top, -20)
+                        .padding(.horizontal, -20)
+                        // MARK: - "새로운 일정" 버튼
+                        Button {
+                            isTextFieldShown.toggle()
+                            textFieldText = ""
+                        } label: {
+                            HStack {
+                                Image(systemName: "plus.circle.fill")
+                                    .resizable()
+                                    .frame(width: 20, height: 20)
+                                Text("새로운 일정")
+                            }
+                            .padding([.leading, .bottom], 20)
                         }
-                        .padding([.leading, .bottom], 20)
-                        
+                        .foregroundColor(Color.baseColor)
                     }
-                    .foregroundColor(Color.baseColor)
-                }
-                
+                    .scrollContentBackground(.hidden)
             }
-            .scrollContentBackground(.hidden)
+            .navigationTitle("오늘 뭐해?")
+            .navigationBarTitleDisplayMode(.inline)
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading: backButton)
-//          .ignoresSafeArea(.keyboard) "새로운 일정"버튼 안올라오게함, 스크롤안댐
         }
     }
     

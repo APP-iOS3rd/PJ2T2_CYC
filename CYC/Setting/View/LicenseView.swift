@@ -53,9 +53,10 @@ struct LicenseView: View {
         }
         .padding()
         .background(Color.bgColor)
+        .navigationTitle("라이센스")
+        .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: backButton)
-        .DismissGesture()
     }
 }
 

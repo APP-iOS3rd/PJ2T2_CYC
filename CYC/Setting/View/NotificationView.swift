@@ -67,9 +67,10 @@ struct NotificationView: View {
             .padding(.horizontal)
             .padding(.top)
         }
+        .navigationTitle("알림 설정")
+        .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: backButton)
-        .DismissGesture()
     }
     
     func techNotification() {

@@ -89,9 +89,10 @@ struct SettingView: View {
             }
         }
         .scrollDisabled(true)
+        .navigationTitle("설정")
+        .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: backButton)
-        .DismissGesture()
     }
 }
 
