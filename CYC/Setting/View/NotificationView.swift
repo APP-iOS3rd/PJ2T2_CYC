@@ -43,15 +43,14 @@ struct NotificationView: View {
             Color.bgColor.ignoresSafeArea(.all)
             
             VStack(alignment: .leading) {
-                
                 Toggle(isOn: $isOnNotification, label: {
-                    
                     // MARK: - 알림 설정 토글
                     Text("알림 설정")
-                        .font(.pretendardBold_25)
-                }).onChange(of: isOnNotification, initial: false, techNotification)
+                        .font(.pretendardBold_23)
+                })
+                .onChange(of: isOnNotification, initial: true, techNotification)
                 
-                VStack(alignment: .leading, spacing: 8) {
+                VStack(alignment: .leading, spacing: 7) {
                     // MARK: - 알림 설정 상세 설명
                     Text("오후 7시부터 12시까지 정각 시간마다 알림")
                         .font(.pretendardSemiBold_15)
@@ -65,11 +64,12 @@ struct NotificationView: View {
                 .vSpacing(.topLeading)
             }
             .padding(.horizontal)
-            .padding(.top)
+            .padding(.top, 5)
         }
+        .navigationTitle("알림 설정")
+        .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: backButton)
-        .DismissGesture()
     }
     
     func techNotification() {

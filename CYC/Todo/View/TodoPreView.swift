@@ -17,7 +17,6 @@ struct TodoPreView: View {
     }
     
     var body: some View {
-        
         NavigationLink(destination: TodoView()) {
             ZStack(alignment: .leading) {
                 Rectangle()

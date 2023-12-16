@@ -27,6 +27,7 @@
 		5267AC8C2B28A722009FDB2A /* GrassView in Frameworks */ = {isa = PBXBuildFile; productRef = 5267AC8B2B28A722009FDB2A /* GrassView */; };
 		526D7F612B2B853800420776 /* ProgressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526D7F602B2B853800420776 /* ProgressModel.swift */; };
 		527B5CF42B29AA3A006A7E5F /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 527B5CF32B29AA3A006A7E5F /* SwiftSoup */; };
+		63071C242B2D88400008CF15 /* NavigationViewStyleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63071C232B2D88400008CF15 /* NavigationViewStyleHelper.swift */; };
 		6317B3CB2B2033CD0039795E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317B3CA2B2033CD0039795E /* LoginView.swift */; };
 		6317B3CD2B203B1C0039795E /* OnboardingTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317B3CC2B203B1C0039795E /* OnboardingTabView.swift */; };
 		6317B3D22B2045450039795E /* PersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317B3D12B2045450039795E /* PersonModel.swift */; };
@@ -56,12 +57,12 @@
 		6317B4042B2154D40039795E /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1ABEA542B200E0B00F3C44A /* Pretendard-Thin.otf */; };
 		6317B40A2B2183A50039795E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317B4092B2183A50039795E /* MainView.swift */; };
 		6367BFA52B29824B0060E8D2 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6367BFA42B29824B0060E8D2 /* UIButton.swift */; };
+		6398A3F92B2D80300074E118 /* Contributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6398A3F82B2D80300074E118 /* Contributes.swift */; };
 		63DCF4292B29749F005DA6C9 /* DLMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DCF4282B29749F005DA6C9 /* DLMode.swift */; };
 		647986F82B27038900BA0691 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647986F72B27038900BA0691 /* StartView.swift */; };
 		647986FB2B27EC0B00BA0691 /* extensionOfUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647986FA2B27EC0B00BA0691 /* extensionOfUserDefaults.swift */; };
 		64DE4B9F2B26DECF00AD4995 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DE4B9E2B26DECF00AD4995 /* LoginModel.swift */; };
 		64DE4BA22B26E00500AD4995 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 64DE4BA12B26E00500AD4995 /* Alamofire */; };
-		B195CF762B29EEDE00D72460 /* DismissGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = B195CF752B29EEDE00D72460 /* DismissGesture.swift */; };
 		B1ABEA422B200D3000F3C44A /* CYCApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ABEA412B200D3000F3C44A /* CYCApp.swift */; };
 		B1ABEA462B200D3200F3C44A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1ABEA452B200D3200F3C44A /* Assets.xcassets */; };
 		B1ABEA492B200D3200F3C44A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1ABEA482B200D3200F3C44A /* Preview Assets.xcassets */; };
@@ -123,6 +124,7 @@
 		5215F1AB2B26077B00CE1733 /* ProgressTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressTextView.swift; sourceTree = "<group>"; };
 		5267AC872B28987F009FDB2A /* CommitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitView.swift; sourceTree = "<group>"; };
 		526D7F602B2B853800420776 /* ProgressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressModel.swift; sourceTree = "<group>"; };
+		63071C232B2D88400008CF15 /* NavigationViewStyleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewStyleHelper.swift; sourceTree = "<group>"; };
 		6317B3CA2B2033CD0039795E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		6317B3CC2B203B1C0039795E /* OnboardingTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTabView.swift; sourceTree = "<group>"; };
 		6317B3D12B2045450039795E /* PersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonModel.swift; sourceTree = "<group>"; };
@@ -140,11 +142,11 @@
 		6317B3EE2B21546D0039795E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6317B4092B2183A50039795E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		6367BFA42B29824B0060E8D2 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		6398A3F82B2D80300074E118 /* Contributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contributes.swift; sourceTree = "<group>"; };
 		63DCF4282B29749F005DA6C9 /* DLMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DLMode.swift; sourceTree = "<group>"; };
 		647986F72B27038900BA0691 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		647986FA2B27EC0B00BA0691 /* extensionOfUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensionOfUserDefaults.swift; sourceTree = "<group>"; };
 		64DE4B9E2B26DECF00AD4995 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
-		B195CF752B29EEDE00D72460 /* DismissGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissGesture.swift; sourceTree = "<group>"; };
 		B1ABEA3E2B200D3000F3C44A /* CYC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CYC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1ABEA412B200D3000F3C44A /* CYCApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CYCApp.swift; sourceTree = "<group>"; };
 		B1ABEA452B200D3200F3C44A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 			children = (
 				6317B3D32B2045860039795E /* PersonGridView.swift */,
 				6317B3D52B2049C60039795E /* AboutCYC.swift */,
+				6398A3F82B2D80300074E118 /* Contributes.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -473,7 +476,7 @@
 				B1ABEA632B200E5800F3C44A /* fontExtension.swift */,
 				6317B3D72B20514D0039795E /* CustomSpacing.swift */,
 				B1ABEA672B2017E900F3C44A /* colorExtension.swift */,
-				B195CF752B29EEDE00D72460 /* DismissGesture.swift */,
+				63071C232B2D88400008CF15 /* NavigationViewStyleHelper.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -638,9 +641,9 @@
 				5205DD772B2039640013DF68 /* ProgressView.swift in Sources */,
 				64DE4B9F2B26DECF00AD4995 /* LoginModel.swift in Sources */,
 				04EA90242B26E4FC00DDC99E /* TodoPreView.swift in Sources */,
-				B195CF762B29EEDE00D72460 /* DismissGesture.swift in Sources */,
 				5215F1A82B25D44700CE1733 /* DdayButtonView.swift in Sources */,
 				047F359F2B21A4BB00574504 /* TodoModel.swift in Sources */,
+				63071C242B2D88400008CF15 /* NavigationViewStyleHelper.swift in Sources */,
 				5267AC882B28987F009FDB2A /* CommitView.swift in Sources */,
 				047F359E2B21A4BB00574504 /* SettingModel.swift in Sources */,
 				647986F82B27038900BA0691 /* StartView.swift in Sources */,
@@ -653,6 +656,7 @@
 				6317B3CB2B2033CD0039795E /* LoginView.swift in Sources */,
 				5215F1AC2B26077B00CE1733 /* ProgressTextView.swift in Sources */,
 				047F35952B21A4B000574504 /* SettingView.swift in Sources */,
+				6398A3F92B2D80300074E118 /* Contributes.swift in Sources */,
 				047F35982B21A4B000574504 /* TodoView.swift in Sources */,
 				047F35A52B21A4C900574504 /* SettingViewModel.swift in Sources */,
 				B1ABEA682B2017E900F3C44A /* colorExtension.swift in Sources */,
@@ -679,7 +683,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = H545GGT7HM;
+				DEVELOPMENT_TEAM = ND6356Y385;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CYCWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = CYCWidget;
@@ -690,7 +694,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = thanky.CYC.CYCWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cw.CYC.CYCWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -706,7 +710,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = H545GGT7HM;
+				DEVELOPMENT_TEAM = ND6356Y385;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CYCWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = CYCWidget;
@@ -717,7 +721,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = thanky.CYC.CYCWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cw.CYC.CYCWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -855,7 +859,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CYC/Preview Content\"";
-				DEVELOPMENT_TEAM = H545GGT7HM;
+				DEVELOPMENT_TEAM = ND6356Y385;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CYC/Info.plist;
@@ -869,7 +873,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = thanky.CYC;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cw.CYC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -887,7 +891,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CYC/Preview Content\"";
-				DEVELOPMENT_TEAM = H545GGT7HM;
+				DEVELOPMENT_TEAM = ND6356Y385;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CYC/Info.plist;
@@ -901,7 +905,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = thanky.CYC;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cw.CYC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
