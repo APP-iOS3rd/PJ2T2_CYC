@@ -12,7 +12,7 @@ struct ModalView: View {
     @ObservedObject var progressModel = ProgressModel.shared
 
     var body: some View {
-        VStack{
+        VStack {
             Picker("Your D-day", selection: $progressModel.goal) {
                 ForEach(1...365, id: \.self) { number in
                     Text("\(number)")
