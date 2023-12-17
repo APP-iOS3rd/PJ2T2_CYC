@@ -38,7 +38,7 @@ struct ProgressBarView: View {
                     .resizable()
                     .frame(width: 40, height: 40)
                     .offset(x: 20, y: 0)
-                , alignment: .trailing
+                ,alignment: .trailing
             )
             .padding(2)
             .frame(minWidth: maxProgressWidth)

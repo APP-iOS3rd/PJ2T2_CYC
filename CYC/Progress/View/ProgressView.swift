@@ -18,9 +18,9 @@ struct ProgressView: View {
     }
     
     var body: some View {
-        VStack{
+        VStack {
             ProgressTextView()
-            HStack{
+            HStack {
                 ProgressBarView(maxProgressWidth: maxProgressWidth)
                     .onAppear {
                         progressModel.progress = loginModel.commitDay

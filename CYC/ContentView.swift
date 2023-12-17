@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct StartView: View {
+struct ContentView: View {
     @AppStorage("isLoggedIn") var isloggedInVIew: Bool = false
     
     var body: some View {
@@ -22,5 +22,5 @@ struct StartView: View {
 }
 
 #Preview {
-    StartView()
+    ContentView()
 }
