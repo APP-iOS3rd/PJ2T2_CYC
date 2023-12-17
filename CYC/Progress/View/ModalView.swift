@@ -34,7 +34,7 @@ struct ModalView: View {
     
     // Animation에 대한 함수는 뷰에서만 정의 가능
     func moveDinosaur() {
-        Task{
+        Task {
             for i in 0...loginModel.commitDay {
                 try await Task.sleep(until: .now.advanced(by: .milliseconds(40)), clock: .continuous)
                 withAnimation {

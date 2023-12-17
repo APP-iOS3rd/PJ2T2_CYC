@@ -11,7 +11,7 @@ struct DdayButtonView: View {
     @Binding var goal: Int
     
     var body: some View {
-        VStack{
+        VStack {
             Image(.kissPink)
                 .resizable()
                 .scaledToFit()

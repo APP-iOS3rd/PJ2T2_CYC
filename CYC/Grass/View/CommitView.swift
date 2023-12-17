@@ -14,7 +14,7 @@ struct CommitView: View {
     @State private var cellColor: Color = .green
     
     var body: some View {
-        ZStack{
+        ZStack {
             Rectangle()
                 .fill(Color.containerColor)
                 .frame(width: 350, height: 200)
@@ -25,7 +25,7 @@ struct CommitView: View {
                     .font(.pretendardBold_17)
                     .foregroundStyle(.base)
                     .padding(.bottom, 10)
-                ZStack{
+                ZStack {
                     GrassView(loginModel.testCase, row: 4, col: 10, cellColor: cellColor)
                     RoundedRectangle(cornerRadius: 15.0)
                         .frame(width: 320, height: 120)
@@ -34,10 +34,10 @@ struct CommitView: View {
                 }
                 .gesture(
                     TapGesture()
-                        .onEnded{ _ in
+                        .onEnded { _ in
                             showColorModal.toggle()
                         })
-                .sheet(isPresented: $showColorModal){
+                .sheet(isPresented: $showColorModal) {
                     ColorModalView(cellColor: $cellColor, showColorModal: $showColorModal)
                 }
             }
