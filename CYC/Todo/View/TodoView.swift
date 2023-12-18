@@ -47,7 +47,7 @@ struct TodoView: View {
                     VStack(alignment: .leading) {
                         Text("할 일 목록")
                             .font(.pretendardBold_25)
-                            .padding(.leading, 20)
+                            .padding(.leading, 15)
                             .padding(.top, 10)
                         
                         // MARK: - 리스트
@@ -93,7 +93,7 @@ struct TodoView: View {
                         }
                         .scrollDisabled(true)
                         .padding(.top, -20)
-                        .padding(.horizontal, -20)
+                        .padding(.leading, -15)
                         // MARK: - "새로운 일정" 버튼
                         Button {
                             isTextFieldShown.toggle()
