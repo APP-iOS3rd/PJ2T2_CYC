@@ -41,6 +41,7 @@ struct ProgressView: View {
                     }
                 }
             }
+            .padding(.horizontal, 5)
         }
         .padding(.top, 20)
         .background(Color.bgColor)

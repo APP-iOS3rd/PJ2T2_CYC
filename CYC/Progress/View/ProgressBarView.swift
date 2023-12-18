@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ProgressBarView: View {
     @ObservedObject var progressModel = ProgressModel.shared
+    @AppStorage("colorkey") var selectedColor: Color = .green
     
     var maxProgressWidth: Double {
         let containerWidth = UIScreen.main.bounds.width - 95
@@ -30,7 +31,7 @@ struct ProgressBarView: View {
             
             ZStack(alignment: .trailing) {
                 RoundedRectangle(cornerRadius: 60)
-                    .foregroundColor(.progressBar)
+                    .foregroundColor(selectedColor)
                     .frame(height: 4)
             }
             //progress bar 움직이는 이미지
