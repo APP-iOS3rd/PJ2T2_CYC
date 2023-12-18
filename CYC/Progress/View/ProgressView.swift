@@ -13,15 +13,16 @@ struct ProgressView: View {
 
     // MARK: 현재 CommitDay까지 가는 progress width 조절
     var maxProgressWidth: Double {
-        let progressWidth = CGFloat(Double(progressModel.progress) / Double(progressModel.goal)) * progressModel.containerWidth
-        return min(progressWidth, progressModel.containerWidth)
+        let containerWidth = UIScreen.main.bounds.width - 95
+        let progressWidth = CGFloat(Double(progressModel.progress) / Double(progressModel.goal)) * containerWidth
+        return min(progressWidth, containerWidth)
     }
     
     var body: some View {
         VStack {
             ProgressTextView()
             HStack {
-                ProgressBarView(maxProgressWidth: maxProgressWidth)
+                ProgressBarView()
                     .onAppear {
                         progressModel.progress = loginModel.commitDay
                         ModalView().moveDinosaur()
