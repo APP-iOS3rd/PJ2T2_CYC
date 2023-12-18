@@ -64,7 +64,7 @@ struct MainView: View {
                         VStack(alignment: .leading, spacing: 8) {
                             Text("Hi, \(loginModel.userName ?? "CYC")")
                             
-                            Text("오늘 커밋 잡쉈어?")
+                            Text(subTextArray.randomElement()!)
                         }
                         .font(.pretendardBold_25)
                         .hSpacing(.leading)
