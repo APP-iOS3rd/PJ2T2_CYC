@@ -47,7 +47,7 @@ struct TodoPreView: View {
                     Spacer()
                         .frame(height: todoModel.count == 0 ? 140 : 0)
 
-                    ForEach(sortedTodoModel.prefix(3), id: \.id) { list in
+                    ForEach(sortedTodoModel.prefix(3)) { list in
                             HStack {
                                 Button {
                                     TodoView().toggleCompleted(list)
