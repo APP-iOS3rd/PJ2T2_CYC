@@ -8,7 +8,6 @@
 import SwiftUI
 import SwiftData
 
-
 struct TodoView: View {
     
     @Environment(\.dismiss) var dismiss
@@ -23,7 +22,7 @@ struct TodoView: View {
     var sortedTodoModel: [TodoModel] { // 생성시간 오래된 순으로 정렬
         return todoModel.sorted(by: { $0.createdAt < $1.createdAt })
     }
-    
+
     var backButton : some View {  // 커스텀 버튼
         Button{
             dismiss()

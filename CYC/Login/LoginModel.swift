@@ -9,6 +9,7 @@ import Foundation
 import Alamofire
 import SwiftSoup
 
+@MainActor
 class LoginModel: ObservableObject {
     static let shared = LoginModel()
     
@@ -97,7 +98,7 @@ class LoginModel: ObservableObject {
     
     // 유저정보를 받아오기 위한 함수
     func getUser() async {
-        guard let token = self.access_token else { return }
+        guard self.access_token != nil else { return }
         let headers: HTTPHeaders = ["Accept": "application/vnd.github+json",
                                     "Authorization": "Bearer \(access_token!)"]
 
