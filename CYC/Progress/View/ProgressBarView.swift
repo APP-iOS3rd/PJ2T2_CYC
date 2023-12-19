@@ -9,8 +9,13 @@ import SwiftUI
 
 struct ProgressBarView: View {
     @ObservedObject var progressModel = ProgressModel.shared
+    @AppStorage("colorkey") var selectedColor: Color = .green
     
-    var maxProgressWidth: Double
+    var maxProgressWidth: Double {
+        let containerWidth = UIScreen.main.bounds.width - 95
+        let progressWidth = CGFloat(Double(progressModel.progress) / Double(progressModel.goal)) * containerWidth
+        return min(progressWidth, containerWidth)
+    }
     
     var body: some View {
         ZStack(alignment: .leading) {
@@ -18,9 +23,6 @@ struct ProgressBarView: View {
             GeometryReader { geo in
                 RoundedRectangle(cornerRadius: 60)
                     .foregroundColor(.bgColor)
-                    .onAppear {
-                        progressModel.containerWidth = UIScreen.main.bounds.width - 95
-                    }
             }
             RoundedRectangle(cornerRadius: 60)
                 .fill(Color.white)
@@ -29,7 +31,7 @@ struct ProgressBarView: View {
             
             ZStack(alignment: .trailing) {
                 RoundedRectangle(cornerRadius: 60)
-                    .foregroundColor(.progressBar)
+                    .foregroundColor(selectedColor)
                     .frame(height: 4)
             }
             //progress bar 움직이는 이미지

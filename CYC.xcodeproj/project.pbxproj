@@ -29,6 +29,7 @@
 		5267AC8C2B28A722009FDB2A /* GrassView in Frameworks */ = {isa = PBXBuildFile; productRef = 5267AC8B2B28A722009FDB2A /* GrassView */; };
 		526D7F612B2B853800420776 /* ProgressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526D7F602B2B853800420776 /* ProgressModel.swift */; };
 		527B5CF42B29AA3A006A7E5F /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 527B5CF32B29AA3A006A7E5F /* SwiftSoup */; };
+		52B93C872B30B8F6005E9ACE /* CommitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B93C862B30B8F6005E9ACE /* CommitModel.swift */; };
 		63071C242B2D88400008CF15 /* NavigationViewStyleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63071C232B2D88400008CF15 /* NavigationViewStyleHelper.swift */; };
 		6317B3CB2B2033CD0039795E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317B3CA2B2033CD0039795E /* LoginView.swift */; };
 		6317B3CD2B203B1C0039795E /* OnboardingTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317B3CC2B203B1C0039795E /* OnboardingTabView.swift */; };
@@ -62,7 +63,6 @@
 		6398A3F92B2D80300074E118 /* Contributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6398A3F82B2D80300074E118 /* Contributes.swift */; };
 		63DCF4292B29749F005DA6C9 /* DLMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DCF4282B29749F005DA6C9 /* DLMode.swift */; };
 		643010582B2E2F05009B2C66 /* SubTextModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643010572B2E2F04009B2C66 /* SubTextModel.swift */; };
-		647986F82B27038900BA0691 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647986F72B27038900BA0691 /* StartView.swift */; };
 		647986F82B27038900BA0691 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647986F72B27038900BA0691 /* ContentView.swift */; };
 		647986FB2B27EC0B00BA0691 /* extensionOfUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647986FA2B27EC0B00BA0691 /* extensionOfUserDefaults.swift */; };
 		64DE4B9F2B26DECF00AD4995 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DE4B9E2B26DECF00AD4995 /* LoginModel.swift */; };
@@ -130,6 +130,7 @@
 		5257BDE12B2DB744006FDD79 /* GrassColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrassColor.swift; sourceTree = "<group>"; };
 		5267AC872B28987F009FDB2A /* CommitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitView.swift; sourceTree = "<group>"; };
 		526D7F602B2B853800420776 /* ProgressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressModel.swift; sourceTree = "<group>"; };
+		52B93C862B30B8F6005E9ACE /* CommitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitModel.swift; sourceTree = "<group>"; };
 		63071C232B2D88400008CF15 /* NavigationViewStyleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewStyleHelper.swift; sourceTree = "<group>"; };
 		6317B3CA2B2033CD0039795E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		6317B3CC2B203B1C0039795E /* OnboardingTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTabView.swift; sourceTree = "<group>"; };
@@ -151,7 +152,6 @@
 		6398A3F82B2D80300074E118 /* Contributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contributes.swift; sourceTree = "<group>"; };
 		63DCF4282B29749F005DA6C9 /* DLMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DLMode.swift; sourceTree = "<group>"; };
 		643010572B2E2F04009B2C66 /* SubTextModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubTextModel.swift; sourceTree = "<group>"; };
-		647986F72B27038900BA0691 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		647986F72B27038900BA0691 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		647986FA2B27EC0B00BA0691 /* extensionOfUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensionOfUserDefaults.swift; sourceTree = "<group>"; };
 		64DE4B9E2B26DECF00AD4995 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
@@ -210,8 +210,8 @@
 		5267AC862B289830009FDB2A /* Grass */ = {
 			isa = PBXGroup;
 			children = (
+				52B93C882B30B8FB005E9ACE /* Model */,
 				5267AC902B28A7AA009FDB2A /* View */,
-				5257BDE12B2DB744006FDD79 /* GrassColor.swift */,
 			);
 			path = Grass;
 			sourceTree = "<group>";
@@ -223,6 +223,15 @@
 				5257BDDF2B2D9CBE006FDD79 /* ColorModalView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		52B93C882B30B8FB005E9ACE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5257BDE12B2DB744006FDD79 /* GrassColor.swift */,
+				52B93C862B30B8F6005E9ACE /* CommitModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		52D16C4A2B2AFA80009A3226 /* NotificationHelper */ = {
@@ -642,6 +651,7 @@
 				6317B3D22B2045450039795E /* PersonModel.swift in Sources */,
 				B1EE4F032B275B3B0097436B /* AppDelegate.swift in Sources */,
 				526D7F612B2B853800420776 /* ProgressModel.swift in Sources */,
+				52B93C872B30B8F6005E9ACE /* CommitModel.swift in Sources */,
 				047F35962B21A4B000574504 /* NotificationView.swift in Sources */,
 				63DCF4292B29749F005DA6C9 /* DLMode.swift in Sources */,
 				6317B3CD2B203B1C0039795E /* OnboardingTabView.swift in Sources */,
@@ -659,7 +669,7 @@
 				63071C242B2D88400008CF15 /* NavigationViewStyleHelper.swift in Sources */,
 				5267AC882B28987F009FDB2A /* CommitView.swift in Sources */,
 				047F359E2B21A4BB00574504 /* SettingModel.swift in Sources */,
-				647986F82B27038900BA0691 /* StartView.swift in Sources */,
+				647986F82B27038900BA0691 /* ContentView.swift in Sources */,
 				643010582B2E2F05009B2C66 /* SubTextModel.swift in Sources */,
 				647986F82B27038900BA0691 /* ContentView.swift in Sources */,
 				6317B3F72B2154A00039795E /* AppIntent.swift in Sources */,

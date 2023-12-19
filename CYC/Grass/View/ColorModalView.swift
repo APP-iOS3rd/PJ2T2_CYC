@@ -8,15 +8,14 @@
 import SwiftUI
 
 struct ColorModalView: View {
-    @Binding var cellColor: Color
-    @Binding var showColorModal: Bool
-    @State var selectedColorName = "green"
+    @ObservedObject private var commitModel = CommitModel.shared
+    @AppStorage("colorkey") var selectedColor: Color = .green
     
     var colorsName = ["red", "green", "blue", "cyan", "orange", "indigo"]
       
     var body: some View {
         VStack {
-            Picker("Choose a color", selection: $selectedColorName) {
+            Picker("Choose a color", selection: $commitModel.selectedColorName) {
                 ForEach(colorsName, id: \.self) {
                     Text($0)
                         .foregroundStyle(GrassColor[$0])
@@ -26,8 +25,8 @@ struct ColorModalView: View {
             .cornerRadius(15)
             
             Button(action: {
-                showColorModal.toggle()
-                cellColor = GrassColor[selectedColorName]
+                commitModel.showColorModal.toggle()
+                selectedColor = GrassColor[commitModel.selectedColorName]
             }) {
                 Text("저장")
                     .font(.pretendardBold_17)
