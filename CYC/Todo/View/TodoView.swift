@@ -12,7 +12,6 @@ import SwiftData
 struct TodoView: View {
     
     @Environment(\.dismiss) var dismiss
-    @Environment(\.modelContext) private var modelContext
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Query private var todoModel: [TodoModel]
     
@@ -20,6 +19,7 @@ struct TodoView: View {
     @State var isTextFieldShown = false
     @FocusState var focused: Bool
     
+    var modelContext: ModelContext
     var sortedTodoModel: [TodoModel] { // 생성시간 오래된 순으로 정렬
         return todoModel.sorted(by: { $0.createdAt < $1.createdAt })
     }
@@ -150,6 +150,9 @@ struct TodoView: View {
 }
 
 
-#Preview {
-    TodoView().preferredColorScheme(.dark)
+struct TodoView_Previews: PreviewProvider {
+    static var previews: some View {
+        let modelContext = TodoPreView().modelContext
+        return TodoView(modelContext: modelContext).preferredColorScheme(.dark)
+    }
 }
