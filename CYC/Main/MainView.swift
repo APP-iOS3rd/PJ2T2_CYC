@@ -18,6 +18,7 @@ struct MainView: View {
     @State private var appearanceMode: AppearanceMode = .System
     @State private var colorScheme: ColorScheme? = nil
     @State var show = true
+    @State private var selectedColorName = "green"
     
     // MARK: 커밋 변수
     var body: some View {
