@@ -10,13 +10,14 @@ import SwiftData
 
 struct MainView: View {
     
+    @AppStorage("appearanceMode") private var appearanceMode: AppearanceMode = .System
     @AppStorage("isLoggedIn") var isloggedInVIew: Bool = false
+   
     @ObservedObject private var loginModel = LoginModel.shared
     @ObservedObject private var progressModel = ProgressModel.shared
-    @Query private var todoModel: [TodoModel]
     
-    @State private var appearanceMode: AppearanceMode = .System
-    @State private var colorScheme: ColorScheme? = nil
+    @Query private var todoModel: [TodoModel]
+ 
     @State var show = true
     @State private var selectedColorName = "green"
     
@@ -45,7 +46,7 @@ struct MainView: View {
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 25, height: 25)
-                                .foregroundStyle(.base)
+                                .foregroundStyle(.gray)
                                 .padding(.horizontal, 5)
                         }
                         
@@ -54,7 +55,7 @@ struct MainView: View {
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 25)
-                                .foregroundStyle(.base)
+                                .foregroundStyle(.gray)
                         }
                     }
                     .padding(.horizontal, 22)
@@ -86,7 +87,7 @@ struct MainView: View {
                     }
                     .scrollIndicators(.hidden)
                 }
-                DLMode(appearanceMode: $appearanceMode, colorScheme: $colorScheme, show: $show)
+                DLMode(appearanceMode: $appearanceMode, show: $show)
                     .ignoresSafeArea()
             }
         }

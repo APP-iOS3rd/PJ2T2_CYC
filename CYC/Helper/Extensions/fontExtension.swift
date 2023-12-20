@@ -23,6 +23,7 @@ extension Font {
     
     //Medium
     static let pretendardMedium: Font = .custom("Pretendard-Medium", size: 15)
+    static let pretendardMedium_17: Font = .custom("Pretendard-Medium", size: 17)
     
     //SemiBold
     static let pretendardSemiBold_12: Font = .custom("Pretendard-SemiBold", size: 12)

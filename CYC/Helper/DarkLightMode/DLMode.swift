@@ -10,12 +10,10 @@ import SwiftUI
 struct DLMode: View {
     
     @Binding var appearanceMode: AppearanceMode
-    @Binding var colorScheme: ColorScheme?
     @Binding var show: Bool
     
     var body: some View {
         ZStack {
-//            Color(show ? .clear : .clear).ignoresSafeArea()
             VStack {
                 Spacer()
                 ZStack {
@@ -42,7 +40,6 @@ struct DLMode: View {
                             // Light Mode
                             Button {
                                 appearanceMode = .Light
-                                colorScheme = .light
                             } label: {
                                 UIButton(mode: .Light, currentMode: $appearanceMode, Rbg: Color(.systemGray), Rbgi: Color(.systemGray3), ibg: .white)
                             }
@@ -51,7 +48,6 @@ struct DLMode: View {
                             // Dark Mode
                             Button {
                                 appearanceMode = .Dark
-                                colorScheme = .dark
                             } label: {
                                 UIButton(mode: .Dark, currentMode: $appearanceMode, Rbg: Color(.systemGray), Rbgi: Color(.systemGray3), ibg: .black)
                             }
@@ -69,13 +65,12 @@ struct DLMode: View {
                             }
                             .onTapGesture {
                                 appearanceMode = .System
-                                colorScheme = nil
                             }
                         }
                     }
                 }
                 .padding(.horizontal, 8)
-                .preferredColorScheme(colorScheme)
+                .preferredColorScheme(AppearanceMode(rawValue: appearanceMode.rawValue)?.colorScheme)
                 
             }
             .offset(y: show ? 300 : -30)
@@ -87,7 +82,7 @@ struct DLMode: View {
 }
 
 #Preview {
-    DLMode(appearanceMode: .constant(.Dark), colorScheme: .constant(.dark), show: .constant(false))
+    DLMode(appearanceMode: .constant(.Dark), show: .constant(false))
 }
 
 

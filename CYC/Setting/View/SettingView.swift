@@ -22,7 +22,7 @@ struct SettingView: View {
             HStack {
                 Image(systemName: "chevron.left") // 화살표 Image
                     .aspectRatio(contentMode: .fit)
-                    .foregroundStyle(.base)
+                    .foregroundStyle(.gray)
                     .bold()
             }
         }
@@ -32,76 +32,77 @@ struct SettingView: View {
         NavigationStack {
             ZStack {
                 Color.bgColor.ignoresSafeArea(.all)
-                
-                VStack(alignment: .leading, spacing: -15) {
-                    
-                    // MARK: - 헤더
-                    Text("설정")
-                        .font(.pretendardBold_23)
-                        .padding(.horizontal, 15)
+                ScrollView {
+                    VStack(alignment: .leading) {
+                        // MARK: - 헤더
+                        Text("설정")
+                            .font(.pretendardBold_23)
+                            .padding(.horizontal, 15)
                         
-                    
-                    // MARK: - 설정
-                    List {
-                        Section {
+                        // MARK: - 설정
+                        VStack(alignment: .leading) {
                             ForEach(SettingViewModel().settings, id: \.self) { setting in
                                 NavigationLink(destination: setting.destination) {
                                     HStack {
                                         Image("\(setting.imageName)")
                                             .resizable()
-                                            .frame(width: 26, height: 26)
+                                            .frame(width: 24, height: 24)
                                         Text("\(setting.name)")
-                                            .font(.pretendardSemiBold_17)
+                                            .font(.pretendardMedium_17)
                                             .padding(.leading, 10)
+                                        
                                     }
+                                    .foregroundStyle(.base)
+                                    .padding(.vertical, 8)
                                 }
-                            }
-                            .listRowBackground(Color.containerColor)
-                        }
-             
-                        
-                        // MARK: - 로그아웃
-                        Button {
-                            showingAlert.toggle()
-                        } label: {
-                            HStack(spacing: 24) {
-                                Image(systemName: "trash.fill")
                                 
-                                Text("로그아웃")
-                            }
-                            .font(.pretendardBold_17)
-                            .foregroundStyle(.logout)
-                        }
-                        .listRowBackground(Color.containerColor)
-                        .alert("정말 로그아웃 하시겠어요?", isPresented: $showingAlert) {
-                            Button("로그아웃", role: .destructive) {
-                                loginModel.logout()
-                                isloggedInVIew = false
                             }
                             
-                            Button("닫기", role: .cancel) {
-                                showingAlert = false
+                            // MARK: - 로그아웃
+                            Button {
+                                showingAlert.toggle()
+                            } label: {
+                                HStack(spacing: 18) {
+                                    Image("trash")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 24, height: 24)
+                                    
+                                    Text("로그아웃")
+                                }
+                                .font(.pretendardMedium_17)
+                                .foregroundStyle(.logout)
+                                .padding(.top, 8)
+                            }
+                            .alert("정말 로그아웃 하시겠어요?", isPresented: $showingAlert) {
+                                Button("로그아웃", role: .destructive) {
+                                    loginModel.logout()
+                                    isloggedInVIew = false
+                                }
+                                
+                                Button("닫기", role: .cancel) {
+                                    showingAlert = false
+                                }
                             }
                         }
+                        .padding(.leading, 15)
                     }
-                    .scrollContentBackground(.hidden)
-                    
-                    // MARK: - Powered by PJ2T2_CYC
-                    VStack {
-                        Text("2023, Check Your Commit all rights reserved.")
-                            .frame(maxWidth: .infinity, alignment: .center)
-                            .font(.pretendardLight_11)
-                            .offset(y: 10)
-                        Text("Powered by PJ2T2_CYC")
-                            .frame(maxWidth: .infinity, alignment: .center)
-                            .font(.pretendardLight_11)
-                            .offset(y: 10)
-                    }
+                    .hSpacing(.leading)
                 }
                 .padding(.top, 5)
+                // MARK: - Powered by PJ2T2_CYC
+                VStack(spacing: 8) {
+                    Text("2023, Check Your Commit all rights reserved.")
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        .font(.pretendardLight_11)
+                    Text("Powered by PJ2T2_CYC")
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        .font(.pretendardLight_11)
+                }
+                .vSpacing(.bottom)
             }
+            
         }
-        .scrollDisabled(true)
         .navigationTitle("설정")
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(true)
