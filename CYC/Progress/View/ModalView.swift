@@ -1,5 +1,5 @@
 //
-//  DdayButtonView.swift
+//  ModalView.swift
 //  CYC
 //
 //  Created by 이민영 on 2023/12/10.
@@ -22,6 +22,7 @@ struct ModalView: View {
             Button {
                 progressModel.showSheet = false
                 moveDinosaur()
+                progressModel.updateGoal(newGoal: progressModel.goal)
             } label: {
                 Text("저장")
                     .font(.pretendardBold_17)
