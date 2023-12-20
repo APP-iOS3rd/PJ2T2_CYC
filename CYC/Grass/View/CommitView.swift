@@ -18,8 +18,10 @@ struct CommitView: View {
         ZStack {
             Rectangle()
                 .fill(Color.containerColor)
-                .frame(width: 350, height: 200)
                 .cornerRadius(15.0)
+                .padding(.horizontal, 20)
+                .padding(.vertical, 10)
+            
             
             VStack(alignment: .leading) {
                 Text("커밋 기록")
@@ -29,8 +31,8 @@ struct CommitView: View {
                 ZStack {
                     GrassView(loginModel.testCase, row: 4, col: 10, cellColor: selectedColor)
                     RoundedRectangle(cornerRadius: 15.0)
-                        .frame(width: 320, height: 120)
                         .foregroundStyle(Color(white: 1.0, opacity: 0.001))
+                        .padding(.horizontal, 10)
                     
                 }
                 .gesture(
