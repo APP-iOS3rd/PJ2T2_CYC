@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		046652082B2BE30E00FCD950 /* keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046652072B2BE30E00FCD950 /* keys.swift */; };
 		047F35952B21A4B000574504 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047F35902B21A4AF00574504 /* SettingView.swift */; };
 		047F35962B21A4B000574504 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047F35912B21A4AF00574504 /* NotificationView.swift */; };
 		047F35982B21A4B000574504 /* TodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047F35932B21A4B000574504 /* TodoView.swift */; };
@@ -61,6 +60,7 @@
 		6317B40A2B2183A50039795E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317B4092B2183A50039795E /* MainView.swift */; };
 		6367BFA52B29824B0060E8D2 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6367BFA42B29824B0060E8D2 /* UIButton.swift */; };
 		637D3FB92B31902A00640143 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647986F72B27038900BA0691 /* ContentView.swift */; };
+		637D3FBB2B31F9F600640143 /* keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637D3FBA2B31F9F600640143 /* keys.swift */; };
 		6398A3F92B2D80300074E118 /* Contributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6398A3F82B2D80300074E118 /* Contributes.swift */; };
 		63DCF4292B29749F005DA6C9 /* DLMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DCF4282B29749F005DA6C9 /* DLMode.swift */; };
 		643010582B2E2F05009B2C66 /* SubTextModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643010572B2E2F04009B2C66 /* SubTextModel.swift */; };
@@ -110,7 +110,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		046652072B2BE30E00FCD950 /* keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = keys.swift; sourceTree = "<group>"; };
 		047F35902B21A4AF00574504 /* SettingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		047F35912B21A4AF00574504 /* NotificationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		047F35932B21A4B000574504 /* TodoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoView.swift; sourceTree = "<group>"; };
@@ -149,6 +148,7 @@
 		6317B3EE2B21546D0039795E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6317B4092B2183A50039795E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		6367BFA42B29824B0060E8D2 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		637D3FBA2B31F9F600640143 /* keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = keys.swift; sourceTree = "<group>"; };
 		6398A3F82B2D80300074E118 /* Contributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contributes.swift; sourceTree = "<group>"; };
 		63DCF4282B29749F005DA6C9 /* DLMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DLMode.swift; sourceTree = "<group>"; };
 		643010572B2E2F04009B2C66 /* SubTextModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubTextModel.swift; sourceTree = "<group>"; };
@@ -347,7 +347,7 @@
 				6317B3CC2B203B1C0039795E /* OnboardingTabView.swift */,
 				6317B3CA2B2033CD0039795E /* LoginView.swift */,
 				64DE4B9E2B26DECF00AD4995 /* LoginModel.swift */,
-				046652072B2BE30E00FCD950 /* keys.swift */,
+				637D3FBA2B31F9F600640143 /* keys.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -656,7 +656,6 @@
 				047F35962B21A4B000574504 /* NotificationView.swift in Sources */,
 				63DCF4292B29749F005DA6C9 /* DLMode.swift in Sources */,
 				6317B3CD2B203B1C0039795E /* OnboardingTabView.swift in Sources */,
-				046652082B2BE30E00FCD950 /* keys.swift in Sources */,
 				047F359D2B21A4BB00574504 /* LicenseModel.swift in Sources */,
 				B1ABEA642B200E5800F3C44A /* fontExtension.swift in Sources */,
 				B1E959872B285EE000DF64A4 /* LocalNotificationHelper.swift in Sources */,
@@ -666,6 +665,7 @@
 				5257BDE02B2D9CBE006FDD79 /* ColorModalView.swift in Sources */,
 				04EA90242B26E4FC00DDC99E /* TodoPreView.swift in Sources */,
 				5215F1A82B25D44700CE1733 /* DdayButtonView.swift in Sources */,
+				637D3FBB2B31F9F600640143 /* keys.swift in Sources */,
 				047F359F2B21A4BB00574504 /* TodoModel.swift in Sources */,
 				63071C242B2D88400008CF15 /* NavigationViewStyleHelper.swift in Sources */,
 				5267AC882B28987F009FDB2A /* CommitView.swift in Sources */,

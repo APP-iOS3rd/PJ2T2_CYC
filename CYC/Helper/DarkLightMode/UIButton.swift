@@ -7,8 +7,21 @@
 
 import SwiftUI
 
-enum AppearanceMode {
-    case Dark, Light, System
+enum AppearanceMode: Int {
+    case System = 0
+    case Light = 1
+    case Dark = 2
+    
+    var colorScheme: ColorScheme? {
+            switch self {
+            case .System:
+                return .none
+            case .Light:
+                return .light
+            case .Dark:
+                return .dark
+            }
+        }
 }
 
 
