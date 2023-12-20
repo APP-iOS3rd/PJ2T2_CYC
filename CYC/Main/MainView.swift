@@ -73,8 +73,6 @@ struct MainView: View {
                         
                         // MARK: - 하단 뷰 연결
                         ProgressView()
-                            .padding(.horizontal, 5)
-                        
                         
                         // MARK: - 잔디 뷰 연결
                         CommitView()
@@ -82,6 +80,7 @@ struct MainView: View {
                         
                         // MARK: - 알림장 미리보기
                         TodoPreView()
+                        
                         
                     }
                     .scrollIndicators(.hidden)
