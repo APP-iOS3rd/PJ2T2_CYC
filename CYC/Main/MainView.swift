@@ -45,7 +45,7 @@ struct MainView: View {
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 25, height: 25)
-                                .foregroundStyle(.base)
+                                .foregroundStyle(.gray)
                                 .padding(.horizontal, 5)
                         }
                         
@@ -54,7 +54,7 @@ struct MainView: View {
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 25)
-                                .foregroundStyle(.base)
+                                .foregroundStyle(.gray)
                         }
                     }
                     .padding(.horizontal, 22)

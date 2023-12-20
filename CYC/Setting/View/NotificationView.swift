@@ -31,7 +31,7 @@ struct NotificationView: View {
             HStack {
                 Image(systemName: "chevron.left") // 화살표 Image
                     .aspectRatio(contentMode: .fit)
-                    .foregroundStyle(.base)
+                    .foregroundStyle(.gray)
                     .bold()
             }
         }
