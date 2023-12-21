@@ -18,60 +18,62 @@ struct TodoPreView: View {
     
     var body: some View {
         NavigationLink(destination: TodoView(modelContext: modelContext)) {
-            ZStack(alignment: .leading) {
+            
+            ZStack/*(alignment: .leading)*/ {
                 Rectangle()
                     .fill(Color.containerColor)
-                    .frame(width: 350, height: 200)
                     .cornerRadius(15.0)
-                VStack(alignment: .leading) {
-                    // MARK: - Todo 미리보기 헤더
-                    HStack(spacing: 230) {
-                        Text("오늘 뭐해?")
-                        .font(.pretendardBold_17)
-                        .foregroundStyle(.base)
-
-                        Image(systemName: "chevron.right")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 15, height: 15)
-                            .foregroundStyle(.base)
-                    }
-                    .padding(.leading, 20)
-                    .padding(.top, 10)
-
-                    Divider()
-                        .frame(width: 350)
-                        .padding(.top, 5)
+                    .padding(.horizontal, 25)
                 
-                    // MARK: - Todo 미리보기 바디
+                VStack {
+                    // MARK: - Todo 미리보기 헤더
+                    GeometryReader { geometry in
+                        HStack {
+                            Text("오늘 뭐해?")
+                                .font(.pretendardBold_17)
+                                .foregroundStyle(.base)
+                                .padding(.leading, geometry.size.width / 10)
+                            
+                            Spacer()
+                            
+                            Image(systemName: "chevron.right")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 15, height: 15)
+                                .foregroundStyle(.base)
+                                .padding(.trailing, geometry.size.width / 10)
+                        }
+                        .padding(.top, 15)
+                    }
                     
+                    Divider()
+                        .padding(.horizontal, 25)
+                        .padding(.top, 30)
                     Spacer()
                         .frame(height: todoModel.count == 0 ? 140 : 0)
-
+                    // MARK: - Todo 미리보기 바디
                     ForEach(sortedTodoModel.prefix(3)) { list in
-                            HStack {
-                                Button {
-                                    TodoView(modelContext: modelContext).toggleCompleted(list)
-                                } label: {    // 완료여부에 따라 이미지 변경
-                                    Image(systemName: list.completed ? "checkmark.circle.fill" : "circle")
-                                }
-                                .buttonStyle(PlainButtonStyle())
-                                .foregroundStyle(list.completed ? Color.green : Color.base)
-                                Spacer()
-                                Text("\(list.title)")
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-                                    .padding(10)
-                                    .font(.pretendardSemiBold_15)
-                                    .foregroundStyle(list.completed ? Color.gray : Color.base)
+                        HStack {
+                            Button {
+                                TodoView(modelContext: modelContext).toggleCompleted(list)
+                            } label: {    // 완료여부에 따라 이미지 변경
+                                Image(systemName: list.completed ? "checkmark.circle.fill" : "circle")
                             }
-                            .padding(.leading, 20)
-                            .offset(y: 25)
+                            .buttonStyle(PlainButtonStyle())
+                            .foregroundStyle(list.completed ? Color.green : Color.base)
+                            Spacer()
+                            Text("\(list.title)")
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(10)
+                                .font(.pretendardSemiBold_15)
+                                .foregroundStyle(list.completed ? Color.gray : Color.base)
                         }
-                        .scrollContentBackground(.hidden)
-                        .frame(width: 350)
-                        .offset(y: -20)
-                        Spacer()
-                            .frame(height: todoModel.count == 1 ? 110 : (todoModel.count == 2 ? 60 : 10))
+                        .padding(.leading, 40)
+                        
+                    }
+                    .scrollContentBackground(.hidden)
+                    Spacer()
+                        .frame(height: todoModel.count == 1 ? 110 : (todoModel.count == 2 ? 60 : 10))
                 }
             }
         }
