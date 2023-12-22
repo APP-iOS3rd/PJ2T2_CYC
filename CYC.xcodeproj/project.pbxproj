@@ -17,6 +17,8 @@
 		047F35A32B21A4C900574504 /* LicenseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047F35A02B21A4C900574504 /* LicenseViewModel.swift */; };
 		047F35A52B21A4C900574504 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047F35A22B21A4C900574504 /* SettingViewModel.swift */; };
 		04EA90242B26E4FC00DDC99E /* TodoPreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EA90232B26E4FC00DDC99E /* TodoPreView.swift */; };
+		41CCD5222B3566D100A8DBB4 /* keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CCD5212B3566D100A8DBB4 /* keys.swift */; };
+		41CCD5242B3566DF00A8DBB4 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 41CCD5232B3566DF00A8DBB4 /* Config.xcconfig */; };
 		5205DD772B2039640013DF68 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5205DD762B2039640013DF68 /* ProgressView.swift */; };
 		5215F1A42B25CDB500CE1733 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5215F1A32B25CDB500CE1733 /* ModalView.swift */; };
 		5215F1A62B25D30800CE1733 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5215F1A52B25D30800CE1733 /* ProgressBarView.swift */; };
@@ -36,34 +38,12 @@
 		6317B3D42B2045860039795E /* PersonGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317B3D32B2045860039795E /* PersonGridView.swift */; };
 		6317B3D62B2049C60039795E /* AboutCYC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317B3D52B2049C60039795E /* AboutCYC.swift */; };
 		6317B3D82B20514D0039795E /* CustomSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317B3D72B20514D0039795E /* CustomSpacing.swift */; };
-		6317B3E02B21546B0039795E /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6317B3DF2B21546B0039795E /* WidgetKit.framework */; };
-		6317B3E22B21546B0039795E /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6317B3E12B21546B0039795E /* SwiftUI.framework */; };
-		6317B3E52B21546B0039795E /* CYCWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317B3E42B21546B0039795E /* CYCWidgetBundle.swift */; };
-		6317B3E72B21546B0039795E /* CYCWidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317B3E62B21546B0039795E /* CYCWidgetLiveActivity.swift */; };
-		6317B3E92B21546B0039795E /* CYCWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317B3E82B21546B0039795E /* CYCWidget.swift */; };
-		6317B3EB2B21546B0039795E /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317B3EA2B21546B0039795E /* AppIntent.swift */; };
-		6317B3ED2B21546D0039795E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6317B3EC2B21546D0039795E /* Assets.xcassets */; };
-		6317B3F12B21546D0039795E /* CYCWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 6317B3DD2B21546B0039795E /* CYCWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		6317B3F72B2154A00039795E /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317B3EA2B21546B0039795E /* AppIntent.swift */; };
-		6317B3F92B2154B80039795E /* fontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ABEA632B200E5800F3C44A /* fontExtension.swift */; };
-		6317B3FA2B2154BA0039795E /* CustomSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317B3D72B20514D0039795E /* CustomSpacing.swift */; };
-		6317B3FB2B2154BD0039795E /* colorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ABEA672B2017E900F3C44A /* colorExtension.swift */; };
-		6317B3FC2B2154C30039795E /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1ABEA562B200E0B00F3C44A /* Pretendard-Black.otf */; };
-		6317B3FD2B2154C50039795E /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1ABEA552B200E0B00F3C44A /* Pretendard-Bold.otf */; };
-		6317B3FE2B2154C70039795E /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1ABEA532B200E0B00F3C44A /* Pretendard-ExtraBold.otf */; };
-		6317B3FF2B2154CA0039795E /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1ABEA582B200E0B00F3C44A /* Pretendard-ExtraLight.otf */; };
-		6317B4002B2154CC0039795E /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1ABEA572B200E0B00F3C44A /* Pretendard-Light.otf */; };
-		6317B4012B2154CE0039795E /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1ABEA512B200E0B00F3C44A /* Pretendard-Medium.otf */; };
-		6317B4022B2154D00039795E /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1ABEA502B200E0B00F3C44A /* Pretendard-Regular.otf */; };
-		6317B4032B2154D20039795E /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1ABEA522B200E0B00F3C44A /* Pretendard-SemiBold.otf */; };
-		6317B4042B2154D40039795E /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1ABEA542B200E0B00F3C44A /* Pretendard-Thin.otf */; };
 		6317B40A2B2183A50039795E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317B4092B2183A50039795E /* MainView.swift */; };
 		6367BFA52B29824B0060E8D2 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6367BFA42B29824B0060E8D2 /* UIButton.swift */; };
 		637D3FB92B31902A00640143 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647986F72B27038900BA0691 /* ContentView.swift */; };
-		637D3FBB2B31F9F600640143 /* keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637D3FBA2B31F9F600640143 /* keys.swift */; };
 		6398A3F92B2D80300074E118 /* Contributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6398A3F82B2D80300074E118 /* Contributes.swift */; };
 		63DCF4292B29749F005DA6C9 /* DLMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DCF4282B29749F005DA6C9 /* DLMode.swift */; };
-		643084C42B33467E00F8110C /* keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643084C32B33467E00F8110C /* keys.swift */; };
 		647986FB2B27EC0B00BA0691 /* extensionOfUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647986FA2B27EC0B00BA0691 /* extensionOfUserDefaults.swift */; };
 		64DE4B9F2B26DECF00AD4995 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DE4B9E2B26DECF00AD4995 /* LoginModel.swift */; };
 		64DE4BA22B26E00500AD4995 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 64DE4BA12B26E00500AD4995 /* Alamofire */; };
@@ -85,16 +65,6 @@
 		B1EE4F032B275B3B0097436B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EE4F022B275B3B0097436B /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		6317B3EF2B21546D0039795E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B1ABEA362B200D3000F3C44A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6317B3DC2B21546B0039795E;
-			remoteInfo = CYCWidgetExtension;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		6317B3F22B21546D0039795E /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -102,7 +72,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				6317B3F12B21546D0039795E /* CYCWidgetExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 1;
@@ -120,6 +89,8 @@
 		047F35A02B21A4C900574504 /* LicenseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicenseViewModel.swift; sourceTree = "<group>"; };
 		047F35A22B21A4C900574504 /* SettingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 		04EA90232B26E4FC00DDC99E /* TodoPreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoPreView.swift; sourceTree = "<group>"; };
+		41CCD5212B3566D100A8DBB4 /* keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = keys.swift; sourceTree = "<group>"; };
+		41CCD5232B3566DF00A8DBB4 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		5205DD762B2039640013DF68 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		5215F1A32B25CDB500CE1733 /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
 		5215F1A52B25D30800CE1733 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
@@ -137,7 +108,6 @@
 		6317B3D32B2045860039795E /* PersonGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonGridView.swift; sourceTree = "<group>"; };
 		6317B3D52B2049C60039795E /* AboutCYC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutCYC.swift; sourceTree = "<group>"; };
 		6317B3D72B20514D0039795E /* CustomSpacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSpacing.swift; sourceTree = "<group>"; };
-		6317B3DD2B21546B0039795E /* CYCWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CYCWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		6317B3DF2B21546B0039795E /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		6317B3E12B21546B0039795E /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		6317B3E42B21546B0039795E /* CYCWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CYCWidgetBundle.swift; sourceTree = "<group>"; };
@@ -148,10 +118,8 @@
 		6317B3EE2B21546D0039795E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6317B4092B2183A50039795E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		6367BFA42B29824B0060E8D2 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
-		637D3FBA2B31F9F600640143 /* keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = keys.swift; sourceTree = "<group>"; };
 		6398A3F82B2D80300074E118 /* Contributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contributes.swift; sourceTree = "<group>"; };
 		63DCF4282B29749F005DA6C9 /* DLMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DLMode.swift; sourceTree = "<group>"; };
-		643084C32B33467E00F8110C /* keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = keys.swift; sourceTree = "<group>"; };
 		647986F72B27038900BA0691 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		647986FA2B27EC0B00BA0691 /* extensionOfUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensionOfUserDefaults.swift; sourceTree = "<group>"; };
 		64DE4B9E2B26DECF00AD4995 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
@@ -177,15 +145,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		6317B3DA2B21546B0039795E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6317B3E22B21546B0039795E /* SwiftUI.framework in Frameworks */,
-				6317B3E02B21546B0039795E /* WidgetKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		B1ABEA3B2B200D3000F3C44A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -347,8 +306,8 @@
 				6317B3CC2B203B1C0039795E /* OnboardingTabView.swift */,
 				6317B3CA2B2033CD0039795E /* LoginView.swift */,
 				64DE4B9E2B26DECF00AD4995 /* LoginModel.swift */,
-				643084C32B33467E00F8110C /* keys.swift */,
-				637D3FBA2B31F9F600640143 /* keys.swift */,
+				41CCD5212B3566D100A8DBB4 /* keys.swift */,
+				41CCD5232B3566DF00A8DBB4 /* Config.xcconfig */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -441,7 +400,6 @@
 			isa = PBXGroup;
 			children = (
 				B1ABEA3E2B200D3000F3C44A /* CYC.app */,
-				6317B3DD2B21546B0039795E /* CYCWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -504,23 +462,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6317B3DC2B21546B0039795E /* CYCWidgetExtension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 6317B3F52B21546D0039795E /* Build configuration list for PBXNativeTarget "CYCWidgetExtension" */;
-			buildPhases = (
-				6317B3D92B21546B0039795E /* Sources */,
-				6317B3DA2B21546B0039795E /* Frameworks */,
-				6317B3DB2B21546B0039795E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = CYCWidgetExtension;
-			productName = CYCWidgetExtension;
-			productReference = 6317B3DD2B21546B0039795E /* CYCWidgetExtension.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		B1ABEA3D2B200D3000F3C44A /* CYC */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B1ABEA4C2B200D3200F3C44A /* Build configuration list for PBXNativeTarget "CYC" */;
@@ -533,7 +474,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				6317B3F02B21546D0039795E /* PBXTargetDependency */,
 			);
 			name = CYC;
 			packageProductDependencies = (
@@ -555,9 +495,6 @@
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
-					6317B3DC2B21546B0039795E = {
-						CreatedOnToolsVersion = 15.0.1;
-					};
 					B1ABEA3D2B200D3000F3C44A = {
 						CreatedOnToolsVersion = 15.0.1;
 					};
@@ -582,29 +519,11 @@
 			projectRoot = "";
 			targets = (
 				B1ABEA3D2B200D3000F3C44A /* CYC */,
-				6317B3DC2B21546B0039795E /* CYCWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		6317B3DB2B21546B0039795E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6317B4012B2154CE0039795E /* Pretendard-Medium.otf in Resources */,
-				6317B4042B2154D40039795E /* Pretendard-Thin.otf in Resources */,
-				6317B3FC2B2154C30039795E /* Pretendard-Black.otf in Resources */,
-				6317B3FD2B2154C50039795E /* Pretendard-Bold.otf in Resources */,
-				6317B3FF2B2154CA0039795E /* Pretendard-ExtraLight.otf in Resources */,
-				6317B3FE2B2154C70039795E /* Pretendard-ExtraBold.otf in Resources */,
-				6317B4022B2154D00039795E /* Pretendard-Regular.otf in Resources */,
-				6317B4032B2154D20039795E /* Pretendard-SemiBold.otf in Resources */,
-				6317B3ED2B21546D0039795E /* Assets.xcassets in Resources */,
-				6317B4002B2154CC0039795E /* Pretendard-Light.otf in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		B1ABEA3C2B200D3000F3C44A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -613,6 +532,7 @@
 				B1ABEA5E2B200E0B00F3C44A /* Pretendard-Bold.otf in Resources */,
 				B1ABEA592B200E0B00F3C44A /* Pretendard-Regular.otf in Resources */,
 				B1ABEA602B200E0B00F3C44A /* Pretendard-Light.otf in Resources */,
+				41CCD5242B3566DF00A8DBB4 /* Config.xcconfig in Resources */,
 				B1ABEA5D2B200E0B00F3C44A /* Pretendard-Thin.otf in Resources */,
 				B1ABEA5F2B200E0B00F3C44A /* Pretendard-Black.otf in Resources */,
 				B1ABEA5C2B200E0B00F3C44A /* Pretendard-ExtraBold.otf in Resources */,
@@ -626,20 +546,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		6317B3D92B21546B0039795E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6317B3FA2B2154BA0039795E /* CustomSpacing.swift in Sources */,
-				6317B3E72B21546B0039795E /* CYCWidgetLiveActivity.swift in Sources */,
-				6317B3FB2B2154BD0039795E /* colorExtension.swift in Sources */,
-				6317B3EB2B21546B0039795E /* AppIntent.swift in Sources */,
-				6317B3E52B21546B0039795E /* CYCWidgetBundle.swift in Sources */,
-				6317B3F92B2154B80039795E /* fontExtension.swift in Sources */,
-				6317B3E92B21546B0039795E /* CYCWidget.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		B1ABEA3A2B200D3000F3C44A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -650,7 +556,6 @@
 				6317B3D62B2049C60039795E /* AboutCYC.swift in Sources */,
 				647986FB2B27EC0B00BA0691 /* extensionOfUserDefaults.swift in Sources */,
 				6317B3D22B2045450039795E /* PersonModel.swift in Sources */,
-				643084C42B33467E00F8110C /* keys.swift in Sources */,
 				B1EE4F032B275B3B0097436B /* AppDelegate.swift in Sources */,
 				526D7F612B2B853800420776 /* ProgressModel.swift in Sources */,
 				52B93C872B30B8F6005E9ACE /* CommitModel.swift in Sources */,
@@ -666,11 +571,11 @@
 				5257BDE02B2D9CBE006FDD79 /* ColorModalView.swift in Sources */,
 				04EA90242B26E4FC00DDC99E /* TodoPreView.swift in Sources */,
 				5215F1A82B25D44700CE1733 /* DdayButtonView.swift in Sources */,
-				637D3FBB2B31F9F600640143 /* keys.swift in Sources */,
 				047F359F2B21A4BB00574504 /* TodoModel.swift in Sources */,
 				63071C242B2D88400008CF15 /* NavigationViewStyleHelper.swift in Sources */,
 				5267AC882B28987F009FDB2A /* CommitView.swift in Sources */,
 				047F359E2B21A4BB00574504 /* SettingModel.swift in Sources */,
+				41CCD5222B3566D100A8DBB4 /* keys.swift in Sources */,
 				6317B3F72B2154A00039795E /* AppIntent.swift in Sources */,
 				B1ABEA422B200D3000F3C44A /* CYCApp.swift in Sources */,
 				5215F1A62B25D30800CE1733 /* ProgressBarView.swift in Sources */,
@@ -691,71 +596,10 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		6317B3F02B21546D0039795E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 6317B3DC2B21546B0039795E /* CYCWidgetExtension */;
-			targetProxy = 6317B3EF2B21546D0039795E /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
-		6317B3F32B21546D0039795E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = KKR332Q2BZ;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CYCWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = CYCWidget;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = none.CYC.CYCWidget;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		6317B3F42B21546D0039795E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = KKR332Q2BZ;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CYCWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = CYCWidget;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = none.CYC.CYCWidget1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 		B1ABEA4A2B200D3200F3C44A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41CCD5232B3566DF00A8DBB4 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -940,15 +784,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6317B3F52B21546D0039795E /* Build configuration list for PBXNativeTarget "CYCWidgetExtension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6317B3F32B21546D0039795E /* Debug */,
-				6317B3F42B21546D0039795E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		B1ABEA392B200D3000F3C44A /* Build configuration list for PBXProject "CYC" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
